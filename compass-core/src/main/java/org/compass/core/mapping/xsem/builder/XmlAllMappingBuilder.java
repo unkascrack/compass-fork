@@ -24,7 +24,7 @@ import org.compass.core.mapping.internal.DefaultAllMapping;
  * A builder allowing to constrcut xml all mapping definition.
  *
  * @author kimchy
- * @see XSEM#all()
+ * @see org.compass.core.mapping.xsem.builder.XSEM#all()
  */
 public class XmlAllMappingBuilder {
 

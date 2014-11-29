@@ -27,8 +27,8 @@ import org.compass.core.mapping.osem.PlainCascadeMapping;
  * but still, cascading should still be performed.
  *
  * @author kimchy
- * @see OSEM#cascade(String)
- * @see SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableCascadeMappingBuilder)
+ * @see org.compass.core.mapping.osem.builder.OSEM#cascade(String)
+ * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableCascadeMappingBuilder)
  */
 public class SearchableCascadeMappingBuilder {
 

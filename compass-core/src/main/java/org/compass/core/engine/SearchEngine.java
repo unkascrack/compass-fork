@@ -106,7 +106,7 @@ public interface SearchEngine {
      * to other transactions. The operations performed before the flush commit operation will not rollback
      * on rollback operation.
      */
-    void flushCommit(String ... aliases) throws SearchEngineException;
+    void flushCommit(String... aliases) throws SearchEngineException;
 
     /**
      * Was this transaction rolled back

@@ -21,7 +21,7 @@ import org.compass.core.config.CompassEnvironment;
 import org.compass.core.config.CompassSettings;
 
 /**
- * A factory for creating {@link org.compass.core.config.binding.metadata.MetaDataReader} based on the settings
+ * A factory for creating {@link MetaDataReader} based on the settings
  * provided ({@link org.compass.core.config.CompassEnvironment.Scanner#READER}.
  *
  * @author kimchy
@@ -29,7 +29,7 @@ import org.compass.core.config.CompassSettings;
 public class MetaDataReaderFactory {
 
     /**
-     * Returns the {@link MetaDataReader} to use. The default one is the internal ASM one.
+     * Returns the {@link org.compass.core.config.binding.metadata.MetaDataReader} to use. The default one is the internal ASM one.
      */
     public static MetaDataReader getMetaDataReader(CompassSettings settings) throws CompassException {
         return (MetaDataReader) settings.getSettingAsInstance(CompassEnvironment.Scanner.READER, AsmMetaDataReader.class.getName());

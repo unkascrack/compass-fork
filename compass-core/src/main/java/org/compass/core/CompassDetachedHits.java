@@ -18,8 +18,8 @@ package org.compass.core;
 
 /**
  * Holds hits returned from a search performed by compass. Can be used outside of
- * a transaction context. In order to get detached hits, use {@link org.compass.core.CompassHits#detach()}
- * or {@link CompassHits#detach(int, int)}.
+ * a transaction context. In order to get detached hits, use {@link CompassHits#detach()}
+ * or {@link org.compass.core.CompassHits#detach(int, int)}.
  *
  * @author kimchy
  */
@@ -57,7 +57,7 @@ public interface CompassDetachedHits extends CompassHitsOperations {
      * Returns all the <code>CompassHit</code>s data as an array. 
      * 
      * @return An array of all the hits.
-     * @see CompassHit
+     * @see org.compass.core.CompassHit
      */
     CompassHit[] getHits() throws CompassException;
 

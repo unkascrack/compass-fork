@@ -105,7 +105,7 @@ public class DefaultJSONWriter {
      * Append a value.
      * @param s A string value.
      * @return this
-     * @throws DefaultJSONException If the value is out of sequence.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the value is out of sequence.
      */
     private DefaultJSONWriter append(String s) throws DefaultJSONException {
         if (s == null) {
@@ -134,7 +134,7 @@ public class DefaultJSONWriter {
      * <code>endArray</code> will be appended to this array. The
      * <code>endArray</code> method must be called to mark the array's end.
      * @return this
-     * @throws DefaultJSONException If the nesting is too deep, or if the object is
+     * @throws org.compass.core.json.impl.DefaultJSONException If the nesting is too deep, or if the object is
      * started in the wrong place (for example as a key or after the end of the
      * outermost array or object).
      */
@@ -153,7 +153,7 @@ public class DefaultJSONWriter {
      * @param m Mode
      * @param c Closing character
      * @return this
-     * @throws DefaultJSONException If unbalanced.
+     * @throws org.compass.core.json.impl.DefaultJSONException If unbalanced.
      */
     private DefaultJSONWriter end(char m, char c) throws DefaultJSONException {
         if (this.mode != m) {
@@ -174,7 +174,7 @@ public class DefaultJSONWriter {
      * End an array. This method most be called to balance calls to
      * <code>array</code>.
      * @return this
-     * @throws DefaultJSONException If incorrectly nested.
+     * @throws org.compass.core.json.impl.DefaultJSONException If incorrectly nested.
      */
     public DefaultJSONWriter endArray() throws DefaultJSONException {
         return this.end('a', ']');
@@ -184,7 +184,7 @@ public class DefaultJSONWriter {
      * End an object. This method most be called to balance calls to
      * <code>object</code>.
      * @return this
-     * @throws DefaultJSONException If incorrectly nested.
+     * @throws org.compass.core.json.impl.DefaultJSONException If incorrectly nested.
      */
     public DefaultJSONWriter endObject() throws DefaultJSONException {
         return this.end('k', '}');
@@ -195,7 +195,7 @@ public class DefaultJSONWriter {
      * object, every value must be preceded by a key.
      * @param s A key string.
      * @return this
-     * @throws DefaultJSONException If the key is out of place. For example, keys
+     * @throws org.compass.core.json.impl.DefaultJSONException If the key is out of place. For example, keys
      *  do not belong in arrays or if the key is null.
      */
     public DefaultJSONWriter key(String s) throws DefaultJSONException {
@@ -225,7 +225,7 @@ public class DefaultJSONWriter {
      * <code>endObject</code> will be appended to this object. The
      * <code>endObject</code> method must be called to mark the object's end.
      * @return this
-     * @throws DefaultJSONException If the nesting is too deep, or if the object is
+     * @throws org.compass.core.json.impl.DefaultJSONException If the nesting is too deep, or if the object is
      * started in the wrong place (for example as a key or after the end of the
      * outermost array or object).
      */
@@ -247,7 +247,7 @@ public class DefaultJSONWriter {
     /**
      * Pop an array or object scope.
      * @param c The scope to close.
-     * @throws DefaultJSONException If nesting is wrong.
+     * @throws org.compass.core.json.impl.DefaultJSONException If nesting is wrong.
      */
     private void pop(char c) throws DefaultJSONException {
         if (this.top <= 0 || this.stack[this.top - 1] != c) {
@@ -260,7 +260,7 @@ public class DefaultJSONWriter {
     /**
      * Push an array or object scope.
      * @param c The scope to open.
-     * @throws DefaultJSONException If nesting is too deep.
+     * @throws org.compass.core.json.impl.DefaultJSONException If nesting is too deep.
      */
     private void push(char c) throws DefaultJSONException {
         if (this.top >= maxdepth) {
@@ -277,7 +277,7 @@ public class DefaultJSONWriter {
      * <code>false</code>.
      * @param b A boolean.
      * @return this
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      */
     public DefaultJSONWriter value(boolean b) throws DefaultJSONException {
         return this.append(b ? "true" : "false");
@@ -287,7 +287,7 @@ public class DefaultJSONWriter {
      * Append a double value.
      * @param d A double.
      * @return this
-     * @throws DefaultJSONException If the number is not finite.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the number is not finite.
      */
     public DefaultJSONWriter value(double d) throws DefaultJSONException {
         return this.value(new Double(d));
@@ -297,7 +297,7 @@ public class DefaultJSONWriter {
      * Append a long value.
      * @param l A long.
      * @return this
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      */
     public DefaultJSONWriter value(long l) throws DefaultJSONException {
         return this.append(Long.toString(l));
@@ -310,7 +310,7 @@ public class DefaultJSONWriter {
      *   String, JSONObject, or JSONArray, or an object with a toJSONString()
      *   method.
      * @return this
-     * @throws DefaultJSONException If the value is out of sequence.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the value is out of sequence.
      */
     public DefaultJSONWriter value(Object o) throws DefaultJSONException {
         return this.append(DefaultJSONObject.valueToString(o));

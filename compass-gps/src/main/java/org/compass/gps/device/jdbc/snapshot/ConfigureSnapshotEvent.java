@@ -23,7 +23,7 @@ import org.compass.gps.device.jdbc.dialect.JdbcDialect;
 
 /**
  * A configuration event, works with
- * {@link org.compass.gps.device.jdbc.snapshot.JdbcSnapshotEventListener#configure(org.compass.gps.device.jdbc.snapshot.ConfigureSnapshotEvent)}.Holds
+ * {@link JdbcSnapshotEventListener#configure(org.compass.gps.device.jdbc.snapshot.ConfigureSnapshotEvent)}.Holds
  * a list of all the mappings.
  * 
  * @author kimchy

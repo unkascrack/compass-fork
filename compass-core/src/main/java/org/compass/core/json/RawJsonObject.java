@@ -19,15 +19,15 @@ package org.compass.core.json;
 import java.util.Iterator;
 
 /**
- * <p>An {@link JsonObject} that has an json string representation. Mainly used for simpliciy,
+ * <p>An {@link org.compass.core.json.JsonObject} that has an json string representation. Mainly used for simpliciy,
  * where Compass will use the configured {@link org.compass.core.converter.json.JsonContentConverter}
  * in order to convert to xml string into the actual {@link org.compass.core.xml.XmlObject} implementation.
  *
  * <p>This object will only be used when saving json object into Compass. When Compass returns json objects
- * as a restult of a query or get/load operations, the actual {@link JsonObject} will be returned.
+ * as a restult of a query or get/load operations, the actual {@link org.compass.core.json.JsonObject} will be returned.
  *
  * <p>Naturally, since the json string will only be parsed when Compass will convert this object, all the
- * {@link JsonObject} methods are not implemented. The {@link JsonObject} is just used
+ * {@link org.compass.core.json.JsonObject} methods are not implemented. The {@link org.compass.core.json.JsonObject} is just used
  * as a marker interface to use the correct json supported converters.
  *
  * @author kimchy

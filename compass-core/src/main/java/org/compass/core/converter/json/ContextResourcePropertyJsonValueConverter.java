@@ -22,7 +22,7 @@ import org.compass.core.mapping.ResourcePropertyMapping;
 import org.compass.core.marshall.MarshallingContext;
 
 /**
- * Same as {@link org.compass.core.converter.json.ResourcePropertyJsonValueConverter} except that
+ * Same as {@link ResourcePropertyJsonValueConverter} except that
  * can actually handle context conversion since it accepts a {@link org.compass.core.converter.mapping.ContextResourcePropertyConverter}.
  *
  * @author kimchy

@@ -22,17 +22,17 @@ import org.compass.gps.device.jpa.JpaGpsDevice;
 import org.compass.gps.device.jpa.JpaGpsDeviceException;
 
 /**
- * Resposible for locating entities for the index process. Most of the times the {@link DefaultJpaEntitiesLocator}
+ * Resposible for locating entities for the index process. Most of the times the {@link org.compass.gps.device.jpa.entities.DefaultJpaEntitiesLocator}
  * should suffice, but it only works with JPA annotations. For JPA implementations that uses a combination of
  * both annotations and other means of configuration (like xml), an implementaiton of this locator is required.
  * <p/>
  * Assume that the <code>EntityManagerFactory</code> is the native one, since the
  * {@link org.compass.gps.device.jpa.extractor.NativeJpaExtractor} of the
- * {@link JpaGpsDevice} was used to extract it.
+ * {@link org.compass.gps.device.jpa.JpaGpsDevice} was used to extract it.
  *
  * @author kimchy
- * @see JpaEntitiesLocatorDetector
- * @see org.compass.gps.device.jpa.entities.HibernateJpaEntitiesLocator
+ * @see org.compass.gps.device.jpa.entities.JpaEntitiesLocatorDetector
+ * @see HibernateJpaEntitiesLocator
  */
 public interface JpaEntitiesLocator {
 
@@ -42,7 +42,7 @@ public interface JpaEntitiesLocator {
      * @param entityManagerFactory The <code>EntityManagerFactory<code> to be optionally used for locating the entities.
      * @param device               The Jpa device that called this locator.
      * @return An array of the enteties that need to be indexed during the index operation.
-     * @throws JpaGpsDeviceException
+     * @throws org.compass.gps.device.jpa.JpaGpsDeviceException
      */
     EntityInformation[] locate(EntityManagerFactory entityManagerFactory, JpaGpsDevice device) throws JpaGpsDeviceException;
 }

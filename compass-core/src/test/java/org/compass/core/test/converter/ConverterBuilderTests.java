@@ -21,7 +21,7 @@ import org.compass.core.mapping.osem.ManagedId;
 import static org.compass.core.mapping.osem.builder.OSEM.*;
 
 /**
- * Same tests as {@link org.compass.core.test.converter.ConverterTests} just using OSEM builder
+ * Same tests as {@link ConverterTests} just using OSEM builder
  * to build the mappings and inject actual instances of the converter.
  */
 public class ConverterBuilderTests extends ConverterTests {

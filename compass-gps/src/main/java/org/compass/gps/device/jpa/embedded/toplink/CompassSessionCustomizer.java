@@ -73,8 +73,8 @@ import org.compass.gps.device.jpa.lifecycle.TopLinkEssentialsJpaEntityLifecycleI
  *
  * <p>This session customizer will also identify if the persistence info is configured to work with JTA or
  * with RESOURCE LOCAL transaction and adjust itsefl accordingly. If JTA is used, it will automatically
- * use Compass {@link JTASyncTransactionFactory} and if RESOURCE LOCAL is used it will automatically use
- * {@link LocalTransactionFactory}. Note, this is only set if the transaction factory is not explicitly set
+ * use Compass {@link org.compass.core.transaction.JTASyncTransactionFactory} and if RESOURCE LOCAL is used it will automatically use
+ * {@link org.compass.core.transaction.LocalTransactionFactory}. Note, this is only set if the transaction factory is not explicitly set
  * using Compass settings.
  *
  * <p>Specific properties that this plugin can use:

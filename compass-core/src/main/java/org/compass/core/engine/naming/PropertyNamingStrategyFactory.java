@@ -24,10 +24,10 @@ import org.compass.core.config.CompassSettings;
  * {@link org.compass.core.config.CompassConfiguration} and can be set using the
  * {@link org.compass.core.config.CompassEnvironment.NamingStrategy#FACTORY_TYPE}
  * setting by setting the fully qulified class name of the factory. Defaults to
- * the {@link DefaultPropertyNamingStrategyFactory}
+ * the {@link org.compass.core.engine.naming.DefaultPropertyNamingStrategyFactory}
  *
  * @author kimchy
- * @see PropertyNamingStrategy
+ * @see org.compass.core.engine.naming.PropertyNamingStrategy
  */
 public interface PropertyNamingStrategyFactory {
 

@@ -44,7 +44,7 @@ public interface CompassHitsOperations extends Serializable, Iterable<CompassHit
      *
      * @param n The n'th hit.
      * @return The object.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object data(int n) throws CompassException;
 
@@ -53,7 +53,7 @@ public interface CompassHitsOperations extends Serializable, Iterable<CompassHit
      *
      * @param n The n'th hit.
      * @return The resource.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource resource(int n) throws CompassException;
 
@@ -62,19 +62,19 @@ public interface CompassHitsOperations extends Serializable, Iterable<CompassHit
      *
      * @param n The n'th hit.
      * @return The hit.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHit hit(int n) throws CompassException;
 
     /**
      * Returns a cached highlighted text the maps to the n'th hit.
      * <p/>
-     * Highlighted text is automatically cached when using {@link CompassHighlighter}
-     * using {@link CompassHits#highlighter(int)}.
+     * Highlighted text is automatically cached when using {@link org.compass.core.CompassHighlighter}
+     * using {@link org.compass.core.CompassHits#highlighter(int)}.
      *
      * @param n The n'th hit
      * @return A highlighted text cache associated witht the n'th hit
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHighlightedText highlightedText(int n) throws CompassException;
 
@@ -84,7 +84,7 @@ public interface CompassHitsOperations extends Serializable, Iterable<CompassHit
      *
      * @param n The n'th hit.
      * @return The score.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     float score(int n) throws CompassException;
 
@@ -96,7 +96,7 @@ public interface CompassHitsOperations extends Serializable, Iterable<CompassHit
     /**
      * Returns a suggested query (based on spell check).
      *
-     * @see CompassQuery#getSuggestedQuery() 
+     * @see org.compass.core.CompassQuery#getSuggestedQuery()
      */
     CompassQuery getSuggestedQuery();
 }

@@ -21,7 +21,7 @@ import org.compass.core.mapping.Cascade;
 import org.compass.core.mapping.osem.ComponentMapping;
 
 /**
- * Specifies a searchable component on property or field of the {@link SearchableMappingBuilder} class.
+ * Specifies a searchable component on property or field of the {@link org.compass.core.mapping.osem.builder.SearchableMappingBuilder} class.
  *
  * <p>A searchable component is a class field/property that reference another class, which
  * content need to be embedded into the content of its searchable class. It will
@@ -46,8 +46,8 @@ import org.compass.core.mapping.osem.ComponentMapping;
  * referenced searchable class mapping definitions.
  *
  * @author kimchy
- * @see OSEM#component(String)
- * @see SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableComponentMappingBuilder)
+ * @see org.compass.core.mapping.osem.builder.OSEM#component(String)
+ * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableComponentMappingBuilder)
  */
 public class SearchableComponentMappingBuilder {
 

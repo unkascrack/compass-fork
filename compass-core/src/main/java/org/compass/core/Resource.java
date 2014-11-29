@@ -126,7 +126,7 @@ public interface Resource extends AliasedObject, Serializable {
      *
      * @param name  the name of the property
      * @param value the value to be set (will be converted to a string).
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     Resource addProperty(String name, Object value) throws SearchEngineException;
 
@@ -138,7 +138,7 @@ public interface Resource extends AliasedObject, Serializable {
      *
      * @param name  the name of the property
      * @param value the value to be set (will be converted to a string).
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     Resource addProperty(String name, Reader value) throws SearchEngineException;
 
@@ -154,35 +154,28 @@ public interface Resource extends AliasedObject, Serializable {
     Resource addProperty(Property property);
 
     /**
-     * Sets a property to the resource (removes then adds) based on resource mapping definitions. If
-     * the property already exists in the resource (the name exists), it will be
-     * added on top of it (won't replace it). ONLY use this method with resource
-     * mapping.
+     * Sets a property to the resource (removes then adds) based on resource mapping definitions.
+     * ONLY use this method with resource mapping.
      *
      * @param name  the name of the property
      * @param value the value to be set (will be converted to a string).
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     Resource setProperty(String name, Object value) throws SearchEngineException;
 
     /**
-     * Sets a property to the resource (removes then adds) based on resource mapping definitions. If
-     * the property already exists in the resource (the name exists), it will be
-     * added on top of it (won't replace it). ONLY use this method with resource
+     * Sets a property to the resource (removes then adds) based on resource mapping definitions..
+     * ONLY use this method with resource
      * mapping.
      *
      * @param name  the name of the property
      * @param value the value to be set (will be converted to a string).
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     Resource setProperty(String name, Reader value) throws SearchEngineException;
 
     /**
-     * Sest a property to the resource (removes then adds). If the property already exists in the
-     * resource (the name exists), it will be added on top of it (won't replace
-     * it). Note: Compass adds all properties specified in mapping file, adding
-     * extra properties to a Resource will make the index out of sync with
-     * mapping.
+     * Sest a property to the resource (removes then adds).
      *
      * @param property The properyt to add
      */
@@ -246,12 +239,12 @@ public interface Resource extends AliasedObject, Serializable {
      *
      * <p>The default value is 1.0.
      *
-     * <p>Values are multiplied into the value of {@link org.compass.core.Property#getBoost()} of
+     * <p>Values are multiplied into the value of {@link Property#getBoost()} of
      * each properties of the resource.  Thus, this method in effect sets a default
      * boost for the fields of this document.
      *
      * @param boost The boost level for the resource
-     * @see org.compass.core.Property#setBoost(float)
+     * @see Property#setBoost(float)
      */
     Resource setBoost(float boost);
 

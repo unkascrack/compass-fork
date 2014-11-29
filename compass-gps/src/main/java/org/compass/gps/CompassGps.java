@@ -18,7 +18,7 @@ package org.compass.gps;
 
 /**
  * <code>CompassGps</code> is responsible for managing
- * {@link org.compass.gps.CompassGpsDevice}s. It can hold one or more
+ * {@link CompassGpsDevice}s. It can hold one or more
  * devices, and manage their lifecycle. It is also resposible for creating an
  * abstraction between devices and their repectice <code>Compass</code>
  * instances, as part of the internal contract between
@@ -31,14 +31,14 @@ package org.compass.gps;
 public interface CompassGps {
 
     /**
-     * Adds a {@link CompassGpsDevice} to be managed.
+     * Adds a {@link org.compass.gps.CompassGpsDevice} to be managed.
      *
      * @param gpsDevice
      */
     void addGpsDevice(CompassGpsDevice gpsDevice);
 
     /**
-     * Sets a list of {@link CompassGpsDevice}s that will be managed.
+     * Sets a list of {@link org.compass.gps.CompassGpsDevice}s that will be managed.
      *
      * @param devices
      */
@@ -47,24 +47,24 @@ public interface CompassGps {
     /**
      * Start <code>CompassGps</code> (also starts all the devices).
      * 
-     * @throws CompassGpsException
+     * @throws org.compass.gps.CompassGpsException
      */
     void start() throws CompassGpsException;
 
     /**
      * Stops <code>CompassGps</code> (also starts all the devices).
      * 
-     * @throws CompassGpsException
+     * @throws org.compass.gps.CompassGpsException
      */
     void stop() throws CompassGpsException;
 
     /**
-     * Return <code>true</code> is started.
+     * Returns <code>true</code> is started.
      */
     boolean isRunning();
 
     /**
-     * Retuns <code>true</code> if the devide performs the index operaiton.
+     * Retuns <code>true</code> if an index operation is in progress.
      */
     boolean isPerformingIndexOperation();
 
@@ -73,9 +73,9 @@ public interface CompassGps {
      * <code>index()</code> operation.
      *
      * <p>Similar to calling the {@link #index(org.compass.gps.IndexPlan)} with a new
-     * instance of {@link DefaultIndexPlan} (and nothing else set).
+     * instance of {@link org.compass.gps.DefaultIndexPlan} (and nothing else set).
      * 
-     * @throws CompassGpsException
+     * @throws org.compass.gps.CompassGpsException
      */
     void index() throws CompassGpsException, IllegalStateException;
 

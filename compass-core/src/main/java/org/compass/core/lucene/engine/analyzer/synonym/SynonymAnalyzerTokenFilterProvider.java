@@ -26,13 +26,13 @@ import org.compass.core.lucene.engine.analyzer.LuceneAnalyzerTokenFilterProvider
 import org.compass.core.util.ClassUtils;
 
 /**
- * A synonym analyzer token filter provider. Uses the {@link SynonymFilter}
- * to return synonyms. The {@link SynonymFilter} in turn uses the {@link SynonymLookupProvider}
+ * A synonym analyzer token filter provider. Uses the {@link org.compass.core.lucene.engine.analyzer.synonym.SynonymFilter}
+ * to return synonyms. The {@link org.compass.core.lucene.engine.analyzer.synonym.SynonymFilter} in turn uses the {@link org.compass.core.lucene.engine.analyzer.synonym.SynonymLookupProvider}
  * which should be provided in order to lookup synonyms for a given value.
  *
  * @author kimchy
- * @see SynonymFilter
- * @see SynonymLookupProvider
+ * @see org.compass.core.lucene.engine.analyzer.synonym.SynonymFilter
+ * @see org.compass.core.lucene.engine.analyzer.synonym.SynonymLookupProvider
  */
 public class SynonymAnalyzerTokenFilterProvider implements LuceneAnalyzerTokenFilterProvider {
 

@@ -22,10 +22,10 @@ import java.io.Serializable;
 import org.compass.core.CompassQuery.CompassSpanQuery;
 
 /**
- * <p>The query builder is used to construct {@link CompassQuery} programmatically.
- * Simple queries, like {@link #le(String,Object)}, will generate a {@link CompassQuery}.
+ * <p>The query builder is used to construct {@link org.compass.core.CompassQuery} programmatically.
+ * Simple queries, like {@link #le(String,Object)}, will generate a {@link org.compass.core.CompassQuery}.
  * More complex ones, will return their respective builder to continue and bulid them (like
- * {@link #multiPhrase(String)}). Combining {@link CompassQuery}s can be done using
+ * {@link #multiPhrase(String)}). Combining {@link org.compass.core.CompassQuery}s can be done using
  * the {@link #bool()} operation.
  *
  * <p>An example of building a query using the query builder:
@@ -41,7 +41,7 @@ public interface CompassQueryBuilder {
 
     /**
      * A general interface for internal builders that will create a
-     * {@link CompassQuery}.
+     * {@link org.compass.core.CompassQuery}.
      *
      * @author kimchy
      */
@@ -159,7 +159,7 @@ public interface CompassQueryBuilder {
         /**
          * Sets the analyzer that will be used to analyze the query string. Can
          * be <code>null</code>. It is used when parsing a query string and
-         * has no effect when using a bulit in query (using the {@link CompassQuery}).
+         * has no effect when using a bulit in query (using the {@link org.compass.core.CompassQuery}).
          */
         CompassQueryStringBuilder setAnalyzer(String analyzer) throws CompassException;
 
@@ -185,7 +185,7 @@ public interface CompassQueryBuilder {
          * Sets the default search property for non prefixed terms in the query
          * string. Can be <code>null</code>. It is used when parsing a query
          * string and has no effect when using a bulit in query (using the
-         * {@link CompassQuery}).
+         * {@link org.compass.core.CompassQuery}).
          */
         CompassQueryStringBuilder setDefaultSearchProperty(String defaultSearchProperty);
 
@@ -222,7 +222,7 @@ public interface CompassQueryBuilder {
         /**
          * Sets the analyzer that will be used to analyze the query string. Can
          * be <code>null</code>. It is used when parsing a query string and
-         * has no effect when using a bulit in query (using the {@link CompassQuery}).
+         * has no effect when using a bulit in query (using the {@link org.compass.core.CompassQuery}).
          */
         CompassMultiPropertyQueryStringBuilder setAnalyzer(String analyzer);
 
@@ -255,6 +255,19 @@ public interface CompassQueryBuilder {
          * @param name The name of the resource property / meta-data.
          */
         CompassMultiPropertyQueryStringBuilder add(String name);
+
+        /**
+         * Adds another resource property name / meta-data that the query string will be executed against.
+         * <p/>
+         * The name can either be the actual resource property or meta-data value,
+         * or the path to the given resource property (alias.rProperty), or the
+         * class property (alias.cProperty) or the path to the meta-data
+         * (alias.cProperty.metaData)
+         *
+         * @param name The name of the resource property / meta-data.
+         * @param boost The boosting factor of this resource property / meta-data.
+         */
+        CompassMultiPropertyQueryStringBuilder add(String name, float boost);
 
         /**
          * If called, the query will be expanded to: <code>+(title:term1 body:term1) +(title:term2 body:term2)</code>
@@ -471,7 +484,7 @@ public interface CompassQueryBuilder {
      * Returns a query that <b>exactly</b> match the given alias.
      *
      * <p>Note, this will <b>not</b> narrow down the search to specific sub indxes.
-     * In order to do that, please use {@link org.compass.core.CompassQuery#setAliases(String[])}.
+     * In order to do that, please use {@link CompassQuery#setAliases(String[])}.
      *
      * @param aliasValue The alias value to match to.
      * @return The generated query.
@@ -482,7 +495,7 @@ public interface CompassQueryBuilder {
      * Returns a query that match the given alias or any extedning aliases.
      *
      * <p>Note, this will <b>not</b> narrow down the search to specific sub indxes.
-     * In order to do that, please use {@link org.compass.core.CompassQuery#setAliases(String[])}.
+     * In order to do that, please use {@link CompassQuery#setAliases(String[])}.
      *
      * @param aliasValue The alias value to match to or any extending aliases.
      * @return The generated query.

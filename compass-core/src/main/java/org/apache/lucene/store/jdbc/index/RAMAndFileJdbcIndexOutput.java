@@ -32,7 +32,7 @@ import org.apache.lucene.store.jdbc.JdbcFileEntrySettings;
 public class RAMAndFileJdbcIndexOutput extends IndexOutput implements JdbcIndexConfigurable {
 
     /**
-     * The threshold setting name. See {@link JdbcFileEntrySettings#setLongSetting(String, long)}.
+     * The threshold setting name. See {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings#setLongSetting(String, long)}.
      * Should be set in bytes.
      */
     public static final String INDEX_OUTPUT_THRESHOLD_SETTING = "indexOutput.threshold";

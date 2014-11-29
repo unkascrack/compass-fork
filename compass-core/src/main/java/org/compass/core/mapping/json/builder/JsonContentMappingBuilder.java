@@ -27,7 +27,7 @@ import org.compass.core.mapping.json.JsonContentMapping;
  * {@link org.compass.core.json.JsonObject} back from the index.
  *
  * @author kimchy
- * @see JSEM#content(String)
+ * @see org.compass.core.mapping.json.builder.JSEM#content(String)
  */
 public class JsonContentMappingBuilder {
 

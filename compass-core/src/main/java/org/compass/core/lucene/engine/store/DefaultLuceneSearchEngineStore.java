@@ -379,9 +379,13 @@ public class DefaultLuceneSearchEngineStore implements LuceneSearchEngineStore {
                 if (lockFactoryType instanceof String && LuceneEnvironment.LockFactory.Type.NATIVE_FS.equalsIgnoreCase((String) lockFactoryType)) {
                     String lockDir = path;
                     if (lockDir == null) {
-                        lockDir = connectionString + "/" + subContext + "/" + subIndex;
-                        if (lockDir.startsWith(FSDirectoryStore.PROTOCOL)) {
-                            lockDir = lockDir.substring(FSDirectoryStore.PROTOCOL.length());
+                        if (directoryStore instanceof FSDirectoryStore) {
+                            lockDir = ((FSDirectoryStore) directoryStore).buildPath(subContext, subIndex);
+                        } else {
+                            lockDir = connectionString + "/" + subContext + "/" + subIndex;
+                            if (lockDir.startsWith(FSDirectoryStore.PROTOCOL)) {
+                                lockDir = lockDir.substring(FSDirectoryStore.PROTOCOL.length());
+                            }
                         }
                     }
                     try {
@@ -392,13 +396,16 @@ public class DefaultLuceneSearchEngineStore implements LuceneSearchEngineStore {
                     if (log.isDebugEnabled()) {
                         log.debug("Using native fs lock for sub index [" + subIndex + "] and lock directory [" + lockDir + "]");
                     }
-                } else
-                if (lockFactoryType instanceof String && LuceneEnvironment.LockFactory.Type.SIMPLE_FS.equalsIgnoreCase((String) lockFactoryType)) {
+                } else if (lockFactoryType instanceof String && LuceneEnvironment.LockFactory.Type.SIMPLE_FS.equalsIgnoreCase((String) lockFactoryType)) {
                     String lockDir = path;
                     if (lockDir == null) {
-                        lockDir = connectionString + "/" + subContext + "/" + subIndex;
-                        if (lockDir.startsWith(FSDirectoryStore.PROTOCOL)) {
-                            lockDir = lockDir.substring(FSDirectoryStore.PROTOCOL.length());
+                        if (directoryStore instanceof FSDirectoryStore) {
+                            lockDir = ((FSDirectoryStore) directoryStore).buildPath(subContext, subIndex);
+                        } else {
+                            lockDir = connectionString + "/" + subContext + "/" + subIndex;
+                            if (lockDir.startsWith(FSDirectoryStore.PROTOCOL)) {
+                                lockDir = lockDir.substring(FSDirectoryStore.PROTOCOL.length());
+                            }
                         }
                     }
                     try {
@@ -410,11 +417,9 @@ public class DefaultLuceneSearchEngineStore implements LuceneSearchEngineStore {
                         log.debug("Using simple fs lock for sub index [" + subIndex + "] and lock directory [" + lockDir + "]");
                     }
 
-                } else
-                if (lockFactoryType instanceof String && LuceneEnvironment.LockFactory.Type.SINGLE_INSTANCE.equalsIgnoreCase((String) lockFactoryType)) {
+                } else if (lockFactoryType instanceof String && LuceneEnvironment.LockFactory.Type.SINGLE_INSTANCE.equalsIgnoreCase((String) lockFactoryType)) {
                     lockFactory = new SingleInstanceLockFactory();
-                } else
-                if (lockFactoryType instanceof String && LuceneEnvironment.LockFactory.Type.NO_LOCKING.equalsIgnoreCase((String) lockFactoryType)) {
+                } else if (lockFactoryType instanceof String && LuceneEnvironment.LockFactory.Type.NO_LOCKING.equalsIgnoreCase((String) lockFactoryType)) {
                     lockFactory = new NoLockFactory();
                 } else {
                     Object temp;
@@ -499,7 +504,7 @@ public class DefaultLuceneSearchEngineStore implements LuceneSearchEngineStore {
     public synchronized void createIndex(String subContext, String subIndex) throws SearchEngineException {
         Directory dir = openDirectory(subContext, subIndex);
         try {
-            IndexWriter indexWriter = new IndexWriter(dir, new StandardAnalyzer(), true);
+            IndexWriter indexWriter = new IndexWriter(dir, new StandardAnalyzer(), true, IndexWriter.MaxFieldLength.UNLIMITED);
             indexWriter.close();
         } catch (IOException e) {
             throw new SearchEngineException("Failed to create index for sub index [" + subIndex + "]", e);

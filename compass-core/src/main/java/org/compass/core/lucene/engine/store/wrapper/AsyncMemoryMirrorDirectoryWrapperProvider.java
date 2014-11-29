@@ -29,17 +29,17 @@ import org.compass.core.engine.SearchEngineException;
 import org.compass.core.util.concurrent.NamedThreadFactory;
 
 /**
- * Wraps a Lucene {@link Directory} with {@link AsyncMemoryMirrorDirectoryWrapper}.
+ * Wraps a Lucene {@link org.apache.lucene.store.Directory} with {@link org.apache.lucene.store.wrapper.AsyncMemoryMirrorDirectoryWrapper}.
  *
  * @author kimchy
- * @see AsyncMemoryMirrorDirectoryWrapper
+ * @see org.apache.lucene.store.wrapper.AsyncMemoryMirrorDirectoryWrapper
  */
 public class AsyncMemoryMirrorDirectoryWrapperProvider implements DirectoryWrapperProvider, CompassConfigurable {
 
     private long awaitTermination;
 
     /**
-     * Configures {@link AsyncMemoryMirrorDirectoryWrapper}.
+     * Configures {@link org.apache.lucene.store.wrapper.AsyncMemoryMirrorDirectoryWrapper}.
      * <code>awaitTermination</code> is the first setting, and defaults to 5 seconds.
      */
     public void configure(CompassSettings settings) throws CompassException {

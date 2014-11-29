@@ -47,15 +47,15 @@ public abstract class AbstractConstantColumnToPropertyMapping extends AbstractCo
     }
 
     public Index getPropertyIndex() {
-        return Property.Index.NOT_ANALYZED;
+        return Index.NOT_ANALYZED;
     }
 
     public Store getPropertyStore() {
-        return Property.Store.YES;
+        return Store.YES;
     }
 
     public TermVector getPropertyTermVector() {
-        return Property.TermVector.NO;
+        return TermVector.NO;
     }
 
     public float getBoost() {

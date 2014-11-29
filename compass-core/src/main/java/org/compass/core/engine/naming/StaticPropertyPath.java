@@ -24,7 +24,7 @@ package org.compass.core.engine.naming;
  * unmarshalling operations. Downside is its memory footprint.
  *
  * @author kimchy
- * @see StaticPropertyNamingStrategy
+ * @see org.compass.core.engine.naming.StaticPropertyNamingStrategy
  */
 public class StaticPropertyPath implements PropertyPath {
 

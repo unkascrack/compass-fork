@@ -19,7 +19,7 @@ package org.compass.core.xml;
 import java.io.Reader;
 
 /**
- * Extends {@link RawXmlObject} and adds association with an alias.
+ * Extends {@link org.compass.core.xml.RawXmlObject} and adds association with an alias.
  *
  * @author kimchy
  */

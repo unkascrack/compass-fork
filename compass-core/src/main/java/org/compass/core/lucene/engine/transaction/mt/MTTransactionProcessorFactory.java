@@ -49,7 +49,7 @@ public class MTTransactionProcessorFactory implements TransactionProcessorFactor
     }
 
     /**
-     * Creates a new {@link org.compass.core.lucene.engine.transaction.mt.MTTransactionProcessor}.
+     * Creates a new {@link MTTransactionProcessor}.
      */
     public TransactionProcessor create(LuceneSearchEngine searchEngine) {
         return new MTTransactionProcessor(this, searchEngine);

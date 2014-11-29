@@ -93,7 +93,7 @@ public class InternalIdsMappingProcessor implements MappingProcessor {
      * Duplicate mappings are mappings that are shared by several mappings.
      * {@link org.compass.core.mapping.osem.OsemMappingIterator.ClassPropertyAndResourcePropertyGatherer}
      * ignores this duplicates, and only process the first one. Later, in the post process
-     * stage ({@link org.compass.core.config.process.PostProcessorMappingProcessor}, the ones
+     * stage ({@link PostProcessorMappingProcessor}, the ones
      * that got skipped will be replced with the ones that were (they are the same).
      *
      * @param classMapping

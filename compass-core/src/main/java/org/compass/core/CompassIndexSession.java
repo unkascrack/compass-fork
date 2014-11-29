@@ -22,7 +22,7 @@ import org.compass.core.config.CompassSettings;
  * A specialized interface that provides only index capabilities.
  *
  * <p>Using the session depends on how transaction managemnet should be done (also see
- * {@link org.compass.core.Compass#openSession()}. The simplest form looks like this:
+ * {@link Compass#openSession()}. The simplest form looks like this:
  *
  * <pre>
  * CompassIndexSession session = compass.openIndexSession();
@@ -63,14 +63,14 @@ public interface CompassIndexSession {
      * sessions will be able to see it. It also means that the operations up to this point will
      * not be rolledback.
      */
-    void flushCommit(String ... aliases) throws CompassException;
+    void flushCommit(String... aliases) throws CompassException;
     
     /**
      * Deletes a resource with the specified alias. Note that the resource must
      * have the defined ids in the mapping files set and an alias set.
      *
      * @param resource The resource to be deleted.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(Resource resource) throws CompassException;
 
@@ -79,7 +79,7 @@ public interface CompassIndexSession {
      * by Compass or it's ids must be set if already known.
      *
      * @param obj The object to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(Object obj) throws CompassException;
 
@@ -90,7 +90,7 @@ public interface CompassIndexSession {
      *
      * @param alias The alias that the objects maps under
      * @param obj   The object to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(String alias, Object obj) throws CompassException;
 
@@ -100,7 +100,7 @@ public interface CompassIndexSession {
      *
      * @param alias The alias that the objects maps under
      * @param ids   The ids of the object to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(String alias, Object... ids) throws CompassException;
 
@@ -111,7 +111,7 @@ public interface CompassIndexSession {
      *
      * @param clazz The class that represtents the required mapping
      * @param obj   The object to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(Class clazz, Object obj) throws CompassException;
 
@@ -121,7 +121,7 @@ public interface CompassIndexSession {
      *
      * @param clazz The class that represtents the required mapping
      * @param ids   The object ids to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(Class clazz, Object... ids) throws CompassException;
 
@@ -129,7 +129,7 @@ public interface CompassIndexSession {
      * Deletes all entries in the index that match the given query.
      *
      * @param query The query to delete by
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(CompassQuery query) throws CompassException;
 
@@ -140,7 +140,7 @@ public interface CompassIndexSession {
      * won't be deleted.
      *
      * @param obj The object to save.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void create(Object obj) throws CompassException;
 
@@ -153,7 +153,7 @@ public interface CompassIndexSession {
      *
      * @param alias The alias that match the object mappings
      * @param obj   The object to save
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void create(String alias, Object obj) throws CompassException;
 
@@ -162,7 +162,7 @@ public interface CompassIndexSession {
      * mapping files will be indexed and saved for later searching.
      *
      * @param obj The object to save.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void save(Object obj) throws CompassException;
 
@@ -173,18 +173,18 @@ public interface CompassIndexSession {
      *
      * @param alias The alias that match the object mappings
      * @param obj   The object to save
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void save(String alias, Object obj) throws CompassException;
 
     /**
-     * When not using explicit {@link org.compass.core.CompassTransaction} in order to manage transactions, can be called
+     * When not using explicit {@link CompassTransaction} in order to manage transactions, can be called
      * to rollback the current running transaction. Effectively also closes the session.
      */
     void rollback() throws CompassException;
 
     /**
-     * Same as {@link CompassSession#close()}.
+     * Same as {@link org.compass.core.CompassSession#close()}.
      */
     void commit() throws CompassException;
 
@@ -196,8 +196,8 @@ public interface CompassIndexSession {
      * / rolledback yet, will commit the transaction (and in case of failure, will roll it back). Failed
      * commits will throw an exception from the close method.
      *
-     * @throws CompassException
-     * @see org.compass.core.Compass#openSession()
+     * @throws org.compass.core.CompassException
+     * @see Compass#openSession()
      */
     void close() throws CompassException;
 

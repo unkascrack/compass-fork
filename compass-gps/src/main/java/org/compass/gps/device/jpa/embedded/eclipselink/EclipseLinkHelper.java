@@ -18,7 +18,6 @@ package org.compass.gps.device.jpa.embedded.eclipselink;
 
 import java.util.List;
 import java.util.Properties;
-import java.util.Vector;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 

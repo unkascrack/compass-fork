@@ -28,7 +28,7 @@ import org.compass.core.mapping.rsem.RawResourcePropertyIdMapping;
  * A builder allowing to constrcut resource id mapping definition.
  *
  * @author kimchy
- * @see RSEM#id(String)
+ * @see org.compass.core.mapping.rsem.builder.RSEM#id(String)
  */
 public class ResourceIdMappingBuilder {
 

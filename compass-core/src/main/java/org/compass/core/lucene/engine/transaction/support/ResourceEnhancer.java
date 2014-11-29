@@ -42,7 +42,7 @@ public class ResourceEnhancer {
 
 
     /**
-     * Result of {@link org.compass.core.lucene.engine.transaction.support.ResourceEnhancer#enahanceResource(org.compass.core.spi.InternalResource)}.
+     * Result of {@link ResourceEnhancer#enahanceResource(org.compass.core.spi.InternalResource)}.
      * Provides the Lucene {@link org.apache.lucene.document.Document} and {@link org.apache.lucene.analysis.Analyzer} to
      * be used with create/update IndexWriter operations.
      */
@@ -69,7 +69,7 @@ public class ResourceEnhancer {
      * Enhances the given resource and reutrns the {@link org.apache.lucene.analysis.Analyzer} that should be
      * used when adding the Lucene Resource to the index.
      *
-     * @param resource            The resource to enhance.
+     * @param resource The resource to enhance.
      * @return The analyzer that should be used when adding the Lucene resource to the search engine
      */
     public static Result enahanceResource(InternalResource resource) {
@@ -101,9 +101,9 @@ public class ResourceEnhancer {
         String extendedAliasProperty = searchEngineFactory.getExtendedAliasProperty();
         resource.removeProperties(extendedAliasProperty);
         ResourceMapping resourceMapping = resource.getResourceMapping();
-        for (int i = 0; i < resourceMapping.getExtendedAliases().length; i++) {
+        for (int i = 0; i < resourceMapping.getRecursiveExtendedAliases().length; i++) {
             LuceneProperty extendedAliasProp = (LuceneProperty) searchEngineFactory.getResourceFactory().createProperty(extendedAliasProperty,
-                    resourceMapping.getExtendedAliases()[i], Property.Store.NO, Property.Index.NOT_ANALYZED);
+                    resourceMapping.getRecursiveExtendedAliases()[i], Property.Store.NO, Property.Index.NOT_ANALYZED);
             extendedAliasProp.getField().setOmitNorms(true);
             extendedAliasProp.getField().setOmitTf(true);
             resource.addProperty(extendedAliasProp);
@@ -112,8 +112,11 @@ public class ResourceEnhancer {
     }
 
     private static Analyzer addAllProperty(Document document, InternalResource resource, Analyzer analyzer, LuceneSearchEngineFactory searchEngineFactory) throws SearchEngineException {
-        AllAnalyzer allAnalyzer = new AllAnalyzer(analyzer, resource, searchEngineFactory);
         AllMapping allMapping = resource.getResourceMapping().getAllMapping();
+        if (!allMapping.isSupported()) {
+            return analyzer;
+        }
+        AllAnalyzer allAnalyzer = new AllAnalyzer(analyzer, resource, searchEngineFactory);
         Fieldable allField = new Field(allMapping.getProperty(), allAnalyzer.createAllTokenStream(), FieldHelper.getFieldTermVector(allMapping.getTermVector()));
         allField.setOmitNorms(allMapping.isOmitNorms());
         allField.setOmitTf(allMapping.isOmitTf());

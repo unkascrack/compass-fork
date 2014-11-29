@@ -23,7 +23,7 @@ import org.apache.lucene.analysis.TokenStream;
 
 /**
  * A simple analyzer wrapper, that adds a set of token filters created by the corresponding
- * {@link LuceneAnalyzerTokenFilterProvider}s.
+ * {@link org.compass.core.lucene.engine.analyzer.LuceneAnalyzerTokenFilterProvider}s.
  *
  * @author kimchy
  */

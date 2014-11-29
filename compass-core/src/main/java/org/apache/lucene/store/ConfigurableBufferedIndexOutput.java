@@ -26,7 +26,7 @@ public abstract class ConfigurableBufferedIndexOutput extends IndexOutput {
     /**
      * Writes a single byte.
      *
-     * @see IndexInput#readByte()
+     * @see org.apache.lucene.store.IndexInput#readByte()
      */
     public void writeByte(byte b) throws IOException {
         if (bufferPosition >= bufferSize)
@@ -39,7 +39,7 @@ public abstract class ConfigurableBufferedIndexOutput extends IndexOutput {
      *
      * @param b      the bytes to write
      * @param length the number of bytes to write
-     * @see IndexInput#readBytes(byte[],int,int)
+     * @see org.apache.lucene.store.IndexInput#readBytes(byte[],int,int)
      */
     public void writeBytes(byte[] b, int offset, int length) throws IOException {
         int bytesLeft = bufferSize - bufferPosition;

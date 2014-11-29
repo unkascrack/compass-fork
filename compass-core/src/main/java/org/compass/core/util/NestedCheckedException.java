@@ -38,7 +38,7 @@ import java.io.PrintWriter;
  * @author kimchy
  * @see #getMessage
  * @see #printStackTrace
- * @see NestedRuntimeException
+ * @see org.compass.core.util.NestedRuntimeException
  */
 public abstract class NestedCheckedException extends Exception {
 

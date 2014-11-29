@@ -37,7 +37,7 @@ import org.compass.gps.IndexPlan;
  * disable cascading.
  *
  * @author kimchy
- * @deprecated Please use {@link org.compass.gps.impl.SingleCompassGps}.
+ * @deprecated Please use {@link SingleCompassGps}.
  */
 public class DualCompassGps extends AbstractCompassGps {
 

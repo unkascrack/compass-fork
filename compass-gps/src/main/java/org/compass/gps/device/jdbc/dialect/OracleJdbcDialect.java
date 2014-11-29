@@ -25,7 +25,7 @@ import java.sql.SQLException;
 public class OracleJdbcDialect extends DefaultJdbcDialect {
 
     /**
-     * @see org.compass.gps.device.jdbc.dialect.DefaultJdbcDialect#setParameter(java.sql.PreparedStatement, int,
+     * @see DefaultJdbcDialect#setParameter(java.sql.PreparedStatement, int,
      *      String)
      */
     @Override

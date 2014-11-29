@@ -43,8 +43,8 @@ import org.compass.core.mapping.osem.ClassDynamicPropertyMapping;
  * {@link #valueFormat(String)}.
  *
  * @author kimchy
- * @see org.compass.core.mapping.osem.builder.OSEM#metadata(String)
- * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableDynamicPropertyMappingBuilder)
+ * @see OSEM#metadata(String)
+ * @see SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableDynamicPropertyMappingBuilder)
  */
 public class SearchableDynamicPropertyMappingBuilder {
 

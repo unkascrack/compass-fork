@@ -10,8 +10,8 @@ import org.compass.core.xml.AliasedXmlObject;
 import org.compass.core.xml.XmlObject;
 
 /**
- * An {@link XmlContentConverter} implementation that wraps the actual {@link XmlContentConverter}
- * configured (based on the settings) and creates and configures a new {@link XmlContentConverter}
+ * An {@link org.compass.core.converter.xsem.XmlContentConverter} implementation that wraps the actual {@link org.compass.core.converter.xsem.XmlContentConverter}
+ * configured (based on the settings) and creates and configures a new {@link org.compass.core.converter.xsem.XmlContentConverter}
  * for both {@link #toXml(org.compass.core.xml.XmlObject)} and {@link #fromXml(String, java.io.Reader)}.
  *
  * @author kimchy
@@ -25,20 +25,20 @@ public class PrototypeXmlContentConverterWrapper implements XmlContentConverterW
     }
 
     /**
-     * Converts the {@link XmlObject} into raw xml by creating and configuring a new
-     * {@link XmlContentConverter} implementation.
+     * Converts the {@link org.compass.core.xml.XmlObject} into raw xml by creating and configuring a new
+     * {@link org.compass.core.converter.xsem.XmlContentConverter} implementation.
      *
-     * @see XmlContentConverter#toXml(org.compass.core.xml.XmlObject)
+     * @see org.compass.core.converter.xsem.XmlContentConverter#toXml(org.compass.core.xml.XmlObject)
      */
     public String toXml(XmlObject xmlObject) throws ConversionException {
         return createContentConverter().toXml(xmlObject);
     }
 
     /**
-     * Converts a raw xml and an alias into an {@link AliasedXmlObject} by creating and configuring
-     * a new {@link XmlContentConverter} implementation.
+     * Converts a raw xml and an alias into an {@link org.compass.core.xml.AliasedXmlObject} by creating and configuring
+     * a new {@link org.compass.core.converter.xsem.XmlContentConverter} implementation.
      *
-     * @see XmlContentConverter#fromXml(String, java.io.Reader)
+     * @see org.compass.core.converter.xsem.XmlContentConverter#fromXml(String, java.io.Reader)
      */
     public AliasedXmlObject fromXml(String alias, Reader xml) throws ConversionException {
         return createContentConverter().fromXml(alias, xml);

@@ -35,7 +35,7 @@ public class XmlContentMapping extends AbstractResourcePropertyMapping implement
     }
     
     /**
-     * Xml content mapping is always {@link Property.Index#NO}.
+     * Xml content mapping is always {@link org.compass.core.Property.Index#NO}.
      */
     public Property.Index getIndex() {
         return Property.Index.NO;

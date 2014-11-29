@@ -22,14 +22,14 @@ import org.compass.core.mapping.SpellCheck;
 import org.compass.core.mapping.osem.ConstantMetaDataMapping;
 
 /**
- * A constant meta-data that can be defined on a {@link SearchableMappingBuilder} class.
+ * A constant meta-data that can be defined on a {@link org.compass.core.mapping.osem.builder.SearchableMappingBuilder} class.
  *
  * <p>A constant meta-data is a predefined name and value pair that will be
  * saved in the search engine index.
  *
  * @author kimchy
- * @see OSEM#constant(String)
- * @see SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableConstantMappingBuilder)
+ * @see org.compass.core.mapping.osem.builder.OSEM#constant(String)
+ * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableConstantMappingBuilder)
  */
 public class SearchableConstantMappingBuilder {
 

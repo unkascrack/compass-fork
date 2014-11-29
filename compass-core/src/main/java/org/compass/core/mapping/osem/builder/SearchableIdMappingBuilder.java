@@ -23,20 +23,20 @@ import org.compass.core.mapping.osem.ClassIdPropertyMapping;
 import org.compass.core.mapping.osem.ManagedId;
 
 /**
- * Specifies a searchable id on property or field of {@link SearchableMappingBuilder}.
+ * Specifies a searchable id on property or field of {@link org.compass.core.mapping.osem.builder.SearchableMappingBuilder}.
  *
  * <p>A root searchable class must have at least one id (or id component) mapping defined for it.
  *
- * <p>The searchable id can optionally have a {@link SearchableMetaDataMappingBuilder} added to it
- * using {@link #add(SearchableMetaDataMappingBuilder)}. If no meta-data is added to it, or Compass
+ * <p>The searchable id can optionally have a {@link org.compass.core.mapping.osem.builder.SearchableMetaDataMappingBuilder} added to it
+ * using {@link #add(org.compass.core.mapping.osem.builder.SearchableMetaDataMappingBuilder)}. If no meta-data is added to it, or Compass
  * identifies that there is another meta-data with the same name, a managed id (internal) will be
  * created for it so it can be correctly unmarshall it from the index. Note, when support unmarshall
  * is set to <code>false</code> for the searchable class, a managed id will still be created for
  * id mappings (and only for id mappings).
  *
  * @author kimchy
- * @see OSEM#id(String)
- * @see SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableIdMappingBuilder)
+ * @see org.compass.core.mapping.osem.builder.OSEM#id(String)
+ * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableIdMappingBuilder)
  */
 public class SearchableIdMappingBuilder {
 

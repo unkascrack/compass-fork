@@ -24,7 +24,7 @@ import org.compass.core.mapping.internal.DefaultAllMapping;
  * A builder allowing to constrcut class all mapping definition.
  *
  * @author kimchy
- * @see OSEM#all()
+ * @see org.compass.core.mapping.osem.builder.OSEM#all()
  */
 public class SearchableAllMappingBuilder {
 

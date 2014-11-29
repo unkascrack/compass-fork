@@ -45,7 +45,7 @@ public abstract class NativeJpaHelper {
         } catch (ClassNotFoundException e) {
             // not in classpath
         } catch (Throwable t) {
-            log.warn("Faiiled to regsiter Spring native JPA extractor", t);
+            log.warn("Failed to register Spring native JPA extractor", t);
         }
         try {
             ClassUtils.forName("org.apache.openejb.persistence.JtaEntityManager", NativeJpaHelper.class.getClassLoader());
@@ -53,7 +53,7 @@ public abstract class NativeJpaHelper {
         } catch (ClassNotFoundException e) {
             // not in classpath
         } catch (Throwable t) {
-            log.warn("Faiiled to regsiter OpenEJB native JPA extractor", t);
+            log.warn("Failed to register OpenEJB native JPA extractor", t);
         }
         try {
             ClassUtils.forName("org.jboss.ejb3.entity.InjectedEntityManagerFactory", NativeJpaHelper.class.getClassLoader());
@@ -61,7 +61,15 @@ public abstract class NativeJpaHelper {
         } catch (ClassNotFoundException e) {
             // not in classpath
         } catch (Throwable t) {
-            log.warn("Faiiled to regsiter JBoss native JPA extractor", t);
+            log.warn("Failed to register JBoss native JPA extractor", t);
+        }
+        try {
+            ClassUtils.forName("org.jboss.jpa.injection.InjectedEntityManagerFactory", NativeJpaHelper.class.getClassLoader());
+            extractorsList.add(new JBossNativeJpaExtractor());
+        } catch (ClassNotFoundException e) {
+            // not in classpath
+        } catch (Throwable t) {
+            log.warn("Failed to register JBoss native JPA extractor", t);
         }
         try {
             ClassUtils.forName("com.sun.enterprise.util.EntityManagerFactoryWrapper", NativeJpaHelper.class.getClassLoader());
@@ -69,7 +77,7 @@ public abstract class NativeJpaHelper {
         } catch (ClassNotFoundException e) {
             // not in classpath
         } catch (Throwable t) {
-            log.warn("Faiiled to regsiter Glassfish native JPA extractor", t);
+            log.warn("Failed to register Glassfish native JPA extractor", t);
         }
         extractors = extractorsList.toArray(new NativeJpaExtractor[extractorsList.size()]);
         if (log.isDebugEnabled()) {
@@ -87,6 +95,8 @@ public abstract class NativeJpaHelper {
 
         T onEclipseLink();
 
+        T onDatanucleus();
+
         T onUnknown();
     }
 
@@ -98,7 +108,12 @@ public abstract class NativeJpaHelper {
         for (Object anInterface : interfaces) {
             interfacesAsStrings.add(((Class) anInterface).getName());
         }
-        interfacesAsStrings.add(nativeEmf.getClass().getName());
+
+        Class clazz = nativeEmf.getClass();
+        while (clazz != Object.class) {
+            interfacesAsStrings.add(clazz.getName());
+            clazz = clazz.getSuperclass();
+        }
 
         T retVal;
         if (interfacesAsStrings.contains("org.hibernate.ejb.HibernateEntityManagerFactory")) {
@@ -109,6 +124,8 @@ public abstract class NativeJpaHelper {
             retVal = callback.onEclipseLink();
         } else if (interfacesAsStrings.contains("org.apache.openjpa.persistence.OpenJPAEntityManagerFactory")) {
             retVal = callback.onOpenJPA();
+        } else if (interfacesAsStrings.contains("org.datanucleus.jpa.EntityManagerFactoryImpl")) {
+            retVal = callback.onDatanucleus();
         } else {
             retVal = callback.onUnknown();
         }

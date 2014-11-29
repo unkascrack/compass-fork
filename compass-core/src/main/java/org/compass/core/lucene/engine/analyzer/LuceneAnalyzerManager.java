@@ -155,28 +155,28 @@ public class LuceneAnalyzerManager {
     }
 
     /**
-     * Returns the default Lucene {@link Analyzer} for Compass.
+     * Returns the default Lucene {@link org.apache.lucene.analysis.Analyzer} for Compass.
      */
     public Analyzer getDefaultAnalyzer() {
         return defaultAnalyzer;
     }
 
     /**
-     * Returns the search Lucene {@link Analyzer}.
+     * Returns the search Lucene {@link org.apache.lucene.analysis.Analyzer}.
      */
     public Analyzer getSearchAnalyzer() {
         return searchAnalyzer;
     }
 
     /**
-     * Returns the Lucene {@link Analyzer} registed under the given name.
+     * Returns the Lucene {@link org.apache.lucene.analysis.Analyzer} registed under the given name.
      */
     public Analyzer getAnalyzer(String analyzerName) {
         return analyzers.get(analyzerName);
     }
 
     /**
-     * Returns the Lucene {@link Analyzer} for the given alias. Might build a per field analyzer
+     * Returns the Lucene {@link org.apache.lucene.analysis.Analyzer} for the given alias. Might build a per field analyzer
      * if the resource has more than one analyzer against one of its properties.
      */
     public Analyzer getAnalyzerByAlias(String alias) {
@@ -192,8 +192,8 @@ public class LuceneAnalyzerManager {
     }
 
     /**
-     * Returns the Lucene {@link Analyzer} based on the give {@link Resource}. Will build a specifc
-     * per field analyzr if the given {@link Resource} has properties with different analyzers.
+     * Returns the Lucene {@link org.apache.lucene.analysis.Analyzer} based on the give {@link org.compass.core.Resource}. Will build a specifc
+     * per field analyzr if the given {@link org.compass.core.Resource} has properties with different analyzers.
      * Will also take into account if the resource has an analyzer controller based on the analyzer
      * controller property value.
      */

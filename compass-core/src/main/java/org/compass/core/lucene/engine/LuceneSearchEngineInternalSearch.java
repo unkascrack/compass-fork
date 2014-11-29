@@ -14,7 +14,7 @@ import org.compass.core.lucene.engine.manager.LuceneIndexHolder;
 import org.compass.core.lucene.search.CacheableMultiReader;
 
 /**
- * A Lucene specific search "internals", allowing for Lucene {@link IndexReader} and {@link Searcher}
+ * A Lucene specific search "internals", allowing for Lucene {@link org.apache.lucene.index.IndexReader} and {@link org.apache.lucene.search.Searcher}
  * access.
  *
  * @author kimchy
@@ -84,14 +84,14 @@ public class LuceneSearchEngineInternalSearch implements SearchEngineInternalSea
     }
 
     /**
-     * Returns a Lucene {@link Searcher}.
+     * Returns a Lucene {@link org.apache.lucene.search.Searcher}.
      */
     public Searcher getSearcher() {
         return this.searcher;
     }
 
     /**
-     * Returns a Lucene {@link IndexReader}.
+     * Returns a Lucene {@link org.apache.lucene.index.IndexReader}.
      */
     public IndexReader getReader() throws SearchEngineException {
         return this.indexReader;

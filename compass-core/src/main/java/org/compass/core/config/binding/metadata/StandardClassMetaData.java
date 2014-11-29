@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * A {@link ClassMetaData} built based on an actual {@link Class}.
+ * A {@link org.compass.core.config.binding.metadata.ClassMetaData} built based on an actual {@link Class}.
  *
  * @author kimchy
  */

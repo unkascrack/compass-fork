@@ -23,27 +23,27 @@ import org.compass.core.mapping.osem.ClassPropertyMapping;
 import org.compass.core.mapping.osem.ManagedId;
 
 /**
- * Specifies a searchable property on property or field of {@link SearchableMappingBuilder}.
+ * Specifies a searchable property on property or field of {@link org.compass.core.mapping.osem.builder.SearchableMappingBuilder}.
  *
- * <p>In order to make the property searchable, at least one {@link SearchableMetaDataMappingBuilder}
- * must be added to it using {@link #add(SearchableMetaDataMappingBuilder)}. If no meta data are
+ * <p>In order to make the property searchable, at least one {@link org.compass.core.mapping.osem.builder.SearchableMetaDataMappingBuilder}
+ * must be added to it using {@link #add(org.compass.core.mapping.osem.builder.SearchableMetaDataMappingBuilder)}. If no meta data are
  * added to the searchable property, a managed id will be created for it (automatically, by default,
  * can be controlled using {@link #managedId(org.compass.core.mapping.osem.ManagedId)}).
  *
  * <p>The searchable property/meta-data is meant to handle basic types (which usually translate to
  * a String saved in the search engine). The conversion is done using converters which can be
- * set on the {@link SearchableMetaDataMappingBuilder}. The managed id converter can also be
+ * set on the {@link org.compass.core.mapping.osem.builder.SearchableMetaDataMappingBuilder}. The managed id converter can also be
  * controlled using one of the <code>managedIdConverter</code> method.
  *
  * <p>Note, that most of the time, a specialized converter for user classes will not be needed,
- * since the {@link SearchableComponentMappingBuilder} usually makes more sense to use.
+ * since the {@link org.compass.core.mapping.osem.builder.SearchableComponentMappingBuilder} usually makes more sense to use.
  *
  * <p>The searchable property can annotate an array/collections as well, with the array element type used for
  * Converter lookups.
  *
  * @author kimchy
- * @see OSEM#property(String)
- * @see SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchablePropertyMappingBuilder)
+ * @see org.compass.core.mapping.osem.builder.OSEM#property(String)
+ * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchablePropertyMappingBuilder)
  */
 public class SearchablePropertyMappingBuilder {
 

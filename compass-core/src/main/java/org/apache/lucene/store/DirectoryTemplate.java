@@ -27,10 +27,10 @@ import org.apache.lucene.store.jdbc.datasource.DataSourceUtils;
  * A simple directory template for performing operations that result in actions being performed on the
  * directory (like index reader/searcher/writer operation). Helps in having the same code base when working
  * with different implementation of Lucene <code>Directory</code>, or switching between un-managed and managed
- * transactions with {@link JdbcDirectory}.
+ * transactions with {@link org.apache.lucene.store.jdbc.JdbcDirectory}.
  * <p/>
  * Will work with any type of <code>Directory</code> implementation. Special actions will be taken if the
- * {@link JdbcDirectory} is used, where {@link DataSourceUtils#commitConnectionIfPossible(java.sql.Connection)} will
+ * {@link org.apache.lucene.store.jdbc.JdbcDirectory} is used, where {@link org.apache.lucene.store.jdbc.datasource.DataSourceUtils#commitConnectionIfPossible(java.sql.Connection)} will
  * be called after the callback method.
  *
  * @author kimchy

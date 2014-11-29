@@ -20,7 +20,7 @@ import org.compass.core.CompassHit;
 
 /**
  * The results object returned by
- * {@link org.compass.core.support.search.CompassSearchHelper} when the search
+ * {@link CompassSearchHelper} when the search
  * operation on <code>Compass</code> is executed.
  * <p>
  * Holds the time it took to perform the search operation (in milliseconds), an

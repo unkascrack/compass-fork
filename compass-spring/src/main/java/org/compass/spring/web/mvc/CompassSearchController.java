@@ -31,10 +31,10 @@ import org.springframework.web.servlet.ModelAndView;
  * <p> A general Spring's MVC Controller that perform the search operation of <code>Compass</code>.
  *
  * <p>Will perform the search operation on the <code>Compass</code> instance using the query supplied
- * by the {@link CompassSearchCommand}.
+ * by the {@link org.compass.core.support.search.CompassSearchCommand}.
  *
  * <p>Pagination can be enabled by setting the <code>pageSize</code> property on the controller,
- * as well as providing the <code>page</code> number property on the {@link CompassSearchCommand}.
+ * as well as providing the <code>page</code> number property on the {@link org.compass.core.support.search.CompassSearchCommand}.
  *
  * <p>The controller has two views to be set, the <code>searchView</code>, which is the view that
  * holds the screen which the user will initiate the search operation, and the

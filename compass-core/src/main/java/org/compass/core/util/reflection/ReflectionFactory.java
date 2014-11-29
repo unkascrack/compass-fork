@@ -35,8 +35,8 @@ import org.compass.core.util.reflection.plain.PlainReflectionField;
 import org.compass.core.util.reflection.plain.PlainReflectionMethod;
 
 /**
- * A factory allowing to create {@link org.compass.core.util.reflection.ReflectionMethod} or
- * {@link org.compass.core.util.reflection.ReflectionField} implementations.
+ * A factory allowing to create {@link ReflectionMethod} or
+ * {@link ReflectionField} implementations.
  *
  * @author kimchy
  */

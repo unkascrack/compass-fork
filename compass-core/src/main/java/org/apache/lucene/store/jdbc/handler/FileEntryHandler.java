@@ -24,8 +24,8 @@ import org.apache.lucene.store.IndexOutput;
 import org.apache.lucene.store.jdbc.JdbcDirectory;
 
 /**
- * A file entry handler acts as a delegate to the {@link JdbcDirectory} for all "file" level
- * operations. Allows the {@link JdbcDirectory} to be abstracted from any specific implementation
+ * A file entry handler acts as a delegate to the {@link org.apache.lucene.store.jdbc.JdbcDirectory} for all "file" level
+ * operations. Allows the {@link org.apache.lucene.store.jdbc.JdbcDirectory} to be abstracted from any specific implementation
  * details regarding a file entry, and have several different file entries for different files or
  * files groups.
  *
@@ -35,7 +35,7 @@ import org.apache.lucene.store.jdbc.JdbcDirectory;
 public interface FileEntryHandler {
 
     /**
-     * Called after the entry is created (during the {@link JdbcDirectory} initialization process.
+     * Called after the entry is created (during the {@link org.apache.lucene.store.jdbc.JdbcDirectory} initialization process.
      */
     void configure(JdbcDirectory jdbcDirectory);
 

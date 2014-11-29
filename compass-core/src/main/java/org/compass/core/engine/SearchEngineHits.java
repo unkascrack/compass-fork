@@ -21,7 +21,7 @@ import org.compass.core.Resource;
 /**
  * Holds hits returned by a find operation of a search engine.
  * 
- * @see org.compass.core.engine.SearchEngineQuery#hits(SearchEngine)
+ * @see SearchEngineQuery#hits(org.compass.core.engine.SearchEngine)
  * 
  * @author kimchy
  */

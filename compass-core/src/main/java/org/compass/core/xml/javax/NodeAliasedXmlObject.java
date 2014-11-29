@@ -4,7 +4,7 @@ import org.compass.core.xml.AliasedXmlObject;
 import org.w3c.dom.Node;
 
 /**
- * A java 5 implementation of {@link AliasedXmlObject} wrapping a {@link org.w3c.dom.Node}.
+ * A java 5 implementation of {@link org.compass.core.xml.AliasedXmlObject} wrapping a {@link org.w3c.dom.Node}.
  *
  * @author kimchy
  */

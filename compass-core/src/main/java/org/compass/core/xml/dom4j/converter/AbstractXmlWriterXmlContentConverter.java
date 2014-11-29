@@ -50,13 +50,13 @@ public abstract class AbstractXmlWriterXmlContentConverter implements XmlContent
     }
 
     /**
-     * Converts the {@link XmlObject} (assumes it is a {@link org.compass.core.xml.dom4j.Dom4jXmlObject}) into
+     * Converts the {@link org.compass.core.xml.XmlObject} (assumes it is a {@link org.compass.core.xml.dom4j.Dom4jXmlObject}) into
      * an xml string. Uses dom4j <code>XmlWriter</code> and <code>OutputFormat</code>
      * (in a compact mode) to perform it.
      *
      * @param xmlObject The xml object to convert into an xml string (must be a {@link org.compass.core.xml.dom4j.Dom4jXmlObject} implementation).
      * @return An xml string representation of the xml object
-     * @throws ConversionException Should not really happne...
+     * @throws org.compass.core.converter.ConversionException Should not really happne...
      */
     public String toXml(XmlObject xmlObject) throws ConversionException {
         Dom4jXmlObject dom4jXmlObject = (Dom4jXmlObject) xmlObject;

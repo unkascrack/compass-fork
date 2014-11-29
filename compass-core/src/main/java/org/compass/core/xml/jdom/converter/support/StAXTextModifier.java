@@ -4,7 +4,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 /**
- * Strategy class (used by {@link org.compass.core.xml.jdom.converter.support.StAXBuilder} that allows for modifying
+ * Strategy class (used by {@link StAXBuilder} that allows for modifying
  * text content when building a JDOM tree from an XML document using
  * StAX {@link javax.xml.stream.XMLStreamReader}. It is most commonly used to trim out
  * white space that can not be automatically determined by the parser

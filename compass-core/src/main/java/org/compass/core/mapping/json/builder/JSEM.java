@@ -60,14 +60,14 @@ public abstract class JSEM {
 
     /**
      * Constructs a new json id mapping using the specified name. Can then be added
-     * to a root json mapping builder using {@link JsonMappingBuilder#add(JsonIdMappingBuilder)}.
+     * to a root json mapping builder using {@link org.compass.core.mapping.json.builder.JsonMappingBuilder#add(org.compass.core.mapping.json.builder.JsonIdMappingBuilder)}.
      */
     public static JsonIdMappingBuilder id(String name) {
         return new JsonIdMappingBuilder(name);
     }
 
     /**
-     * Constrcuts a new json property mapping that can be used with {@link JsonArrayMappingBuilder#element(JsonPropertyMappingBuilder)}.
+     * Constrcuts a new json property mapping that can be used with {@link org.compass.core.mapping.json.builder.JsonArrayMappingBuilder#element(org.compass.core.mapping.json.builder.JsonPropertyMappingBuilder)}.
      */
     public static JsonPropertyMappingBuilder property() {
         return property(null);
@@ -75,8 +75,8 @@ public abstract class JSEM {
 
     /**
      * Constructs a new json property mapping using the specified name. Can then be added
-     * to a json mapping builder using {@link JsonMappingBuilder#add(JsonPropertyMappingBuilder)}
-     * or to a json object mapping builder using {@link JsonObjectMappingBuilder#add(JsonPropertyMappingBuilder)}.
+     * to a json mapping builder using {@link org.compass.core.mapping.json.builder.JsonMappingBuilder#add(org.compass.core.mapping.json.builder.JsonPropertyMappingBuilder)}
+     * or to a json object mapping builder using {@link org.compass.core.mapping.json.builder.JsonObjectMappingBuilder#add(org.compass.core.mapping.json.builder.JsonPropertyMappingBuilder)}.
      */
     public static JsonPropertyMappingBuilder property(String name) {
         return new JsonPropertyMappingBuilder(name);
@@ -84,7 +84,7 @@ public abstract class JSEM {
 
     /**
      * Constructs a new json analyzer property mapping using the specified name. Can then be added
-     * to a json mapping builder using {@link JsonMappingBuilder#add(JsonAnalyzerMappingBuilder)}.
+     * to a json mapping builder using {@link org.compass.core.mapping.json.builder.JsonMappingBuilder#add(org.compass.core.mapping.json.builder.JsonAnalyzerMappingBuilder)}.
      */
     public static JsonAnalyzerMappingBuilder analyzer(String name) {
         return new JsonAnalyzerMappingBuilder(name);
@@ -92,14 +92,14 @@ public abstract class JSEM {
 
     /**
      * Constructs a new json content mapping using the specified name. Can be added to json
-     * mapping builder using {@link JsonMappingBuilder#add(JsonContentMappingBuilder)}.
+     * mapping builder using {@link org.compass.core.mapping.json.builder.JsonMappingBuilder#add(org.compass.core.mapping.json.builder.JsonContentMappingBuilder)}.
      */
     public static JsonContentMappingBuilder content(String name) {
         return new JsonContentMappingBuilder(name);
     }
 
     /**
-     * Constructs a new json object mapping that can be used with {@link JsonArrayMappingBuilder#element(JsonObjectMappingBuilder)}.
+     * Constructs a new json object mapping that can be used with {@link org.compass.core.mapping.json.builder.JsonArrayMappingBuilder#element(org.compass.core.mapping.json.builder.JsonObjectMappingBuilder)}.
      */
     public static JsonObjectMappingBuilder object() {
         return object(null);
@@ -107,14 +107,14 @@ public abstract class JSEM {
 
     /**
      * Constructs a new json object mapping using the specified name. Can be added to json
-     * mapping builder using {@link JsonMappingBuilder#add(JsonObjectMappingBuilder)}.
+     * mapping builder using {@link org.compass.core.mapping.json.builder.JsonMappingBuilder#add(org.compass.core.mapping.json.builder.JsonObjectMappingBuilder)}.
      */
     public static JsonObjectMappingBuilder object(String name) {
         return new JsonObjectMappingBuilder(name);
     }
 
     /**
-     * Constructs a new json array mapping that can be used with {@link JsonArrayMappingBuilder#element(JsonArrayMappingBuilder)}.
+     * Constructs a new json array mapping that can be used with {@link org.compass.core.mapping.json.builder.JsonArrayMappingBuilder#element(org.compass.core.mapping.json.builder.JsonArrayMappingBuilder)}.
      */
     public static JsonArrayMappingBuilder array() {
         return new JsonArrayMappingBuilder(null);
@@ -122,7 +122,7 @@ public abstract class JSEM {
 
     /**
      * Constructs a enw json array mapping using the specified name. Can be added to json
-     * mapping builder using {@link JsonMappingBuilder#add(JsonArrayMappingBuilder)}.
+     * mapping builder using {@link org.compass.core.mapping.json.builder.JsonMappingBuilder#add(org.compass.core.mapping.json.builder.JsonArrayMappingBuilder)}.
      */
     public static JsonArrayMappingBuilder array(String name) {
         return new JsonArrayMappingBuilder(name);
@@ -130,7 +130,7 @@ public abstract class JSEM {
 
     /**
      * Constructs a new json boost property mapping using the specified name. Can then be added
-     * to a json mapping builder using {@link JsonMappingBuilder#add(JsonBoostMappingBuilder)}.
+     * to a json mapping builder using {@link org.compass.core.mapping.json.builder.JsonMappingBuilder#add(org.compass.core.mapping.json.builder.JsonBoostMappingBuilder)}.
      */
     public static JsonBoostMappingBuilder boost(String name) {
         return new JsonBoostMappingBuilder(name);
@@ -138,7 +138,7 @@ public abstract class JSEM {
 
     /**
      * Constructs a new all mapping definition that can be added to a json mapping builder using
-     * {@link JsonMappingBuilder#all(JsonAllMappingBuilder)}.
+     * {@link org.compass.core.mapping.json.builder.JsonMappingBuilder#all(org.compass.core.mapping.json.builder.JsonAllMappingBuilder)}.
      */
     public static JsonAllMappingBuilder all() {
         return new JsonAllMappingBuilder();

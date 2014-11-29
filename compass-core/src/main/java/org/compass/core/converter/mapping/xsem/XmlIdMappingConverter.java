@@ -9,7 +9,7 @@ import org.compass.core.marshall.MarshallingContext;
 import org.compass.core.xml.XmlObject;
 
 /**
- * Responsible for converting {@link XmlObject} based on {@link org.compass.core.mapping.xsem.XmlIdMapping}.
+ * Responsible for converting {@link org.compass.core.xml.XmlObject} based on {@link org.compass.core.mapping.xsem.XmlIdMapping}.
  * Uses the {@link org.compass.core.mapping.xsem.XmlIdMapping} value converter to actually convert the given
  * value.
  * <p/>

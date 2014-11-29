@@ -25,7 +25,7 @@ import org.compass.core.test.AbstractTestCase;
  * This test verifies that with polymorphic relationship, with the
  * base class having a colleciton of properties, all is well and no
  * internal id is generated for the
- * {@link org.compass.core.test.component.inheritance3.Child#names}
+ * {@link Child#names}
  * mapping.
  *
  * @author kimchy

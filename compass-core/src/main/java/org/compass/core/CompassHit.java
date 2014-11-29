@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * Wrapper that provides a lazily loaded hit from
- * {@link CompassHitsOperations}.
+ * {@link org.compass.core.CompassHitsOperations}.
  *
  * @author kimchy
  */
@@ -30,7 +30,7 @@ public interface CompassHit extends Serializable {
      * Returns the alias value of the hit.
      *
      * @return The alias.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String getAlias() throws CompassException;
 
@@ -43,8 +43,8 @@ public interface CompassHit extends Serializable {
      * Returns the object for this hit.
      *
      * @return The object data of the hit.
-     * @throws CompassException
-     * @see CompassHits#data(int)
+     * @throws org.compass.core.CompassException
+     * @see org.compass.core.CompassHits#data(int)
      */
     Object getData() throws CompassException;
 
@@ -54,11 +54,11 @@ public interface CompassHit extends Serializable {
     Object data() throws CompassException;
 
     /**
-     * Returns the {@link Resource} for this hit.
+     * Returns the {@link org.compass.core.Resource} for this hit.
      *
-     * @return The {@link Resource} of the hit.
-     * @throws CompassException
-     * @see CompassHits#resource(int)
+     * @return The {@link org.compass.core.Resource} of the hit.
+     * @throws org.compass.core.CompassException
+     * @see org.compass.core.CompassHits#resource(int)
      */
     Resource getResource() throws CompassException;
 
@@ -71,8 +71,8 @@ public interface CompassHit extends Serializable {
      * Returns the score for this hit.
      *
      * @return The score of the hit.
-     * @throws CompassException
-     * @see CompassHits#score(int)
+     * @throws org.compass.core.CompassException
+     * @see org.compass.core.CompassHits#score(int)
      */
     float getScore() throws CompassException;
 
@@ -84,11 +84,11 @@ public interface CompassHit extends Serializable {
     /**
      * Returns a cached highlighted text the maps to the hit.
      * <p/>
-     * Highlighted text is automatically cached when using {@link CompassHighlighter}
-     * using {@link CompassHits#highlighter(int)}.
+     * Highlighted text is automatically cached when using {@link org.compass.core.CompassHighlighter}
+     * using {@link org.compass.core.CompassHits#highlighter(int)}.
      *
      * @return The cached highlighted hits
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHighlightedText getHighlightedText() throws CompassException;
 

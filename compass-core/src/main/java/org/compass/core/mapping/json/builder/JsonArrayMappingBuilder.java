@@ -24,7 +24,7 @@ import org.compass.core.mapping.json.Naming;
  * A builder allowing to constrcut json array mapping definition.
  *
  * @author kimchy
- * @see JSEM#array(String)
+ * @see org.compass.core.mapping.json.builder.JSEM#array(String)
  */
 public class JsonArrayMappingBuilder {
 
@@ -69,7 +69,7 @@ public class JsonArrayMappingBuilder {
     /**
      * Sets the array json element to a json property mapping definition.
      *
-     * @see JSEM#property()
+     * @see org.compass.core.mapping.json.builder.JSEM#property()
      */
     public JsonArrayMappingBuilder element(JsonPropertyMappingBuilder builder) {
         if (builder.mapping.getName() == null) {
@@ -85,7 +85,7 @@ public class JsonArrayMappingBuilder {
     /**
      * Sets the array json element to a json object mapping definition.
      *
-     * @see JSEM#object()
+     * @see org.compass.core.mapping.json.builder.JSEM#object()
      */
     public JsonArrayMappingBuilder element(JsonObjectMappingBuilder builder) {
         if (builder.mapping.getName() == null) {
@@ -101,7 +101,7 @@ public class JsonArrayMappingBuilder {
     /**
      * Sets the array json element to a json array mapping definition.
      *
-     * @see JSEM#array()
+     * @see org.compass.core.mapping.json.builder.JSEM#array()
      */
     public JsonArrayMappingBuilder element(JsonArrayMappingBuilder builder) {
         if (builder.mapping.getName() == null) {

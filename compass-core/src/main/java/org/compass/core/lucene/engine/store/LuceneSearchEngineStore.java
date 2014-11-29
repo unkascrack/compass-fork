@@ -61,12 +61,14 @@ public interface LuceneSearchEngineStore {
     String[] getAliasesBySubIndex(String subIndex);
 
     /**
-     * Returns the directory that match the given sub index.
+     * Returns the directory that match the given sub index. Note, this will probably
+     * be a cached directory instance, so no need to close it.
      */
     Directory openDirectory(String subIndex) throws SearchEngineException;
 
     /**
-     * Returns the directory that match the given sub index.
+     * Returns the directory that match the given sub index. Note, this will probably
+     * be a cached directory instance, so no need to close it.
      */
     Directory openDirectory(String subContext, String subIndex) throws SearchEngineException;
 
@@ -167,7 +169,7 @@ public interface LuceneSearchEngineStore {
     String getDefaultSubContext();
 
     /**
-     * A callback to register event listeners when a {@link SearchEngine} is
+     * A callback to register event listeners when a {@link org.compass.core.engine.SearchEngine} is
      * created.
      *
      * @param searchEngine The search engine created

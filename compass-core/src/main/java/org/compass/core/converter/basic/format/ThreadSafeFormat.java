@@ -21,7 +21,7 @@ import java.text.ParseException;
 import org.compass.core.converter.ConversionException;
 
 /**
- * Wrapper around {@link Formatter} that can be called by multiple
+ * Wrapper around {@link org.compass.core.converter.basic.format.Formatter} that can be called by multiple
  * threads concurrently.
  *
  * <p>Format has a high overhead in creating and is not thread safe. To make best

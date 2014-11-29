@@ -45,7 +45,7 @@ import org.hibernate.metadata.ClassMetadata;
  * instead of using <code>setFirstResult</code> and <code>setMaxResults</code>. Using scrollable
  * results yields better performance especially for large result set.
  *
- * <p>Also takes into accont if using {@link HibernateJpaQueryProvider} by called its <code>createCriteria</code>
+ * <p>Also takes into accont if using {@link org.compass.gps.device.jpa.queryprovider.HibernateJpaQueryProvider} by called its <code>createCriteria</code>
  * instead of the default <code>createQuery</code>. The criteria better handles outer joins, allows to set the
  * fetch size, and automatically supports ordering by the ids of the entities.
  *

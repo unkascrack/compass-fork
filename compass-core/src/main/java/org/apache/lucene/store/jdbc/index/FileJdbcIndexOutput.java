@@ -31,7 +31,7 @@ import org.apache.lucene.store.jdbc.JdbcFileEntrySettings;
  * the file to the database.
  * <p/>
  * Usefull for large files that are known in advance to be larger then the acceptable threshold configured in
- * {@link RAMAndFileJdbcIndexOutput}.
+ * {@link org.apache.lucene.store.jdbc.index.RAMAndFileJdbcIndexOutput}.
  *
  * @author kimchy
  */

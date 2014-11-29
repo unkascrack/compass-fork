@@ -20,7 +20,7 @@ package org.compass.core;
  * Allows the application to define units of work, while maintaining abstraction
  * from the underlying transaction implementation (eg. JTA, Local).
  * 
- * @see org.compass.core.CompassSession#beginTransaction()
+ * @see CompassSession#beginTransaction()
  * @see org.compass.core.transaction.TransactionFactory
  * 
  * @author kimchy
@@ -31,14 +31,14 @@ public interface CompassTransaction {
 	 * Ends the current unit of work. The transaction will be commited only if
 	 * it was initiated by the current transcation.
 	 * 
-	 * @throws CompassException
+	 * @throws org.compass.core.CompassException
 	 */
 	void commit() throws CompassException;
 
 	/**
 	 * Force the underlying transaction to roll back.
 	 * 
-	 * @throws CompassException
+	 * @throws org.compass.core.CompassException
 	 */
 	void rollback() throws CompassException;
 
@@ -46,7 +46,7 @@ public interface CompassTransaction {
 	 * Was this transaction rolled back or set to rollback only?
 	 * 
 	 * @return If the transaction was rolled backed
-	 * @throws CompassException
+	 * @throws org.compass.core.CompassException
 	 */
 	boolean wasRolledBack() throws CompassException;
 
@@ -56,7 +56,7 @@ public interface CompassTransaction {
 	 * <code>commit()</code>.
 	 * 
 	 * @return If the transaction was committed
-	 * @throws CompassException
+	 * @throws org.compass.core.CompassException
 	 */
 	boolean wasCommitted() throws CompassException;
 

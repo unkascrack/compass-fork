@@ -119,7 +119,7 @@ public class DefaultJSONTokener {
      * character.
      * @param c The character to match.
      * @return The character.
-     * @throws DefaultJSONException if the character does not match.
+     * @throws org.compass.core.json.impl.DefaultJSONException if the character does not match.
      */
     public char next(char c) throws DefaultJSONException {
         char n = next();
@@ -136,7 +136,7 @@ public class DefaultJSONTokener {
      *
      * @param n     The number of characters to take.
      * @return      A string of n characters.
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      *   Substring bounds error if there are not
      *   n characters remaining in the source string.
      */
@@ -154,7 +154,7 @@ public class DefaultJSONTokener {
     /**
      * Get the next char in the string, skipping whitespace
      * and comments (slashslash, slashstar, and hash).
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      * @return  A character, or 0 if there are no more characters.
      */
     public char nextClean() throws DefaultJSONException {
@@ -205,7 +205,7 @@ public class DefaultJSONTokener {
      *      <code>"</code>&nbsp;<small>(double quote)</small> or
      *      <code>'</code>&nbsp;<small>(single quote)</small>.
      * @return      A String.
-     * @throws DefaultJSONException Unterminated string.
+     * @throws org.compass.core.json.impl.DefaultJSONException Unterminated string.
      */
     public String nextString(char quote) throws DefaultJSONException {
         char c;
@@ -302,7 +302,7 @@ public class DefaultJSONTokener {
     /**
      * Get the next value. The value can be a Boolean, Double, Integer,
      * JSONArray, JSONObject, Long, or String, or the JSONObject.NULL object.
-     * @throws DefaultJSONException If syntax error.
+     * @throws org.compass.core.json.impl.DefaultJSONException If syntax error.
      *
      * @return An object.
      */

@@ -28,17 +28,17 @@ import org.apache.lucene.store.jdbc.lock.PhantomReadLock;
 /**
  * General directory level settings.
  * <p />
- * The settings also holds {@link JdbcFileEntrySettings}, that can be registered with
+ * The settings also holds {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings}, that can be registered with
  * the directory settings. Note, that when registering them, they are registered under
  * both the complete name and the 3 charecters name suffix.
  * <p />
  * When creating the settings, it already holds sensible settings, they are:
- * The default {@link JdbcFileEntrySettings} uses the file entry settings defaults.
- * The "deletable", ""deleteable.new", and "deletable.new" uses the {@link NoOpFileEntryHandler}.
- * The "segments" and "segments.new" uses the {@link ActualDeleteFileEntryHandler}, {@link FetchOnOpenJdbcIndexInput},
- * and {@link RAMJdbcIndexOutput}.
- * The file suffix "fnm" uses the {@link FetchOnOpenJdbcIndexInput}, and {@link RAMJdbcIndexOutput}.
- * The file suffix "del" and "tmp" uses the {@link ActualDeleteFileEntryHandler}.
+ * The default {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings} uses the file entry settings defaults.
+ * The "deletable", ""deleteable.new", and "deletable.new" uses the {@link org.apache.lucene.store.jdbc.handler.NoOpFileEntryHandler}.
+ * The "segments" and "segments.new" uses the {@link org.apache.lucene.store.jdbc.handler.ActualDeleteFileEntryHandler}, {@link org.apache.lucene.store.jdbc.index.FetchOnOpenJdbcIndexInput},
+ * and {@link org.apache.lucene.store.jdbc.index.RAMJdbcIndexOutput}.
+ * The file suffix "fnm" uses the {@link org.apache.lucene.store.jdbc.index.FetchOnOpenJdbcIndexInput}, and {@link org.apache.lucene.store.jdbc.index.RAMJdbcIndexOutput}.
+ * The file suffix "del" and "tmp" uses the {@link org.apache.lucene.store.jdbc.handler.ActualDeleteFileEntryHandler}.
  *
  * @author kimchy
  */
@@ -75,6 +75,12 @@ public class JdbcDirectorySettings {
     private int queryTimeout = 10;
 
     private Class lockClass = PhantomReadLock.class;
+
+    private String tableCatalog = null;
+
+    private String tableSchema = null;
+
+    private String tableType = "";
 
     /**
      * Creates a new instance of the Jdbc directory settings with it's default values initialized.
@@ -210,7 +216,7 @@ public class JdbcDirectorySettings {
     }
 
     /**
-     * Registers a {@link JdbcFileEntrySettings} against the given name.
+     * Registers a {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings} against the given name.
      * The name can be the full name of the file, or it's 3 charecters suffix.
      */
     public void registerFileEntrySettings(String name, JdbcFileEntrySettings fileEntrySettings) {
@@ -226,7 +232,7 @@ public class JdbcDirectorySettings {
 
     /**
      * Returns the file entries according to the name. If a direct match is found, it's registered
-     * {@link JdbcFileEntrySettings} is returned. If one is registered
+     * {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings} is returned. If one is registered
      * against the last 3 charecters, then it is returned. If none is found, the default file entry
      * handler is returned.
      */
@@ -259,7 +265,7 @@ public class JdbcDirectorySettings {
 
     /**
      * Returns the delta (in millis) for the delete mark deleted. File entries marked as being deleted will
-     * be deleted from the system (using {@link org.apache.lucene.store.jdbc.JdbcDirectory#deleteMarkDeleted()}
+     * be deleted from the system (using {@link JdbcDirectory#deleteMarkDeleted()}
      * if: current_time - deletelMarkDeletedDelta &lt; Time File Entry Marked as Deleted.
      */
     public long getDeleteMarkDeletedDelta() {
@@ -268,7 +274,7 @@ public class JdbcDirectorySettings {
 
     /**
      * Sets the delta (in millis) for the delete mark deleted. File entries marked as being deleted will
-     * be deleted from the system (using {@link org.apache.lucene.store.jdbc.JdbcDirectory#deleteMarkDeleted()}
+     * be deleted from the system (using {@link JdbcDirectory#deleteMarkDeleted()}
      * if: current_time - deletelMarkDeletedDelta &lt; Time File Entry Marked as Deleted.
      */
     public void setDeleteMarkDeletedDelta(long deleteMarkDeletedDelta) {
@@ -290,16 +296,40 @@ public class JdbcDirectorySettings {
     }
 
     /**
-     * Returns the lock class that will be used for locking. Defaults to {@link PhantomReadLock}.
+     * Returns the lock class that will be used for locking. Defaults to {@link org.apache.lucene.store.jdbc.lock.PhantomReadLock}.
      */
     public Class getLockClass() {
         return lockClass;
     }
 
     /**
-     * Sets the lock class that will be used for locking. Defaults to {@link PhantomReadLock}.
+     * Sets the lock class that will be used for locking. Defaults to {@link org.apache.lucene.store.jdbc.lock.PhantomReadLock}.
      */
     public void setLockClass(Class lockClass) {
         this.lockClass = lockClass;
+    }
+
+    public String getTableCatalog() {
+        return tableCatalog;
+    }
+
+    public void setTableCatalog(String tableCatalog) {
+        this.tableCatalog = tableCatalog;
+    }
+
+    public String getTableSchema() {
+        return tableSchema;
+    }
+
+    public void setTableSchema(String tableSchema) {
+        this.tableSchema = tableSchema;
+    }
+
+    public String getTableType() {
+        return tableType;
+    }
+
+    public void setTableType(String tableType) {
+        this.tableType = tableType;
     }
 }

@@ -24,7 +24,7 @@ import org.compass.gps.spi.CompassGpsInterfaceDevice;
  * already partitioned using the provided {@link IndexEntitiesIndexer}.
  *
  * @author kimchy
- * @see org.compass.gps.device.support.parallel.AbstractParallelGpsDevice
+ * @see AbstractParallelGpsDevice
  * @see IndexEntitiesIndexer
  * @see IndexEntity
  */
@@ -37,7 +37,7 @@ public interface ParallelIndexExecutor {
      * @param entities             The entities to index
      * @param indexEntitiesIndexer The indexer to use in order to index the entities
      * @param compassGps           The gps interface to use in order to obtain meta information
-     * @throws CompassGpsException
+     * @throws org.compass.gps.CompassGpsException
      */
     void performIndex(IndexEntity[][] entities, IndexEntitiesIndexer indexEntitiesIndexer,
                       CompassGpsInterfaceDevice compassGps) throws CompassGpsException;

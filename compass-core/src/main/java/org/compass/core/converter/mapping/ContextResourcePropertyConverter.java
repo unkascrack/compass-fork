@@ -44,7 +44,7 @@ public interface ContextResourcePropertyConverter<T> extends ResourcePropertyCon
      * @param o                       The Object to convert from
      * @param resourcePropertyMapping The resource proeprty mapping
      * @return The String converted from the Object
-     * @throws ConversionException
+     * @throws org.compass.core.converter.ConversionException
      */
     String toString(T o, ResourcePropertyMapping resourcePropertyMapping, MarshallingContext context) throws ConversionException;
 

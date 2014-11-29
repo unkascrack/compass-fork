@@ -35,17 +35,21 @@ import org.compass.core.util.StringUtils;
 public abstract class AbstractRefAliasMappingConverter implements Converter {
 
     public boolean marshall(Resource resource, Object root, Mapping mapping, MarshallingContext context) throws ConversionException {
-        RefAliasObjectMapping hasRefAliasMapping = (RefAliasObjectMapping) mapping;
-        ClassMapping[] classMappings = hasRefAliasMapping.getRefClassMappings();
+        RefAliasObjectMapping refAliasMapping = (RefAliasObjectMapping) mapping;
+        ClassMapping[] classMappings = refAliasMapping.getRefClassMappings();
         ClassMapping classMapping;
         if (root == null || classMappings.length == 1) {
             classMapping = classMappings[0];
         } else {
-            classMapping = extractClassMapping(context, root.getClass(), resource, hasRefAliasMapping);
+            classMapping = extractClassMapping(context, root.getClass(), resource, refAliasMapping);
         }
         Object current = context.getAttribute(MarshallingEnvironment.ATTRIBUTE_CURRENT);
-        context.setAttribute(MarshallingEnvironment.ATTRIBUTE_PARENT, current);
-        return doMarshall(resource, root, hasRefAliasMapping, classMapping, context);
+        Object parent = context.setAttribute(MarshallingEnvironment.ATTRIBUTE_PARENT, current);
+        try {
+            return doMarshall(resource, root, refAliasMapping, classMapping, context);
+        } finally {
+            context.setAttribute(MarshallingEnvironment.ATTRIBUTE_PARENT, parent);
+        }
     }
 
     protected abstract boolean doMarshall(Resource resource, Object root, RefAliasObjectMapping hasRefAliasMapping,
@@ -99,8 +103,12 @@ public abstract class AbstractRefAliasMappingConverter implements Converter {
             }
         }
         Object current = context.getAttribute(MarshallingEnvironment.ATTRIBUTE_CURRENT);
-        context.setAttribute(MarshallingEnvironment.ATTRIBUTE_PARENT, current);
-        return doUnmarshall(resource, hasRefAliasMapping, classMapping, context);
+        Object parent = context.setAttribute(MarshallingEnvironment.ATTRIBUTE_PARENT, current);
+        try {
+            return doUnmarshall(resource, hasRefAliasMapping, classMapping, context);
+        } finally {
+            context.setAttribute(MarshallingEnvironment.ATTRIBUTE_PARENT, parent);
+        }
     }
 
     /**

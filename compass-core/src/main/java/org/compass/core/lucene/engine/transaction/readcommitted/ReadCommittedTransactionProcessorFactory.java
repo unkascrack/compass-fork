@@ -21,7 +21,7 @@ import org.compass.core.lucene.engine.transaction.TransactionProcessor;
 import org.compass.core.lucene.engine.transaction.TransactionProcessorFactory;
 
 /**
- * A transaction processor factory that creates {@link ReadCommittedTransactionProcessor}
+ * A transaction processor factory that creates {@link org.compass.core.lucene.engine.transaction.readcommitted.ReadCommittedTransactionProcessor}
  * instances.
  *
  * <p>Read committed transaction processor allows to isolate changes done during a transaction from other
@@ -30,12 +30,12 @@ import org.compass.core.lucene.engine.transaction.TransactionProcessorFactory;
  * be filtered out if a search is executed within the same transaction just after the delete.
  *
  * @author kimchy
- * @see org.compass.core.lucene.engine.transaction.readcommitted.ReadCommittedTransactionProcessor
+ * @see ReadCommittedTransactionProcessor
  */
 public class ReadCommittedTransactionProcessorFactory implements TransactionProcessorFactory {
 
     /**
-     * Constructs a new {@link org.compass.core.lucene.engine.transaction.readcommitted.ReadCommittedTransactionProcessor}.
+     * Constructs a new {@link ReadCommittedTransactionProcessor}.
      */
     public TransactionProcessor create(LuceneSearchEngine searchEngine) {
         return new ReadCommittedTransactionProcessor(searchEngine);

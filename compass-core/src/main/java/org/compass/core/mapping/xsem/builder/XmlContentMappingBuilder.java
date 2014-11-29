@@ -28,7 +28,7 @@ import org.compass.core.mapping.xsem.XmlContentMapping;
  * xml string).
  *
  * @author kimchy
- * @see XSEM#content(String)
+ * @see org.compass.core.mapping.xsem.builder.XSEM#content(String)
  */
 public class XmlContentMappingBuilder {
 

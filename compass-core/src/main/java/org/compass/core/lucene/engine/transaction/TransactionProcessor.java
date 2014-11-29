@@ -69,7 +69,7 @@ public interface TransactionProcessor {
      * Flush changes and make them visible for other transactions. Note, operations performed up until
      * the flush commit was called might not be able to roll back.
      */
-    void flushCommit(String ... aliases) throws SearchEngineException;
+    void flushCommit(String... aliases) throws SearchEngineException;
 
     /**
      * Creates a resource.

@@ -35,7 +35,7 @@ import org.compass.core.config.CompassSettings;
  * might not be consistent with the search engine if discarded.
  *
  * <p>Using the session depends on how transaction managemnet should be done (also see
- * {@link org.compass.core.Compass#openSession()}. The simplest form looks like this:
+ * {@link Compass#openSession()}. The simplest form looks like this:
  *
  * <pre>
  * CompassSession session = compass.openSession();
@@ -47,7 +47,7 @@ import org.compass.core.config.CompassSettings;
  * }
  * </pre>
  *
- * <p>A more complex form includes explicit control using {@link org.compass.core.CompassTransaction}:
+ * <p>A more complex form includes explicit control using {@link CompassTransaction}:
  *
  * <pre>
  * CompassSession session = compass.openSession();
@@ -68,8 +68,8 @@ import org.compass.core.config.CompassSettings;
  * </pre>
  *
  * @author kimchy
- * @see org.compass.core.Resource
- * @see org.compass.core.Compass
+ * @see Resource
+ * @see Compass
  */
 
 public interface CompassSession extends CompassOperations, CompassSearchSession, CompassIndexSession {
@@ -88,7 +88,7 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
     boolean isReadOnly();
 
     /**
-     * When not using the {@link org.compass.core.CompassTransaction} interface, will begin a local transaction
+     * When not using the {@link CompassTransaction} interface, will begin a local transaction
      * instead of the configured transaction.
      */
     CompassSession useLocalTransaction();
@@ -126,8 +126,8 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
      * determined by the property <code>compass.transaction.factory</code>.
      *
      * @return a CompassTransaction instance
-     * @throws CompassException
-     * @see CompassTransaction
+     * @throws org.compass.core.CompassException
+     * @see org.compass.core.CompassTransaction
      */
     CompassTransaction beginTransaction() throws CompassException;
 
@@ -164,7 +164,7 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
      *
      * @param names The property names
      * @return A term freqs builder
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassTermFreqsBuilder termFreqsBuilder(String... names) throws CompassException;
 
@@ -172,12 +172,12 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
      * Returns an Analyzer helper. Can be used to help analyze given texts.
      *
      * @return the analyzer helper
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassAnalyzerHelper analyzerHelper() throws CompassException;
 
     /**
-     * When not using explicit {@link org.compass.core.CompassTransaction} in order to manage transactions, can be called
+     * When not using explicit {@link CompassTransaction} in order to manage transactions, can be called
      * to rollback the current running transaction. Effectively also closes the session.
      */
     void rollback() throws CompassException;
@@ -195,8 +195,8 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
      * / rolledback yet, will commit the transaction (and in case of failure, will roll it back). Failed
      * commits will throw an exception from the close method.
      *
-     * @throws CompassException
-     * @see org.compass.core.Compass#openSession()
+     * @throws org.compass.core.CompassException
+     * @see Compass#openSession()
      */
     void close() throws CompassException;
 

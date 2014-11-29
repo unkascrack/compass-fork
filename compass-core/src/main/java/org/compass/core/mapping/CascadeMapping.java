@@ -32,7 +32,7 @@ public interface CascadeMapping {
      *
      * @param root The root object to extract the cascaded value from
      * @return The cascaded value to cascade
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object getCascadeValue(Object root) throws CompassException;
 

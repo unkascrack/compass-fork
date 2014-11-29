@@ -217,6 +217,8 @@ public class CompassEnvironment {
 
                 public static final String ENUM = "enum";
 
+                public static final String UUID = "uuid";
+
                 public static final String STRINGBUILDER = "stringbuilder";
             }
 
@@ -283,6 +285,8 @@ public class CompassEnvironment {
                 public static final String STRINGBUILDER = "stringbuilder";
 
                 public static final String ENUM = "enum";
+
+                public static final String UUID = "uuid";
 
                 public static final String URL = "url";
 
@@ -887,6 +891,14 @@ public class CompassEnvironment {
          * Defaults to the "concurrent" executor manager.
          */
         public static final String EXECUTOR_MANAGER_TYPE = EXECUTOR_MANAGER_PREFIX + "type";
+
+        /**
+         * Disabled executor manager, meaning that Compass will not spawn any new thread.
+         */
+        public abstract class Disabled {
+
+            public static final String NAME = "disabled";
+        }
 
         /**
          * A set of settings for the scheduled executor manager (based on java.util.concurrent).

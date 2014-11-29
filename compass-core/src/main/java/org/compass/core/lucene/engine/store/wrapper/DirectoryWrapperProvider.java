@@ -20,8 +20,8 @@ import org.apache.lucene.store.Directory;
 import org.compass.core.engine.SearchEngineException;
 
 /**
- * A Lucene {@link Directory} wrapper provider, allows to wrap the actual created
- * {@link Directory} with wrappers (for example to provide memory based cache).
+ * A Lucene {@link org.apache.lucene.store.Directory} wrapper provider, allows to wrap the actual created
+ * {@link org.apache.lucene.store.Directory} with wrappers (for example to provide memory based cache).
  *
  * @author kimchy
  */
@@ -33,7 +33,7 @@ public interface DirectoryWrapperProvider {
      * @param subIndex The sub index the directory is associated with
      * @param dir      The directory to wrap
      * @return The wrapped directory
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     Directory wrap(String subIndex, Directory dir) throws SearchEngineException;
 }

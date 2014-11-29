@@ -35,7 +35,7 @@ import org.compass.core.lucene.engine.transaction.search.SearchTransactionProces
 import org.compass.core.util.ClassUtils;
 
 /**
- * Transaction Processor Manager holds a map of name to {@link org.compass.core.lucene.engine.transaction.TransactionProcessorFactory}
+ * Transaction Processor Manager holds a map of name to {@link TransactionProcessorFactory}
  * mapping.
  *
  * @author kimchy

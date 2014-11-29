@@ -40,16 +40,16 @@ import org.compass.core.util.ClassUtils;
 import org.compass.core.xml.XmlObject;
 
 /**
- * Handles xml content mapping definition. Saves the raw xml content from {@link XmlObject}
- * into the search engine, and unmarshalls raw xml content into {@link XmlObject}.
+ * Handles xml content mapping definition. Saves the raw xml content from {@link org.compass.core.xml.XmlObject}
+ * into the search engine, and unmarshalls raw xml content into {@link org.compass.core.xml.XmlObject}.
  *
- * <p>In order to perform the conversion between {@link XmlObject} and raw xml, the converter
- * uses a {@link XmlContentConverter} implementation. There is no default one, and it must
- * be cofigured for this converter to funtion using {@link CompassEnvironment.Xsem.XmlContent#TYPE).
+ * <p>In order to perform the conversion between {@link org.compass.core.xml.XmlObject} and raw xml, the converter
+ * uses a {@link org.compass.core.converter.xsem.XmlContentConverter} implementation. There is no default one, and it must
+ * be cofigured for this converter to funtion using {@link org.compass.core.config.CompassEnvironment.Xsem.XmlContent#TYPE).
  *
- * <p>{@link XmlContentConverter} implementations are wrapped by one of the three built in strategies:
- * {@link PrototypeXmlContentConverterWrapper}, {@link PoolXmlContentConverterWrapper},
- * {@link SingletonXmlContentConverterWrapper}, or a user provided fully qualified class name.
+ * <p>{@link org.compass.core.converter.xsem.XmlContentConverter} implementations are wrapped by one of the three built in strategies:
+ * {@link org.compass.core.converter.xsem.PrototypeXmlContentConverterWrapper}, {@link org.compass.core.converter.xsem.PoolXmlContentConverterWrapper},
+ * {@link org.compass.core.converter.xsem.SingletonXmlContentConverterWrapper}, or a user provided fully qualified class name.
  *
  * @author kimchy
  */

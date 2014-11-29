@@ -25,8 +25,8 @@ import org.compass.core.mapping.osem.ClassPropertyAnalyzerController;
  * within Compass. If no analyzer is found, the {@link #nullAnalyzer(String)} will be used (if specified).
  *
  * @author kimchy
- * @see OSEM#analyzer(String)
- * @see SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableAnalyzerMappingBuilder)
+ * @see org.compass.core.mapping.osem.builder.OSEM#analyzer(String)
+ * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableAnalyzerMappingBuilder)
  */
 public class SearchableAnalyzerMappingBuilder {
 

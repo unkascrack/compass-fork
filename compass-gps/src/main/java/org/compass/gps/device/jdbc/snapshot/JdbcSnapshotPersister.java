@@ -24,8 +24,8 @@ import org.compass.gps.device.jdbc.JdbcGpsDeviceException;
  * store. Examples for stores can be RAM and FS (File System).
  * 
  * @see org.compass.gps.device.jdbc.snapshot.JdbcSnapshotPersister
- * @see org.compass.gps.device.jdbc.snapshot.RAMJdbcSnapshotPersister
- * @see org.compass.gps.device.jdbc.snapshot.FSJdbcSnapshotPersister
+ * @see RAMJdbcSnapshotPersister
+ * @see FSJdbcSnapshotPersister
  * 
  * @author kimchy
  */
@@ -35,7 +35,7 @@ public interface JdbcSnapshotPersister {
      * Saves the jdbc snapshot to the store.
      * 
      * @param snapshot
-     * @throws JdbcGpsDeviceException
+     * @throws org.compass.gps.device.jdbc.JdbcGpsDeviceException
      */
     void save(JdbcSnapshot snapshot) throws JdbcGpsDeviceException;
 
@@ -43,7 +43,7 @@ public interface JdbcSnapshotPersister {
      * Loads the jdbc snapshot from the store.
      * 
      * @return The jdbc snapshot
-     * @throws JdbcGpsDeviceException
+     * @throws org.compass.gps.device.jdbc.JdbcGpsDeviceException
      */
     JdbcSnapshot load() throws JdbcGpsDeviceException;
 }

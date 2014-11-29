@@ -26,7 +26,7 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
 /**
- * Allows to generate an {@link ReflectionConstructor} implementation based on ASM that does not use
+ * Allows to generate an {@link org.compass.core.util.reflection.ReflectionConstructor} implementation based on ASM that does not use
  * reflection.
  *
  * @author kimchy
@@ -38,7 +38,7 @@ public class AsmReflectionConstructorGenerator {
     final private static String[] REFLECTIONCONSTRUCTOR_INTERNAL_NAME = new String[]{Type.getInternalName(ReflectionConstructor.class)};
 
     /**
-     * Allows to generate an {@link ReflectionConstructor} implementation based on ASM that does not use
+     * Allows to generate an {@link org.compass.core.util.reflection.ReflectionConstructor} implementation based on ASM that does not use
      * reflection.
      */
     public static synchronized ReflectionConstructor generateConstructor(Constructor originalCtor) throws NoSuchMethodException {
@@ -65,7 +65,7 @@ public class AsmReflectionConstructorGenerator {
                 String classInternalName = className.replace('.', '/'); // build internal name for ASM
 
                 ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_MAXS);
-                cw.visit(Opcodes.V1_4, Opcodes.ACC_PUBLIC + Opcodes.ACC_SUPER,
+                cw.visit(Opcodes.V1_5, Opcodes.ACC_PUBLIC + Opcodes.ACC_SUPER,
                         classInternalName, null, OBJECT_INTERNAL_NAME,
                         REFLECTIONCONSTRUCTOR_INTERNAL_NAME);
 

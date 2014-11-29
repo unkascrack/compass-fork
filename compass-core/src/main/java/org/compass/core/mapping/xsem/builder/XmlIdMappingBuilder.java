@@ -28,7 +28,7 @@ import org.compass.core.mapping.xsem.XmlIdMapping;
  * A builder allowing to constrcut xml id mapping definition.
  *
  * @author kimchy
- * @see XSEM#id(String)
+ * @see org.compass.core.mapping.xsem.builder.XSEM#id(String)
  */
 public class XmlIdMappingBuilder {
 

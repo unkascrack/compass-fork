@@ -47,7 +47,7 @@ import org.springframework.util.ReflectionUtils;
  * annotation for injection of Compass interfaces. Any such annotated fields
  * or methods in any Spring-managed object will automatically be injected.
  * <p/>
- * Will inject either a {@link Compass} or {@link CompassSession} instances.
+ * Will inject either a {@link org.compass.core.Compass} or {@link org.compass.core.CompassSession} instances.
  *
  * @author kimchy
  */
@@ -101,7 +101,7 @@ public class CompassContextBeanPostProcessor extends InstantiationAwareBeanPostP
      *
      * @param compassName name of the EntityManagerFactory
      * @return the EntityManagerFactory or throw NoSuchBeanDefinitionException
-     * @throws NoSuchBeanDefinitionException if there is no such EntityManagerFactory
+     * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException if there is no such EntityManagerFactory
      *                                       in the context
      */
     protected Compass findEntityManagerFactoryByName(String compassName)

@@ -27,7 +27,7 @@ import org.compass.core.mapping.xsem.XmlObjectMapping;
  * A builder allowing to constrcut xml mapping definition.
  *
  * @author kimchy
- * @see XSEM#xml(String)
+ * @see org.compass.core.mapping.xsem.builder.XSEM#xml(String)
  */
 public class XmlMappingBuilder implements ResourceMappingProvider {
 

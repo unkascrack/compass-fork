@@ -80,14 +80,14 @@ public interface CompassGpsInterfaceDevice extends CompassGps {
     /**
      * Returns the <code>Compass</code> instance used for indexing. Note that
      * no operations that will affect the index should be made using it, use
-     * {@link #executeForIndex(CompassCallback)} operation instead.
+     * {@link #executeForIndex(org.compass.core.CompassCallback)} operation instead.
      */
     Compass getIndexCompass();
 
     /**
      * Returns the <code>Compass</code> instance used for mirroring. Note that
      * no operations that will affect the index should be made using it, use
-     * {@link #executeForMirror(CompassCallback)} operation instead.
+     * {@link #executeForMirror(org.compass.core.CompassCallback)} operation instead.
      */
     Compass getMirrorCompass();
 }

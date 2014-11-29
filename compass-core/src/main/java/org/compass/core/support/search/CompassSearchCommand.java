@@ -27,8 +27,8 @@ import org.compass.core.CompassQuery;
  * If both are set, the CompassQuery will be used.
  *
  * @author kimchy
- * @see org.compass.core.support.search.CompassSearchHelper
- * @see org.compass.core.support.search.CompassSearchResults
+ * @see CompassSearchHelper
+ * @see CompassSearchResults
  */
 public class CompassSearchCommand {
 
@@ -56,7 +56,7 @@ public class CompassSearchCommand {
 
     /**
      * Constructs a new search command with the given query and the page number
-     * (in case {@link org.compass.core.support.search.CompassSearchHelper} is
+     * (in case {@link CompassSearchHelper} is
      * used with pagination.
      *
      * @param query The search query
@@ -78,7 +78,7 @@ public class CompassSearchCommand {
 
     /**
      * Constructs a new search command with the given query and the page number
-     * (in case {@link org.compass.core.support.search.CompassSearchHelper} is
+     * (in case {@link CompassSearchHelper} is
      * used with pagination.
      *
      * @param query The search query
@@ -119,7 +119,7 @@ public class CompassSearchCommand {
     }
 
     /**
-     * Returns the page paramter if using the {@link org.compass.core.support.search.CompassSearchHelper}
+     * Returns the page paramter if using the {@link CompassSearchHelper}
      * pagination feature.
      *
      * @return The current page number
@@ -129,7 +129,7 @@ public class CompassSearchCommand {
     }
 
     /**
-     * Sets the page paramter if using the {@link org.compass.core.support.search.CompassSearchHelper}
+     * Sets the page paramter if using the {@link CompassSearchHelper}
      * pagination feature.
      *
      * @param page The page number

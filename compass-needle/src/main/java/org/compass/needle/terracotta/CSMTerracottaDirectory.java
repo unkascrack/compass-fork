@@ -23,7 +23,7 @@ import org.terracotta.modules.concurrent.collections.ConcurrentStringMap;
 
 /**
  * An extension to {@link org.compass.needle.terracotta.TerracottaDirectory} that works in much the same way, except that it
- * uses Terracotta {@link ConcurrentStringMap} instead of {@link java.util.concurrent.ConcurrentHashMap} to store the
+ * uses Terracotta {@link org.terracotta.modules.concurrent.collections.ConcurrentStringMap} instead of {@link java.util.concurrent.ConcurrentHashMap} to store the
  * index at.
  *
  * @author kimchy

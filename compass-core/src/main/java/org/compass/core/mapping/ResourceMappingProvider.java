@@ -17,7 +17,7 @@
 package org.compass.core.mapping;
 
 /**
- * An interface allowing for implemenations to provide a {@link org.compass.core.mapping.ResourceMapping}
+ * An interface allowing for implemenations to provide a {@link ResourceMapping}
  * instance.
  *
  * @author kimchy

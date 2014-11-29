@@ -17,15 +17,15 @@
 package org.compass.core.engine.naming;
 
 /**
- * A naming strategy that uses {@link DefaultPropertyPath} when building
- * {@link PropertyPath}.
+ * A naming strategy that uses {@link org.compass.core.engine.naming.DefaultPropertyPath} when building
+ * {@link org.compass.core.engine.naming.PropertyPath}.
  *
  * @author kimchy
  * @author lexi
- * @see PropertyPath
- * @see DefaultPropertyPath
- * @see PropertyNamingStrategyFactory
- * @see DefaultPropertyNamingStrategyFactory
+ * @see org.compass.core.engine.naming.PropertyPath
+ * @see org.compass.core.engine.naming.DefaultPropertyPath
+ * @see org.compass.core.engine.naming.PropertyNamingStrategyFactory
+ * @see org.compass.core.engine.naming.DefaultPropertyNamingStrategyFactory
  */
 public class DefaultPropertyNamingStrategy implements PropertyNamingStrategy {
 

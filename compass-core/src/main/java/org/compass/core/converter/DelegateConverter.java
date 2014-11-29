@@ -17,14 +17,14 @@
 package org.compass.core.converter;
 
 /**
- * A {@link Converter} that delegates to another {@link Converter}.
+ * A {@link org.compass.core.converter.Converter} that delegates to another {@link org.compass.core.converter.Converter}.
  *
  * @author kimchy
  */
 public interface DelegateConverter extends Converter {
 
     /**
-     * Sets the delegated {@link Converter}.
+     * Sets the delegated {@link org.compass.core.converter.Converter}.
      */
     void setDelegatedConverter(Converter delegatedConverter);
 

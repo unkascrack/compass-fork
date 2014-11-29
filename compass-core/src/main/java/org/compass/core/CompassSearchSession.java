@@ -22,7 +22,7 @@ import org.compass.core.config.CompassSettings;
  * A specialized interface that provides only search and read capabilities.
  *
  * <p>Using the session depends on how transaction managemnet should be done (also see
- * {@link Compass#openSearchSession()}. The simplest form looks like this:
+ * {@link org.compass.core.Compass#openSearchSession()}. The simplest form looks like this:
  *
  * <pre>
  * CompassSearchSession session = compass.openSearchSession();
@@ -45,7 +45,7 @@ public interface CompassSearchSession {
     CompassSettings getSettings();
     
     /**
-     * When not using the {@link org.compass.core.CompassTransaction} interface, will begin a local transaction
+     * When not using the {@link CompassTransaction} interface, will begin a local transaction
      * instead of the configured transaction.
      */
     CompassSearchSession useLocalTransaction();
@@ -59,7 +59,7 @@ public interface CompassSearchSession {
      * @param clazz The class that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The resource, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource getResource(Class clazz, Object id) throws CompassException;
 
@@ -70,7 +70,7 @@ public interface CompassSearchSession {
      * @param clazz The class that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The resource, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource getResource(Class clazz, Object... ids) throws CompassException;
 
@@ -84,7 +84,7 @@ public interface CompassSearchSession {
      * @param alias The alias that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource getResource(String alias, Object id) throws CompassException;
 
@@ -96,7 +96,7 @@ public interface CompassSearchSession {
      * @param alias The alias that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource getResource(String alias, Object... ids) throws CompassException;
 
@@ -109,7 +109,7 @@ public interface CompassSearchSession {
      * @param clazz The class that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource loadResource(Class clazz, Object id) throws CompassException;
 
@@ -121,7 +121,7 @@ public interface CompassSearchSession {
      * @param clazz The class that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource loadResource(Class clazz, Object... ids) throws CompassException;
 
@@ -134,7 +134,7 @@ public interface CompassSearchSession {
      * @param alias The alias that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource loadResource(String alias, Object id) throws CompassException;
 
@@ -146,7 +146,7 @@ public interface CompassSearchSession {
      * @param alias The alias that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource loadResource(String alias, Object... ids) throws CompassException;
 
@@ -159,7 +159,7 @@ public interface CompassSearchSession {
      * @param clazz The class that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The object, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     <T> T get(Class<T> clazz, Object id) throws CompassException;
 
@@ -171,7 +171,7 @@ public interface CompassSearchSession {
      * @param clazz The class that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The object, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     <T> T get(Class<T> clazz, Object... ids) throws CompassException;
 
@@ -184,7 +184,7 @@ public interface CompassSearchSession {
      * @param alias The alias that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The object, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object get(String alias, Object id) throws CompassException;
 
@@ -196,7 +196,7 @@ public interface CompassSearchSession {
      * @param alias The alias that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The object, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object get(String alias, Object... ids) throws CompassException;
 
@@ -209,7 +209,7 @@ public interface CompassSearchSession {
      * @param clazz The class that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The object
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     <T> T load(Class<T> clazz, Object id) throws CompassException;
 
@@ -220,7 +220,7 @@ public interface CompassSearchSession {
      * @param clazz The class that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The object
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     <T> T load(Class<T> clazz, Object... ids) throws CompassException;
 
@@ -233,7 +233,7 @@ public interface CompassSearchSession {
      * @param alias The alias that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The object
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object load(String alias, Object id) throws CompassException;
 
@@ -244,7 +244,7 @@ public interface CompassSearchSession {
      * @param alias The alias that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The object
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object load(String alias, Object... ids) throws CompassException;
 
@@ -272,7 +272,7 @@ public interface CompassSearchSession {
      *
      * @param query The query string to search by
      * @return A hits of objects that matches the query string
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHits find(String query) throws CompassException;
 
@@ -301,7 +301,7 @@ public interface CompassSearchSession {
      *
      * @param names The property names
      * @return A term freqs builder
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassTermFreqsBuilder termFreqsBuilder(String... names) throws CompassException;
 
@@ -309,7 +309,7 @@ public interface CompassSearchSession {
      * Returns an Analyzer helper. Can be used to help analyze given texts.
      *
      * @return the analyzer helper
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassAnalyzerHelper analyzerHelper() throws CompassException;
 

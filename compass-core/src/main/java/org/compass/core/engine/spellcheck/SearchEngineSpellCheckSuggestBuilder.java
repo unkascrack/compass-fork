@@ -36,7 +36,7 @@ public interface SearchEngineSpellCheckSuggestBuilder {
     /**
      * Narrows down the spell check suggestions to the given types.
      */
-    SearchEngineSpellCheckSuggestBuilder types(Class ... types);
+    SearchEngineSpellCheckSuggestBuilder types(Class... types);
 
     /**
      * Restricts the number of suggestions. Defaults to <code>1</code>.

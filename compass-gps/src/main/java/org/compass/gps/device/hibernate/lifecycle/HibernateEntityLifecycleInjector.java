@@ -33,7 +33,7 @@ public interface HibernateEntityLifecycleInjector {
      *
      * @param sessionFactory The <code>SessionFactory</code> to inject the global lifecycle to.
      * @param device         The Jpa device calling this injector
-     * @throws HibernateGpsDeviceException
+     * @throws org.compass.gps.device.hibernate.HibernateGpsDeviceException
      */
     void injectLifecycle(SessionFactory sessionFactory, HibernateGpsDevice device) throws HibernateGpsDeviceException;
 
@@ -42,7 +42,7 @@ public interface HibernateEntityLifecycleInjector {
      *
      * @param sessionFactory The <code>SessionFactory</code> to remove lifecycle from
      * @param device         The Jpa device calling
-     * @throws HibernateGpsDevice
+     * @throws org.compass.gps.device.hibernate.HibernateGpsDevice
      */
     void removeLifecycle(SessionFactory sessionFactory, HibernateGpsDevice device) throws HibernateGpsDeviceException;
 }

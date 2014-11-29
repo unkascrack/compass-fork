@@ -30,9 +30,9 @@ import org.apache.lucene.store.jdbc.index.RAMAndFileJdbcIndexOutput;
  * {@link org.apache.lucene.store.jdbc.handler.FileEntryHandler} that will be created
  * and initialized with the settings.
  * <p/>
- * Default values for a new instanciated instnce are: {@link MarkDeleteFileEntryHandler} for
- * the {@link #FILE_ENTRY_HANDLER_TYPE} setting, {@link FetchOnBufferReadJdbcIndexInput} for the
- * {@link #INDEX_INPUT_TYPE_SETTING} setting, and {@link RAMAndFileJdbcIndexOutput} for the
+ * Default values for a new instanciated instnce are: {@link org.apache.lucene.store.jdbc.handler.MarkDeleteFileEntryHandler} for
+ * the {@link #FILE_ENTRY_HANDLER_TYPE} setting, {@link org.apache.lucene.store.jdbc.index.FetchOnBufferReadJdbcIndexInput} for the
+ * {@link #INDEX_INPUT_TYPE_SETTING} setting, and {@link org.apache.lucene.store.jdbc.index.RAMAndFileJdbcIndexOutput} for the
  * {@link #INDEX_OUTPUT_TYPE_SETTING} setting.
  *
  * @author kimchy

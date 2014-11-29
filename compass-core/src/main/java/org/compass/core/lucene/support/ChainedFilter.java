@@ -28,7 +28,7 @@ import org.apache.lucene.util.SortedVIntList;
 
 /**
  * <p>
- * Allows multiple {@link Filter}s to be chained.
+ * Allows multiple {@link org.apache.lucene.search.Filter}s to be chained.
  * Logical operations such as <b>NOT</b> and <b>XOR</b>
  * are applied between filters. One operation can be used
  * for all filters, or a specific operation can be declared
@@ -93,7 +93,7 @@ public class ChainedFilter extends Filter {
     }
 
     /**
-     * {@link Filter#getDocIdSet}.
+     * {@link org.apache.lucene.search.Filter#getDocIdSet}.
      */
     public DocIdSet getDocIdSet(IndexReader reader) throws IOException {
         int[] index = new int[1]; // use array as reference to modifiable int;

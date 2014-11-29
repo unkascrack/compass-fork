@@ -25,7 +25,7 @@ import org.compass.core.config.CompassConfigurable;
  * further filter out (or add additional tokens) during the analysis process.
  *
  * @author kimchy
- * @see TokenFilter
+ * @see org.apache.lucene.analysis.TokenFilter
  * @see org.compass.core.lucene.engine.analyzer.synonym.SynonymFilter
  * @see org.compass.core.lucene.engine.analyzer.synonym.SynonymAnalyzerTokenFilterProvider
  */

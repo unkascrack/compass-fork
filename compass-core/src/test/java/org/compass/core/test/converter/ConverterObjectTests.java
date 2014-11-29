@@ -20,8 +20,8 @@ import org.compass.core.config.CompassEnvironment;
 import org.compass.core.config.CompassSettings;
 
 /**
- * Same tests as {@link org.compass.core.test.converter.ConverterTests} just tests it
- * with injection of an actual instance of {@link org.compass.core.test.converter.SampleConverter}.
+ * Same tests as {@link ConverterTests} just tests it
+ * with injection of an actual instance of {@link SampleConverter}.
  *
  * @author kimchy
  */

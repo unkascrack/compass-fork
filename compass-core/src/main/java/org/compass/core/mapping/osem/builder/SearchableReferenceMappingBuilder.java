@@ -21,7 +21,7 @@ import org.compass.core.mapping.Cascade;
 import org.compass.core.mapping.osem.ReferenceMapping;
 
 /**
- * Specifies a searchable reference on property or field of the {@link SearchableMappingBuilder} class.
+ * Specifies a searchable reference on property or field of the {@link org.compass.core.mapping.osem.builder.SearchableMappingBuilder} class.
  *
  * <p>A searchable reference is a class field/property that reference another class, and the
  * relationship need to be stored by Compass so it can be traversed when getting the class
@@ -42,8 +42,8 @@ import org.compass.core.mapping.osem.ReferenceMapping;
  * the {@link #refComponentAlias(String)}.
  *
  * @author kimchy
- * @see OSEM#reference(String)
- * @see SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableReferenceMappingBuilder)
+ * @see org.compass.core.mapping.osem.builder.OSEM#reference(String)
+ * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableReferenceMappingBuilder)
  */
 public class SearchableReferenceMappingBuilder {
 

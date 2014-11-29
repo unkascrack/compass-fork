@@ -25,7 +25,7 @@ import org.compass.core.config.CompassSettings;
  * <code>Converter</code>.
  *
  * @author kimchy
- * @see Converter
+ * @see org.compass.core.converter.Converter
  */
 public interface ConverterLookup extends CompassConfigurable {
 
@@ -40,7 +40,7 @@ public interface ConverterLookup extends CompassConfigurable {
     /**
      * Looks up a converter based on the converter name (or class name). The converter
      * should have been registered with the converter lookup using the
-     * {@link #registerConverter(String, Converter)}.
+     * {@link #registerConverter(String, org.compass.core.converter.Converter)}.
      *
      * @param name The lookup name of the converter
      * @return The converter that match for the given name.
@@ -48,7 +48,7 @@ public interface ConverterLookup extends CompassConfigurable {
     Converter lookupConverter(String name);
 
     /**
-     * Registers a {@link Converter} under a converter name.
+     * Registers a {@link org.compass.core.converter.Converter} under a converter name.
      *
      * @param converterName The converter name to be registered against
      * @param converter     The converter to use
@@ -56,7 +56,7 @@ public interface ConverterLookup extends CompassConfigurable {
     void registerConverter(String converterName, Converter converter);
 
     /**
-     * Registers a {@link Converter} under the converter name. Also associates
+     * Registers a {@link org.compass.core.converter.Converter} under the converter name. Also associates
      * the converter with the given type.
      *
      * @param converterName The converter name to be registered against

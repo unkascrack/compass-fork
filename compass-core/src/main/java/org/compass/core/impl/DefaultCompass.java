@@ -17,8 +17,10 @@
 package org.compass.core.impl;
 
 import java.lang.ref.WeakReference;
+import java.security.AccessControlException;
 import javax.naming.NamingException;
 import javax.naming.Reference;
+import javax.naming.Referenceable;
 import javax.naming.StringRefAddr;
 
 import org.apache.commons.logging.Log;
@@ -69,13 +71,11 @@ import org.compass.core.transaction.context.TransactionContextCallbackWithTr;
 /**
  * @author kimchy
  */
-public class DefaultCompass implements InternalCompass {
+public class DefaultCompass implements InternalCompass, Referenceable {
 
     private static final Log logger = LogFactory.getLog(DefaultCompass.class);
 
     private static final long serialVersionUID = 3256446884762891059L;
-
-    private static final IdentifierGenerator UUID_GENERATOR = new UUIDGenerator();
 
     private final String name;
 
@@ -169,11 +169,16 @@ public class DefaultCompass implements InternalCompass {
         }
 
         if (settings.getSettingAsBoolean(CompassEnvironment.REGISTER_SHUTDOWN_HOOK, true)) {
-            shutdownThread = new ShutdownThread(this);
-            if (logger.isDebugEnabled()) {
-                logger.debug("Registering shutdown hook [" + System.identityHashCode(shutdownThread) + "]");
+            try {
+                shutdownThread = new ShutdownThread(this);
+
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Registering shutdown hook [" + System.identityHashCode(shutdownThread) + "]");
+                }
+                Runtime.getRuntime().addShutdownHook(shutdownThread);
+            } catch (AccessControlException e) {
+                // we are not allowed to register a shutdown thread, ignore
             }
-            Runtime.getRuntime().addShutdownHook(shutdownThread);
         }
 
         this.debug = settings.getSettingAsBoolean(CompassEnvironment.DEBUG, false);
@@ -312,6 +317,7 @@ public class DefaultCompass implements InternalCompass {
     }
 
     // from javax.naming.Referenceable
+
     public Reference getReference() throws NamingException {
         return new Reference(DefaultCompass.class.getName(), new StringRefAddr("uuid", uuid),
                 CompassObjectFactory.class.getName(), null);
@@ -363,6 +369,7 @@ public class DefaultCompass implements InternalCompass {
         }
         // JNDI
         try {
+            IdentifierGenerator UUID_GENERATOR = new UUIDGenerator();
             uuid = (String) UUID_GENERATOR.generate();
         } catch (Exception e) {
             throw new CompassException("Could not generate UUID for JNDI binding");

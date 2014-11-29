@@ -28,6 +28,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -50,7 +51,7 @@ import org.compass.core.converter.dynamic.JexlDynamicConverter;
 import org.compass.core.converter.dynamic.MVELDynamicConverter;
 import org.compass.core.converter.dynamic.OgnlDynamicConverter;
 import org.compass.core.converter.dynamic.VelocityDynamicConverter;
-import org.compass.core.converter.extended.DataTimeConverter;
+import org.compass.core.converter.extended.DateTimeConverter;
 import org.compass.core.converter.extended.FileConverter;
 import org.compass.core.converter.extended.InputStreamConverter;
 import org.compass.core.converter.extended.LocaleConverter;
@@ -148,6 +149,7 @@ public class DefaultConverterLookup implements ConverterLookup {
         defaultConveterTypes.put(CompassEnvironment.Converter.DefaultTypes.Simple.STRINGBUFFER, StringBufferConverter.class);
         defaultConveterTypes.put(CompassEnvironment.Converter.DefaultTypes.Simple.STRINGBUILDER, StringBuilderConverter.class);
         defaultConveterTypes.put(CompassEnvironment.Converter.DefaultTypes.Simple.ENUM, EnumConverter.class);
+        defaultConveterTypes.put(CompassEnvironment.Converter.DefaultTypes.Simple.UUID, UUIDConverter.class);
         defaultConveterTypes.put(CompassEnvironment.Converter.DefaultTypes.Simple.URL, URLConverter.class);
         defaultConveterTypes.put(CompassEnvironment.Converter.DefaultTypes.Extendend.FILE, FileConverter.class);
         defaultConveterTypes.put(CompassEnvironment.Converter.DefaultTypes.Extendend.INPUT_STREAM, InputStreamConverter.class);
@@ -206,6 +208,8 @@ public class DefaultConverterLookup implements ConverterLookup {
                 StringBuilder.class, new StringBuilderConverter());
         addDefaultConverter(converterGroups, CompassEnvironment.Converter.DefaultTypeNames.Simple.ENUM,
                 Enum.class, new EnumConverter());
+        addDefaultConverter(converterGroups, CompassEnvironment.Converter.DefaultTypeNames.Simple.UUID,
+                UUID.class, new UUIDConverter());
         addDefaultConverter(converterGroups, CompassEnvironment.Converter.DefaultTypeNames.Simple.URL,
                 URL.class, new URLConverter());
         addDefaultConverter(converterGroups, CompassEnvironment.Converter.DefaultTypeNames.Simple.URI,
@@ -231,7 +235,7 @@ public class DefaultConverterLookup implements ConverterLookup {
                 java.sql.Timestamp.class, new SqlTimestampConverter());
         try {
             addDefaultConverter(converterGroups, CompassEnvironment.Converter.DefaultTypeNames.Extendend.JODA_DATETIME,
-                    ClassUtils.forName("org.joda.time.DateTime", settings.getClassLoader()), new DataTimeConverter());
+                    ClassUtils.forName("org.joda.time.DateTime", settings.getClassLoader()), new DateTimeConverter());
             log.debug("JODA found in the class path, registering DataTime converter");
         } catch (Throwable t) {
             // do nothing

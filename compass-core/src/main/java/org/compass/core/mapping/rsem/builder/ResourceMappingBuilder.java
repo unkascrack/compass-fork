@@ -27,7 +27,7 @@ import org.compass.core.mapping.rsem.RawResourceMapping;
  * A builder allowing to constrcut resource mapping definition.
  *
  * @author kimchy
- * @see RSEM#resource(String)
+ * @see org.compass.core.mapping.rsem.builder.RSEM#resource(String)
  */
 public class ResourceMappingBuilder implements ResourceMappingProvider {
 

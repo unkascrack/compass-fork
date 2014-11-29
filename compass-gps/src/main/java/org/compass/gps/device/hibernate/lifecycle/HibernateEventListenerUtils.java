@@ -33,13 +33,13 @@ import org.compass.core.mapping.osem.ClassMapping;
 import org.compass.core.mapping.osem.ClassPropertyMetaDataMapping;
 import org.compass.core.spi.InternalCompass;
 import org.compass.core.util.Assert;
-import org.compass.core.util.FieldInvoker;
 import org.compass.gps.spi.CompassGpsInterfaceDevice;
 import org.hibernate.EntityMode;
 import org.hibernate.engine.SessionFactoryImplementor;
 import org.hibernate.event.EventSource;
 import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.persister.entity.EntityPersister;
+import org.hibernate.proxy.HibernateProxy;
 import org.hibernate.type.CollectionType;
 import org.hibernate.type.Type;
 
@@ -134,25 +134,28 @@ public abstract class HibernateEventListenerUtils {
             Mapping[] idMappings = propertyTypeMapping.getIdMappings();
             for (int j = 0, jlen = idMappings.length; j < jlen; j++) {
                 ClassPropertyMetaDataMapping idMapping = (ClassPropertyMetaDataMapping) idMappings[j];
-                String idPropertyName = idMapping.getPropertyName();
                 try {
-                    FieldInvoker idGetter = new FieldInvoker(propertyType, idPropertyName).prepare();
-                    Object value = new FieldInvoker(entity.getClass(), name).prepare().get(entity);
+                    // initiaize the value in case it is lazy (and only for the first time)
+                    if (j == 0) {
+                        if (propertyValue instanceof HibernateProxy) {
+                            propertyValue = ((HibernateProxy) propertyValue).getHibernateLazyInitializer().getImplementation();
+                        }
+                    }
                     if (collection) {
-                        for (Iterator iter = ((Collection) value).iterator(); iter.hasNext();) {
+                        for (Iterator iter = ((Collection) propertyValue).iterator(); iter.hasNext();) {
                             Object obj = iter.next();
-                            Object id = idGetter.get(obj);
+                            Object id = idMapping.getGetter().get(obj);
                             if (id == null) {
                                 dependencies.add(obj);
                             }
                             dependencies.addAll(getUnpersistedCascades(compassGps, obj, sessionFactory, cascade, visited));
                         }
                     } else {
-                        Object id = idGetter.get(value);
+                        Object id = idMapping.getGetter().get(propertyValue);
                         if (id == null) {
-                            dependencies.add(value);
+                            dependencies.add(propertyValue);
                         }
-                        dependencies.addAll(getUnpersistedCascades(compassGps, value, sessionFactory, cascade, visited));
+                        dependencies.addAll(getUnpersistedCascades(compassGps, propertyValue, sessionFactory, cascade, visited));
                     }
                 } catch (Exception e) {
                     // ignore

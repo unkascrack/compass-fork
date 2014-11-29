@@ -20,8 +20,8 @@ import java.util.Locale;
 
 /**
  * An object representing a Compass query. The query is created using the
- * {@link org.compass.core.CompassQueryBuilder}, and used to get the
- * matching {@link org.compass.core.CompassHits}.
+ * {@link CompassQueryBuilder}, and used to get the
+ * matching {@link CompassHits}.
  * <p>
  * The query be sorted as well using one of the <code>addSort</code>
  * operations. Note that adding sorting is only applicable for the query that
@@ -137,13 +137,13 @@ public interface CompassQuery {
 
     /**
      * Attaches the Compass Query to the current session. Should be called when the query
-     * is created using {@link org.compass.core.Compass#queryBuilder()}.
+     * is created using {@link Compass#queryBuilder()}.
      */
     CompassQuery attach(CompassSession session);
 
     /**
      * Attaches the Compass Query to the current session. Should be called when the query
-     * is created using {@link org.compass.core.Compass#queryBuilder()}.
+     * is created using {@link Compass#queryBuilder()}.
      */
     CompassQuery attach(CompassSearchSession session);
 
@@ -295,7 +295,7 @@ public interface CompassQuery {
     CompassQuery setTypes(Class... types);
 
     /**
-     * Sets a filter to the query. Please see {@link CompassQueryFilterBuilder}.
+     * Sets a filter to the query. Please see {@link org.compass.core.CompassQueryFilterBuilder}.
      *
      * @param filter The filter for the query
      * @return the query
@@ -303,10 +303,10 @@ public interface CompassQuery {
     CompassQuery setFilter(CompassQueryFilter filter);
 
     /**
-     * Returns the filter set using {@link #setFilter(CompassQueryFilter)}. <code>null</code>
+     * Returns the filter set using {@link #setFilter(org.compass.core.CompassQueryFilter)}. <code>null</code>
      * if none is set.
      *
-     * @return The filter set using {@link #setFilter(CompassQueryFilter)}
+     * @return The filter set using {@link #setFilter(org.compass.core.CompassQueryFilter)}
      */
     CompassQueryFilter getFilter();
 
@@ -343,7 +343,7 @@ public interface CompassQuery {
 
     /**
      * Returns the count of hits that match this query. Note, this will be faster than
-     * {@link CompassHitsOperations#length()}.
+     * {@link org.compass.core.CompassHitsOperations#length()}.
      *
      * <p>Same as calling <code>count(0.0f)</code>.
      */
@@ -351,7 +351,7 @@ public interface CompassQuery {
 
     /**
      * Returns the count of hits that match this query and are higher than the given score.
-     * Note, this will be faster than {@link CompassHitsOperations#length()}.
+     * Note, this will be faster than {@link org.compass.core.CompassHitsOperations#length()}.
      */
     long count(float minimumScore);
 

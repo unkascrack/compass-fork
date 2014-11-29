@@ -40,11 +40,11 @@ import org.compass.core.util.ClassUtils;
  * mappings to extend it. By default, teh alias name will be the class short
  * name.
  *
- * <p>Note, a root searchable must be associated with at least one {@link SearchableIdMappingBuilder}.
+ * <p>Note, a root searchable must be associated with at least one {@link org.compass.core.mapping.osem.builder.SearchableIdMappingBuilder}.
  *
  * <p>By default, the searchable class is defined as a root class. A root class is
  * a top level searchable class. A non root class can be used to define mappings
- * definitions for {@link SearchableComponentMappingBuilder}, and it is preferable that classes
+ * definitions for {@link org.compass.core.mapping.osem.builder.SearchableComponentMappingBuilder}, and it is preferable that classes
  * that are only used as component mapping definitions, will be defined with {@link #root(boolean)}
  * set to <code>false</code>.
  *
@@ -59,13 +59,13 @@ import org.compass.core.util.ClassUtils;
  *
  * <p>A searchable class creates an internal "all" meta-data, which holds
  * searchable information of all the class searchable content. Controlling
- * the "all" property using the {@link SearchableAllMappingBuilder} and setting it
- * using {@link #all(SearchableAllMappingBuilder)}.
+ * the "all" property using the {@link org.compass.core.mapping.osem.builder.SearchableAllMappingBuilder} and setting it
+ * using {@link #all(org.compass.core.mapping.osem.builder.SearchableAllMappingBuilder)}.
  *
  * <p>The seachable class can have a specialized analyzer (different from the
  * default one) associated with it using {@link #analyzer(String)}. Note, that this
  * will associate the class statically with an analyzer. Dynamically associating
- * the class with an analyzer, the {@link SearchableAnalyzerMappingBuilder} can be
+ * the class with an analyzer, the {@link org.compass.core.mapping.osem.builder.SearchableAnalyzerMappingBuilder} can be
  * used to annotated the dynamic value for the analyzer to use.
  *
  * <p>The {@link #poly(boolean)} can be used to mapped polymprphic inheritance tree. This is the less
@@ -73,7 +73,7 @@ import org.compass.core.util.ClassUtils;
  * searchable classes using the {@link #extendsAliases(String[])} mapping.
  *
  * @author kimchy
- * @see OSEM#searchable(Class)
+ * @see org.compass.core.mapping.osem.builder.OSEM#searchable(Class)
  */
 public class SearchableMappingBuilder implements ResourceMappingProvider {
 
@@ -174,7 +174,7 @@ public class SearchableMappingBuilder implements ResourceMappingProvider {
     /**
      * Controls the managed id value for all the mapped properties that have no explicit setting
      * of the managed id (also default to NA). The default value for the managed id is derived from
-     * globabl Compass settings and defaults to {@link ManagedId#NO_STORE}.
+     * globabl Compass settings and defaults to {@link org.compass.core.mapping.osem.ManagedId#NO_STORE}.
      */
     public SearchableMappingBuilder managedId(ManagedId managedId) {
         mapping.setManagedId(managedId);

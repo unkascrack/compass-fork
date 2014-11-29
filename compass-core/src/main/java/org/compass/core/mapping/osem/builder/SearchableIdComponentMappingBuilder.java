@@ -21,7 +21,7 @@ import org.compass.core.mapping.Cascade;
 import org.compass.core.mapping.osem.IdComponentMapping;
 
 /**
- * Specifies a searchable id component on property or field of the {@link SearchableMappingBuilder} class.
+ * Specifies a searchable id component on property or field of the {@link org.compass.core.mapping.osem.builder.SearchableMappingBuilder} class.
  *
  * <p>A searchable id component is a class field/property that reference another class, which
  * content need to be embedded into the content of its searchable class and

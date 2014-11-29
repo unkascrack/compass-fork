@@ -41,9 +41,9 @@ import org.compass.core.xml.RawXmlObject;
 import org.compass.core.xml.XmlObject;
 
 /**
- * Responsible for converting {@link XmlObject} based on {@link XmlObjectMapping}.
+ * Responsible for converting {@link org.compass.core.xml.XmlObject} based on {@link org.compass.core.mapping.xsem.XmlObjectMapping}.
  * <p/>
- * Note, that marshalls might create several resources, if the {@link XmlObjectMapping} has
+ * Note, that marshalls might create several resources, if the {@link org.compass.core.mapping.xsem.XmlObjectMapping} has
  * an xpath expression associated with it.
  * <p/>
  *

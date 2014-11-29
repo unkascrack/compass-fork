@@ -39,8 +39,8 @@ public interface ConnectionProxy extends Connection {
     /**
      * If the given Jdbc Connection actually controls the connection.
      *
-     * @see TransactionAwareDataSourceProxy
-     * @see DataSourceUtils#releaseConnection(java.sql.Connection)
+     * @see org.apache.lucene.store.jdbc.datasource.TransactionAwareDataSourceProxy
+     * @see org.apache.lucene.store.jdbc.datasource.DataSourceUtils#releaseConnection(java.sql.Connection)
      */
     boolean controlConnection();
 }

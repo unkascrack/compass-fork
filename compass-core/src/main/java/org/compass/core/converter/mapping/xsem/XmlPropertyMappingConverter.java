@@ -25,11 +25,11 @@ import org.compass.core.marshall.MarshallingContext;
 import org.compass.core.xml.XmlObject;
 
 /**
- * Responsible for converting {@link XmlObject} based on {@link XmlPropertyMapping}.
- * Uses the {@link XmlPropertyMapping} value converter to actually convert the given
+ * Responsible for converting {@link org.compass.core.xml.XmlObject} based on {@link org.compass.core.mapping.xsem.XmlPropertyMapping}.
+ * Uses the {@link org.compass.core.mapping.xsem.XmlPropertyMapping} value converter to actually convert the given
  * value.
  * <p/>
- * The converter executes the given xpath expression associated with {@link XmlPropertyMapping}
+ * The converter executes the given xpath expression associated with {@link org.compass.core.mapping.xsem.XmlPropertyMapping}
  * and for each xml object will use the value converter to marshall it.
  * <p/>
  * Note, that un-marshalling is not supported.

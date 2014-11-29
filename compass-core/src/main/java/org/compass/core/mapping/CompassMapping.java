@@ -50,7 +50,7 @@ public interface CompassMapping {
 
     /**
      * Returns the alias mapping for the given alias (most if not all of the times, this will
-     * be a {@link org.compass.core.mapping.ResourceMapping}).
+     * be a {@link ResourceMapping}).
      */
     AliasMapping getAliasMapping(String alias);
 
@@ -171,7 +171,7 @@ public interface CompassMapping {
     ResourcePropertyLookup getResourcePropertyLookup(String name) throws IllegalArgumentException;
 
     /**
-     * Finds the {@link ResourcePropertyMapping} definition for the specified path. The
+     * Finds the {@link org.compass.core.mapping.ResourcePropertyMapping} definition for the specified path. The
      * path is in the format of: [alias].[class property mapping].[meta data mapping] in
      * case of class mapping, and [alias].[resource property mapping] in case of resource
      * mapping. The format of [alias].[class property mapping] can also be applied, and
@@ -183,7 +183,7 @@ public interface CompassMapping {
     ResourcePropertyMapping getResourcePropertyMappingByPath(String path);
 
     /**
-     * Returns an array of all the given {@link org.compass.core.mapping.ResourcePropertyMapping} for the given
+     * Returns an array of all the given {@link ResourcePropertyMapping} for the given
      * path. If the path is in "dot path" notation, will reutrn a single mappings matching it (see
      * {@link #getResourcePropertyMappingByPath(String)}). Otherwise will return all the ones mapped to
      * the given name.

@@ -19,7 +19,7 @@ package org.compass.core.xml;
 import org.compass.core.spi.AliasedObject;
 
 /**
- * An {@link XmlObject} that is also assoicated with an alias.
+ * An {@link org.compass.core.xml.XmlObject} that is also assoicated with an alias.
  *
  * @author kimchy
  */

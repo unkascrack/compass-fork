@@ -23,15 +23,15 @@ import org.compass.core.CompassException;
 import org.compass.core.util.reader.StringReader;
 
 /**
- * <p>An {@link XmlObject} that has an xml string representation. Mainly used for simpliciy,
+ * <p>An {@link org.compass.core.xml.XmlObject} that has an xml string representation. Mainly used for simpliciy,
  * where Compass will use the configured {@link org.compass.core.converter.xsem.XmlContentConverter}
- * in order to convert to xml string into the actual {@link XmlObject} implementation.
+ * in order to convert to xml string into the actual {@link org.compass.core.xml.XmlObject} implementation.
  * <p/>
  * <p>This object will only be used when saving xml object into Compass. When Compass returns xml objects
- * as a restult of a query or get/load operations, the actual {@link XmlObject} will be returned.
+ * as a restult of a query or get/load operations, the actual {@link org.compass.core.xml.XmlObject} will be returned.
  * <p/>
  * <p>Naturally, since the xml string will only be parsed when Compass will convert this object, all the
- * {@link XmlObject} methods are not implemented. The {@link XmlObject} is just used as a marker interface
+ * {@link org.compass.core.xml.XmlObject} methods are not implemented. The {@link org.compass.core.xml.XmlObject} is just used as a marker interface
  * to use the correct xsem supported converters.
  *
  * @author kimchy

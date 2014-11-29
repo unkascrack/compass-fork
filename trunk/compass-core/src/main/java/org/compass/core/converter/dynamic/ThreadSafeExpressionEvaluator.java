@@ -4,7 +4,7 @@ import org.compass.core.converter.ConversionException;
 import org.compass.core.mapping.ResourcePropertyMapping;
 
 /**
- * A pool of {@link ExpressionEvaluator}s where the dynamic expression library
+ * A pool of {@link org.compass.core.converter.dynamic.ExpressionEvaluator}s where the dynamic expression library
  * does not provide a high performance thread save evaluation.
  *
  * @author kimchy

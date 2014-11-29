@@ -37,7 +37,7 @@ import org.apache.lucene.search.spans.TermSpans;
  * all field.
  *
  * @author kimchy
- * @see BoostingTermQuery
+ * @see org.apache.lucene.search.payloads.BoostingTermQuery
  */
 // LUCENE MONITOR
 public class AllBoostingTermQuery extends SpanTermQuery {

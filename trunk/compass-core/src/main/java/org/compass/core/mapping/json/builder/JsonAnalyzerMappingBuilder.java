@@ -28,7 +28,7 @@ import org.compass.core.mapping.json.JsonPropertyAnalyzerController;
  * within Compass. If no analyzer is found, the {@link #nullAnalyzer(String)} will be used (if specified).
  *
  * @author kimchy
- * @see JSEM#analyzer(String)
+ * @see org.compass.core.mapping.json.builder.JSEM#analyzer(String)
  */
 public class JsonAnalyzerMappingBuilder {
 

@@ -24,12 +24,12 @@ import org.compass.core.lucene.engine.transaction.TransactionProcessorFactory;
  * A lightweight search only transaction processor factory.
  *
  * @author kimchy
- * @see SearchTransactionProcessor
+ * @see org.compass.core.lucene.engine.transaction.search.SearchTransactionProcessor
  */
 public class SearchTransactionProcessorFactory implements TransactionProcessorFactory {
 
     /**
-     * Creates a new {@link SearchTransactionProcessor}.
+     * Creates a new {@link org.compass.core.lucene.engine.transaction.search.SearchTransactionProcessor}.
      */
     public TransactionProcessor create(LuceneSearchEngine searchEngine) {
         return new SearchTransactionProcessor(searchEngine);

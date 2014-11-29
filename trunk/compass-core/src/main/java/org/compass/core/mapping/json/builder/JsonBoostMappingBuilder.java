@@ -24,7 +24,7 @@ import org.compass.core.mapping.json.JsonBoostPropertyMapping;
  * Allows to dynamically define the boost value of the resource based on a JSON property value.
  *
  * @author kimchy
- * @see JSEM#boost(String) 
+ * @see org.compass.core.mapping.json.builder.JSEM#boost(String)
  */
 public class JsonBoostMappingBuilder {
 

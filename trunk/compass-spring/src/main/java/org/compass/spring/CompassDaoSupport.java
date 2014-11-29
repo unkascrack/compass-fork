@@ -50,14 +50,14 @@ public abstract class CompassDaoSupport implements InitializingBean {
     }
 
     /**
-     * Creates a new {@link CompassTemplate} based on the provided {@link Compass}. Subclasses
+     * Creates a new {@link org.compass.core.CompassTemplate} based on the provided {@link org.compass.core.Compass}. Subclasses
      * can override it to create a subclass of CompassTemplate, or change the configuration.
      * <p>
      * The method is only called when initializing the dao with Compass instance
      * and not a CompassTemplate instance.
      * 
      * @param compass
-     * @return A new {@link CompassTemplate} warpping the given {@link Compass} instance.
+     * @return A new {@link org.compass.core.CompassTemplate} warpping the given {@link org.compass.core.Compass} instance.
      */
     protected CompassTemplate createCompassTemplate(Compass compass) {
         return new CompassTemplate(compass);

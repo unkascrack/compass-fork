@@ -11,7 +11,7 @@ import org.apache.lucene.index.IndexDeletionPolicy;
  * An index deletion policy that deletes all commits when initialized.
  *
  * @author kimchy
- * @see org.compass.core.lucene.engine.indexdeletionpolicy.IndexDeletionPolicyFactory
+ * @see IndexDeletionPolicyFactory
  */
 public class KeepNoneOnInitDeletionPolicy implements IndexDeletionPolicy {
 

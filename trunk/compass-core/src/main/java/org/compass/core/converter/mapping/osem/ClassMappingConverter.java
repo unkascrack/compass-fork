@@ -474,11 +474,11 @@ public class ClassMappingConverter implements ResourceMappingConverter, CompassC
     }
 
     /**
-     * A simple extension point that allows to set the boost value for the created {@link Resource}.
+     * A simple extension point that allows to set the boost value for the created {@link org.compass.core.Resource}.
      * <p/>
      * The default implemenation uses the statically defined boost value in the mapping definition
      * ({@link org.compass.core.mapping.osem.ClassMapping#getBoost()}) to set the boost level
-     * using {@link Resource#setBoost(float)}
+     * using {@link org.compass.core.Resource#setBoost(float)}
      * <p/>
      * Note, that this method will only be called on a root level (root=true) mapping.
      *
@@ -486,7 +486,7 @@ public class ClassMappingConverter implements ResourceMappingConverter, CompassC
      * @param root         The Object that is marshalled into the respective Resource
      * @param classMapping The Class Mapping deifnition
      * @param context      The marshalling context
-     * @throws ConversionException
+     * @throws org.compass.core.converter.ConversionException
      */
     protected void doSetBoost(Resource resource, Object root, ClassMapping classMapping,
                               MarshallingContext context) throws ConversionException {

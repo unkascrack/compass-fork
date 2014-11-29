@@ -25,7 +25,7 @@ import org.compass.core.mapping.xsem.XmlBoostPropertyMapping;
  * Allows to dynamically define the boost value of the resource based on a XML property value.
  *
  * @author kimchy
- * @see XSEM#boost(String, String)
+ * @see org.compass.core.mapping.xsem.builder.XSEM#boost(String, String)
  */
 public class XmlBoostMappingBuilder {
 

@@ -44,11 +44,11 @@ public class RawResourcePropertyAnalyzerController extends RawResourcePropertyMa
     }
 
     public Index getIndex() {
-        return Property.Index.NOT_ANALYZED;
+        return Index.NOT_ANALYZED;
     }
 
     public Store getStore() {
-        return Property.Store.YES;
+        return Store.YES;
     }
 
     public Property.TermVector getTermVector() {

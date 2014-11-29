@@ -41,7 +41,7 @@ public class ResourcePropertyValueConverter extends SimpleXmlValueConverter impl
     /**
      * Normalizes the {@link org.compass.core.xml.XmlObject#getValue()} using the delegated
      * {@link org.compass.core.converter.mapping.ResourcePropertyConverter#fromString(String, org.compass.core.mapping.ResourcePropertyMapping)},
-     * and then using {@link org.compass.core.converter.xsem.ResourcePropertyValueConverter#toString(Object, org.compass.core.mapping.ResourcePropertyMapping)}.
+     * and then using {@link ResourcePropertyValueConverter#toString(Object, org.compass.core.mapping.ResourcePropertyMapping)}.
      */
     public String toString(XmlObject xmlObject, ResourcePropertyMapping resourcePropertyMapping) {
         return converter.toString(converter.fromString(xmlObject.getValue(), resourcePropertyMapping), resourcePropertyMapping);

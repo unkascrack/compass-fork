@@ -32,16 +32,16 @@ import org.compass.core.util.StringUtils;
  * therad safe.
  *
  * <p>Will perform the search operation on the <code>Compass</code> instance using the query
- * supplied by the {@link org.compass.core.support.search.CompassSearchCommand}.
+ * supplied by the {@link CompassSearchCommand}.
  *
  * <p>Pagination will be enabled if <code>pageSize</code> property is set on the controller,
  * as well as providing the <code>page</code> number property on the
- * {@link org.compass.core.support.search.CompassSearchCommand}.
+ * {@link CompassSearchCommand}.
  *
  * <p>The search controller provides several extension points, including
- * {@link #buildQuery(CompassSearchCommand,org.compass.core.CompassSession)},
- * {@link #doProcessBeforeDetach(CompassSearchCommand,org.compass.core.CompassSession,org.compass.core.CompassHits,int,int)}
- * and {@link #doProcessAfterDetach(CompassSearchCommand,org.compass.core.CompassSession,org.compass.core.CompassDetachedHits)}.
+ * {@link #buildQuery(org.compass.core.support.search.CompassSearchCommand,org.compass.core.CompassSession)},
+ * {@link #doProcessBeforeDetach(org.compass.core.support.search.CompassSearchCommand,org.compass.core.CompassSession,org.compass.core.CompassHits,int,int)}
+ * and {@link #doProcessAfterDetach(org.compass.core.support.search.CompassSearchCommand,org.compass.core.CompassSession,org.compass.core.CompassDetachedHits)}.
  *
  * @author kimchy
  */
@@ -96,9 +96,9 @@ public class CompassSearchHelper {
     /**
      * Performs the actual search operation. If pageSize is set, will perform pagination using the
      * provided size, if not, will return all the hits. Also allows for several extensions points:
-     * {@link #buildQuery(CompassSearchCommand,org.compass.core.CompassSession)},
-     * {@link #doProcessBeforeDetach(CompassSearchCommand,org.compass.core.CompassSession,org.compass.core.CompassHits,int,int)}
-     * and {@link #doProcessAfterDetach(CompassSearchCommand,org.compass.core.CompassSession,org.compass.core.CompassDetachedHits)}.
+     * {@link #buildQuery(org.compass.core.support.search.CompassSearchCommand,org.compass.core.CompassSession)},
+     * {@link #doProcessBeforeDetach(org.compass.core.support.search.CompassSearchCommand,org.compass.core.CompassSession,org.compass.core.CompassHits,int,int)}
+     * and {@link #doProcessAfterDetach(org.compass.core.support.search.CompassSearchCommand,org.compass.core.CompassSession,org.compass.core.CompassDetachedHits)}.
      *
      * @param searchCommand The search command to perform the search
      * @param session       CompassSession to execute the search with

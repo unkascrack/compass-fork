@@ -24,7 +24,7 @@ import org.compass.core.mapping.json.PlainJsonObjectMapping;
  * A builder allowing to constrcut json object mapping definition.
  *
  * @author kimchy
- * @see JSEM#object(String) 
+ * @see org.compass.core.mapping.json.builder.JSEM#object(String)
  */
 public class JsonObjectMappingBuilder {
 

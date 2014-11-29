@@ -17,7 +17,6 @@
 package org.compass.core;
 
 import java.io.Serializable;
-import javax.naming.Referenceable;
 
 import org.compass.core.config.CompassConfiguration;
 import org.compass.core.config.CompassSettings;
@@ -40,10 +39,10 @@ import org.compass.core.engine.spellcheck.SearchEngineSpellCheckManager;
  * optimiser lifecycle.
  *
  * @author kimchy
- * @see CompassSession
+ * @see org.compass.core.CompassSession
  * @see org.compass.core.config.CompassConfiguration
  */
-public interface Compass extends Referenceable, Serializable {
+public interface Compass extends Serializable {
 
     /**
      * If there is a transaction bound session, will return it. Otherwise
@@ -63,7 +62,7 @@ public interface Compass extends Referenceable, Serializable {
      * transaction.
      *
      * @return CompassSession The compass session
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassSession openSession() throws CompassException;
 
@@ -85,7 +84,7 @@ public interface Compass extends Referenceable, Serializable {
      * transaction.
      *
      * @return CompassSession The compass session
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassSearchSession openSearchSession() throws CompassException;
 
@@ -107,7 +106,7 @@ public interface Compass extends Referenceable, Serializable {
      * transaction.
      *
      * @return CompassSession The compass session
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassIndexSession openIndexSession() throws CompassException;
 
@@ -117,7 +116,7 @@ public interface Compass extends Referenceable, Serializable {
      * (such as file descriptor when storing the index within the file system) that
      * will not be released otherwise.
      *
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void close() throws CompassException;
 
@@ -140,11 +139,11 @@ public interface Compass extends Referenceable, Serializable {
     CompassQueryBuilder queryBuilder() throws CompassException;
 
     /**
-     * Creates a new query filter builder that can create {@link org.compass.core.CompassQueryFilter}s
-     * that can later be added to {@link org.compass.core.CompassQuery#setFilter(CompassQueryFilter)}.
+     * Creates a new query filter builder that can create {@link CompassQueryFilter}s
+     * that can later be added to {@link CompassQuery#setFilter(org.compass.core.CompassQueryFilter)}.
      */
     CompassQueryFilterBuilder queryFilterBuilder() throws CompassException;
-    
+
     /**
      * Returns a resource factory allowing to create resources and properties.
      */

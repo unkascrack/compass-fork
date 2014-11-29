@@ -21,7 +21,7 @@ import org.codehaus.groovy.grails.web.json.JSONObject;
 import org.compass.core.json.AliasedJsonObject;
 
 /**
- * An aliased wrapper around grails {@link JSONObject}.
+ * An aliased wrapper around grails {@link org.codehaus.groovy.grails.web.json.JSONObject}.
  *
  * @author kimchy
  */

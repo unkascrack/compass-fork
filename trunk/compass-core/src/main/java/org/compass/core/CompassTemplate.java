@@ -96,9 +96,9 @@ public class CompassTemplate implements CompassOperations {
     }
 
     /**
-     * Sets the {@link org.compass.core.CompassSession} to be read only.
+     * Sets the {@link CompassSession} to be read only.
      *
-     * @see CompassSession#setReadOnly() 
+     * @see org.compass.core.CompassSession#setReadOnly()
      */
     public void setReadOnly(boolean readOnly) {
         this.readOnly = readOnly;
@@ -118,7 +118,7 @@ public class CompassTemplate implements CompassOperations {
      *
      * @param action The action to execute witin a compass transaction
      * @return An object as the result of the compass action
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     public <T> T execute(CompassCallback<T> action) throws CompassException {
         CompassSession session = compass.openSession();
@@ -162,7 +162,7 @@ public class CompassTemplate implements CompassOperations {
      *
      * @param action The action to execute witin a compass transaction
      * @return An object as the result of the compass action
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     public <T> T executeLocal(CompassCallback<T> action) throws CompassException {
         CompassSession session = compass.openSession();
@@ -202,7 +202,7 @@ public class CompassTemplate implements CompassOperations {
      *
      * @param action the callback to execute.
      * @return The hits that match the query
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     public CompassHitsOperations executeFind(CompassCallback<CompassHitsOperations> action) throws CompassException {
         return execute(action);

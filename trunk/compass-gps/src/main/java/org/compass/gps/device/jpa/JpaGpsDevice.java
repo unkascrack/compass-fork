@@ -63,8 +63,8 @@ import org.compass.gps.device.support.parallel.IndexEntity;
  *
  * <p>Mirroring can be done in two ways. The first one is using JPA official API, implemeting
  * an Entity Lifecycle listener and specifing it for each entity class via annotations. Compass
- * comes with helper base clases for it, {@link AbstractCompassJpaEntityListener} and
- * {@link AbstractDeviceJpaEntityListener}. As far as integrating Compass with JPA for mirroring,
+ * comes with helper base clases for it, {@link org.compass.gps.device.jpa.AbstractCompassJpaEntityListener} and
+ * {@link org.compass.gps.device.jpa.AbstractDeviceJpaEntityListener}. As far as integrating Compass with JPA for mirroring,
  * this is the less preferable way. The second option for mirroring is to use the
  * {@link org.compass.gps.device.jpa.lifecycle.JpaEntityLifecycleInjector}, which will use the internal JPA implementation to
  * inject global lifecycle event listerens (sadly, there is no option to do that with the
@@ -81,9 +81,9 @@ import org.compass.gps.device.support.parallel.IndexEntity;
  * <p>The device allows for {@link org.compass.gps.device.jpa.extractor.NativeJpaExtractor} to be set, for applications
  * that use a framework or by themself wrap the actual <code>EntityManagerFactory</code> implementation.
  *
- * <p>For advance usage, the device allows for {@link EntityManagerWrapper} to be set,
+ * <p>For advance usage, the device allows for {@link org.compass.gps.device.jpa.EntityManagerWrapper} to be set,
  * allowing to control the creation of <code>EntityManager</code>s, and transactions.
- * The {@link DefaultEntityManagerWrapper} should suffice for most cases.
+ * The {@link org.compass.gps.device.jpa.DefaultEntityManagerWrapper} should suffice for most cases.
  *
  * <p>The device extends the parallel device provinding supprot for parallel indexing.
  *

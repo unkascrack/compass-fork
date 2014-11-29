@@ -20,7 +20,7 @@ package org.compass.core;
  * A highlighter tool that can highlight hits in a given text based on an
  * executed query.
  * 
- * @see org.compass.core.CompassHits#highlighter(int)
+ * @see CompassHits#highlighter(int)
  * 
  * @author kimchy
  */
@@ -78,7 +78,7 @@ public interface CompassHighlighter {
      * @param highlighterName
      *            The name of the highlighter that will be used
      * @return the higlighter
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHighlighter setHighlighter(String highlighterName) throws CompassException;
 
@@ -89,7 +89,7 @@ public interface CompassHighlighter {
      * @param analyzerName
      *            The analyzer name that will be used.
      * @return the highlighter
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHighlighter setAnalyzer(String analyzerName) throws CompassException;
 
@@ -100,7 +100,7 @@ public interface CompassHighlighter {
      *
      * @param resource The resource to derive the analyzer from
      * @return the highlighter
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHighlighter setAnalyzer(Resource resource) throws CompassException;
 
@@ -112,7 +112,7 @@ public interface CompassHighlighter {
      * @param separator
      *            The separator used
      * @return the highlighter
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHighlighter setSeparator(String separator) throws CompassException;
 
@@ -123,7 +123,7 @@ public interface CompassHighlighter {
      * @param maxBytesToAnalyze
      *            The maximum number of bytes analyzed for highlighting
      * @return the highlighter
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHighlighter setMaxBytesToAnalyze(int maxBytesToAnalyze) throws CompassException;
 
@@ -135,7 +135,7 @@ public interface CompassHighlighter {
      * @param maxNumFragments
      *            The maximum number if fragments
      * @return the highlighter
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHighlighter setMaxNumFragments(int maxNumFragments) throws CompassException;
 
@@ -146,7 +146,7 @@ public interface CompassHighlighter {
      * @param textTokenizer
      *            How the text will be tokenized for highlighting
      * @return the highlighter
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHighlighter setTextTokenizer(TextTokenizer textTokenizer) throws CompassException;
 
@@ -166,7 +166,7 @@ public interface CompassHighlighter {
      * @param propertyName
      *            The resource property name / meta-data.
      * @return The best fragment text highlighted.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String fragment(String propertyName) throws CompassException;
 
@@ -185,7 +185,7 @@ public interface CompassHighlighter {
      * @param text
      *            The text to be highlighted.
      * @return The best fragment text highlighted.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String fragment(String propertyName, String text) throws CompassException;
 
@@ -208,7 +208,7 @@ public interface CompassHighlighter {
      * @param propertyName
      *            The resource property name / meta-data.
      * @return The best fragments highlighted.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String[] fragments(String propertyName) throws CompassException;
 
@@ -229,7 +229,7 @@ public interface CompassHighlighter {
      * @param text
      *            The text to be highlighted.
      * @return The best fragments highlighted.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String[] fragments(String propertyName, String text) throws CompassException;
 
@@ -252,7 +252,7 @@ public interface CompassHighlighter {
      * @param propertyName
      *            The resource property name / meta-data.
      * @return The best fragments highlighted and separated.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String fragmentsWithSeparator(String propertyName) throws CompassException;
 
@@ -274,7 +274,7 @@ public interface CompassHighlighter {
      * @param text
      *            The text to be highlighted.
      * @return The best fragments highlighted and separated.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String fragmentsWithSeparator(String propertyName, String text) throws CompassException;
     
@@ -295,7 +295,7 @@ public interface CompassHighlighter {
      * @param propertyName
      * 				The resource property name / meta-data.
      * @return The best fragment texts highlighted.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String[] multiValueFragment(String propertyName) throws CompassException;
     
@@ -318,7 +318,7 @@ public interface CompassHighlighter {
      * @param texts
      * 				Texts to be highlighted.
      * @return The best fragment texts highlighted.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String[] multiValueFragment(String propertyName, String[] texts) throws CompassException;
     
@@ -338,7 +338,7 @@ public interface CompassHighlighter {
      * @param propertyName
      * 				The resource property name / meta-data.
      * @return The best fragments highlighted and separated.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String multiValueFragmentWithSeparator(String propertyName) throws CompassException;
     
@@ -360,7 +360,7 @@ public interface CompassHighlighter {
      * @param texts
      * 				Texts to be highlighted.
      * @return The best fragments highlighted and separated.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     String multiValueFragmentWithSeparator(String propertyName, String[] texts) throws CompassException;
 

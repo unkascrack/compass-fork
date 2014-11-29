@@ -106,7 +106,7 @@ public abstract class Assert {
      * Assert.hasLength(name, "Name must not be empty");</pre>
      * @param text the string to check
      * @param message the exception message to use if the assertion fails
-     * @see StringUtils#hasLength
+     * @see org.compass.core.util.StringUtils#hasLength
      */
     public static void hasLength(String text, String message) {
         if (!StringUtils.hasLength(text)) {
@@ -119,7 +119,7 @@ public abstract class Assert {
      * <pre>
      * Assert.hasLength(name);</pre>
      * @param text the string to check
-     * @see StringUtils#hasLength
+     * @see org.compass.core.util.StringUtils#hasLength
      */
     public static void hasLength(String text) {
         hasLength(text, "[Assertion failed] - this String argument must have length; it cannot be <code>null</code> or empty");
@@ -132,7 +132,7 @@ public abstract class Assert {
      * Assert.hasText(name, "Name must not be empty");</pre>
      * @param text the string to check
      * @param message the exception message to use if the assertion fails
-     * @see StringUtils#hasText
+     * @see org.compass.core.util.StringUtils#hasText
      */
     public static void hasText(String text, String message) {
         if (!StringUtils.hasText(text)) {
@@ -146,7 +146,7 @@ public abstract class Assert {
      * <pre>
      * Assert.hasText(name, "Name must not be empty");</pre>
      * @param text the string to check
-     * @see StringUtils#hasText
+     * @see org.compass.core.util.StringUtils#hasText
      */
     public static void hasText(String text) {
         hasText(text,

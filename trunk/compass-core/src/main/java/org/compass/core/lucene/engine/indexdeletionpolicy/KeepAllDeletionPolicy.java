@@ -9,7 +9,7 @@ import org.apache.lucene.index.IndexDeletionPolicy;
  * An index deletion policy that does not delete any commits, old or new.
  *
  * @author kimchy
- * @see org.compass.core.lucene.engine.indexdeletionpolicy.IndexDeletionPolicyFactory
+ * @see IndexDeletionPolicyFactory
  */
 public class KeepAllDeletionPolicy implements IndexDeletionPolicy {
 

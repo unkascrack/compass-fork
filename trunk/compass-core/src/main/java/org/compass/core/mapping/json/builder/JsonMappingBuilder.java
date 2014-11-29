@@ -28,7 +28,7 @@ import org.compass.core.mapping.json.RootJsonObjectMapping;
  * A builder allowing to constrcut json mapping definition.
  *
  * @author kimchy
- * @see JSEM#json(String)
+ * @see org.compass.core.mapping.json.builder.JSEM#json(String)
  */
 public class JsonMappingBuilder implements ResourceMappingProvider {
 

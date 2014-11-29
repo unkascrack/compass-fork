@@ -36,7 +36,7 @@ public class SpringNativeJpaExtractor implements NativeJpaExtractor {
      *
      * @param entityManagerFactory The (possibly) managed Spring entity manager factory
      * @return The native entity manager factory
-     * @throws JpaGpsDeviceException
+     * @throws org.compass.gps.device.jpa.JpaGpsDeviceException
      */
     public EntityManagerFactory extractNative(EntityManagerFactory entityManagerFactory) throws JpaGpsDeviceException {
         if (entityManagerFactory instanceof EntityManagerFactoryInfo) {

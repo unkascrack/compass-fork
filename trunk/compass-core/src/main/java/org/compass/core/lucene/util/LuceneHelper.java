@@ -24,9 +24,11 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.index.TermEnum;
 import org.apache.lucene.index.TermFreqVector;
 import org.apache.lucene.search.Filter;
+import org.apache.lucene.search.HitCollector;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.store.Directory;
 import org.compass.core.Compass;
+import org.compass.core.CompassException;
 import org.compass.core.CompassHits;
 import org.compass.core.CompassQuery;
 import org.compass.core.CompassQueryFilter;
@@ -46,6 +48,7 @@ import org.compass.core.lucene.engine.LuceneSearchEngineQuery;
 import org.compass.core.lucene.engine.LuceneSearchEngineQueryFilter;
 import org.compass.core.lucene.engine.analyzer.LuceneAnalyzerManager;
 import org.compass.core.lucene.engine.manager.LuceneSearchEngineIndexManager;
+import org.compass.core.lucene.engine.spellcheck.InternalLuceneSearchEngineSpellCheckManager;
 import org.compass.core.spi.InternalCompass;
 import org.compass.core.spi.InternalCompassQuery;
 import org.compass.core.spi.InternalCompassSession;
@@ -60,9 +63,9 @@ import org.compass.core.spi.InternalResource;
 public abstract class LuceneHelper {
 
     /**
-     * Creates a new {@link CompassQuery} based on a Lucene {@link Query}.
+     * Creates a new {@link org.compass.core.CompassQuery} based on a Lucene {@link org.apache.lucene.search.Query}.
      *
-     * <p>Allows to create {@link CompassQuery} based on external Lucene {@link Query} that is not supported
+     * <p>Allows to create {@link org.compass.core.CompassQuery} based on external Lucene {@link org.apache.lucene.search.Query} that is not supported
      * by one of Compass query builders.
      *
      * @param compass Compass instance
@@ -77,9 +80,9 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Creates a new {@link CompassQuery} based on a Lucene {@link Query}.
+     * Creates a new {@link org.compass.core.CompassQuery} based on a Lucene {@link org.apache.lucene.search.Query}.
      *
-     * <p>Allows to create {@link CompassQuery} based on external Lucene {@link Query} that is not supported
+     * <p>Allows to create {@link org.compass.core.CompassQuery} based on external Lucene {@link org.apache.lucene.search.Query} that is not supported
      * by one of Compass query builders.
      *
      * @param session Compass session
@@ -96,10 +99,10 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns the underlying {@link LuceneSearchEngineQuery} of the given {@link CompassQuery}.
+     * Returns the underlying {@link org.compass.core.lucene.engine.LuceneSearchEngineQuery} of the given {@link org.compass.core.CompassQuery}.
      * <p/>
      * Can be used for example to add custom Sorting using
-     * {@link LuceneSearchEngineQuery#addSort(org.apache.lucene.search.SortField)}, or get the actual lucene query
+     * {@link org.compass.core.lucene.engine.LuceneSearchEngineQuery#addSort(org.apache.lucene.search.SortField)}, or get the actual lucene query
      * using {@link org.compass.core.lucene.engine.LuceneSearchEngineQuery#getQuery()}.
      *
      * @param query The compass query to extract the lucene search engine query from
@@ -110,9 +113,9 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Creates a new {@link CompassQueryFilter} based on a Lucene {@link Filter}.
+     * Creates a new {@link org.compass.core.CompassQueryFilter} based on a Lucene {@link org.apache.lucene.search.Filter}.
      * <p/>
-     * Allows to create {@link CompassQueryFilter} based on external Lucene {@link Filter} that is not supported
+     * Allows to create {@link org.compass.core.CompassQueryFilter} based on external Lucene {@link org.apache.lucene.search.Filter} that is not supported
      * by one fo Comapss query filter builders.
      *
      * @param session Comapss session
@@ -125,9 +128,9 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns the underlying {@link LuceneSearchEngineQueryFilter} of the given {@link CompassQueryFilter}.
+     * Returns the underlying {@link org.compass.core.lucene.engine.LuceneSearchEngineQueryFilter} of the given {@link org.compass.core.CompassQueryFilter}.
      * <p/>
-     * Can be used to get the actual Lucene {@link Filter} using
+     * Can be used to get the actual Lucene {@link org.apache.lucene.search.Filter} using
      * {@link org.compass.core.lucene.engine.LuceneSearchEngineQueryFilter#getFilter()}.
      *
      * @param filter The compass query filter to extract the lucene search engine query filter from
@@ -138,7 +141,7 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns the underlying {@link LuceneSearchEngineHits} of the given {@link CompassHits}.
+     * Returns the underlying {@link org.compass.core.lucene.engine.LuceneSearchEngineHits} of the given {@link org.compass.core.CompassHits}.
      * <p/>
      * Used mainly to access the actual Lucene {@link org.apache.lucene.search.Hits}, or get
      * Lucene {@link org.apache.lucene.search.Explanation}.
@@ -157,7 +160,7 @@ public abstract class LuceneHelper {
 
     /**
      * Returns the given search engine "internals" used for search. For Lucene, returns
-     * {@link LuceneSearchEngineInternalSearch} which allows to access Lucene
+     * {@link org.compass.core.lucene.engine.LuceneSearchEngineInternalSearch} which allows to access Lucene
      * {@link org.apache.lucene.index.IndexReader} and {@link org.apache.lucene.search.Searcher}.
      * <p/>
      * The search intenrals will be ones that are executed against the whole index. In order to search on
@@ -172,7 +175,7 @@ public abstract class LuceneHelper {
 
     /**
      * Returns the given search engine "internals" used for search. For Lucene, returns
-     * {@link LuceneSearchEngineInternalSearch} which allows to access Lucene
+     * {@link org.compass.core.lucene.engine.LuceneSearchEngineInternalSearch} which allows to access Lucene
      * {@link org.apache.lucene.index.IndexReader} and {@link org.apache.lucene.search.Searcher}.
      * <p/>
      * The search can be narrowed down to specific sub indexes or aliases. A <code>null</code> value
@@ -188,7 +191,7 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns the actual Lucene {@link Document} that the {@link Resource} wraps.
+     * Returns the actual Lucene {@link org.apache.lucene.document.Document} that the {@link org.compass.core.Resource} wraps.
      *
      * @param resource The resource to get the document from
      * @return The Lucene document that resource wraps
@@ -198,12 +201,12 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns Lucene {@link TermFreqVector} using the given Compass session and {@link Resource}.
+     * Returns Lucene {@link org.apache.lucene.index.TermFreqVector} using the given Compass session and {@link org.compass.core.Resource}.
      *
      * @param session  Compass session
      * @param resource The resource to get the term freq vector for
      * @return The term infos freq vector for the given resource
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     public static TermFreqVector[] getTermFreqVectors(CompassSession session, Resource resource)
             throws SearchEngineException {
@@ -218,13 +221,13 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns Lucene {@link TermFreqVector} for the given property and resource, using the session.
+     * Returns Lucene {@link org.apache.lucene.index.TermFreqVector} for the given property and resource, using the session.
      *
      * @param session      Compass session
      * @param resource     The resource to get the term freq vector for
      * @param propertyName Theh property name (Lucene field name) to get the term freq vector for
      * @return Teh term info freq vector for the given resource and property
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     public static TermFreqVector getTermFreqVector(CompassSession session, Resource resource, String propertyName)
             throws SearchEngineException {
@@ -243,6 +246,17 @@ public abstract class LuceneHelper {
      */
     public static Directory getDirectory(Compass compass, String subIndex) {
         return ((LuceneSearchEngineIndexManager) ((InternalCompass) compass).getSearchEngineIndexManager()).getStore().openDirectory(subIndex);
+    }
+
+    /**
+     * Returns the lucene {@link org.apache.lucene.store.Directory} used for spell checking associtaed with the given sub index.
+     */
+    public static Directory getSpellCheckDirectory(Compass compass, String subIndex) {
+        InternalLuceneSearchEngineSpellCheckManager spellCheckManager = ((InternalLuceneSearchEngineSpellCheckManager) ((InternalCompass) compass).getSpellCheckManager());
+        if (spellCheckManager == null) {
+            throw new CompassException("Spell check is not enabled");
+        }
+        return spellCheckManager.getStore().openDirectory(spellCheckManager.getStoreSubContext(), subIndex);
     }
 
     /**
@@ -265,4 +279,36 @@ public abstract class LuceneHelper {
         }
         return list.toArray(new String[list.size()]);
     }
+
+    /**
+     * Collect results using a {@link org.apache.lucene.search.HitCollector}.
+     *
+     * While using HitCollectors make sure that
+     * <ul>
+     * <li>You aren't loading documents in each collect operation</li>
+     * <li>You are using the field cache</li>
+     * </ul>
+     *
+     * @param query        The query to use
+     * @param hitCollector The hit collector to use
+     * @return the LuceneSearchEngineInternalSearch that was used or null if no index was available
+     */
+    public static LuceneSearchEngineInternalSearch collect(CompassQuery query, HitCollector hitCollector) {
+        InternalCompassQuery intenralQuery = ((InternalCompassQuery) query);
+        LuceneSearchEngineQuery luceneQuery = getLuceneSearchEngineQuery(query);
+        LuceneSearchEngineInternalSearch internalSearch = getLuceneInternalSearch(intenralQuery.getSession(), luceneQuery.getSubIndexes(), luceneQuery.getAliases());
+
+        try {
+            if (internalSearch.getSearcher() == null) {
+                // no index
+                return null;
+            }
+            internalSearch.getSearcher().search(luceneQuery.getQuery(), luceneQuery.getFilter().getFilter(), hitCollector);
+            return internalSearch;
+        } catch (IOException e) {
+            throw new SearchEngineException("Failed to collect hits for query [" + query + "]", e);
+        }
+    }
+
+
 }

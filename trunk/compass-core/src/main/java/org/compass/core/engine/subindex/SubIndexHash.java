@@ -21,7 +21,7 @@ import org.compass.core.engine.SearchEngineException;
 
 /**
  * Reprensetns a set of sub indexes, and knows how to map a single sub index
- * value from an alias and a set of {@link Property} ids.
+ * value from an alias and a set of {@link org.compass.core.Property} ids.
  *
  * <p>This allows to have different mappings from {@link org.compass.core.Resource}
  * to a specific sub index.
@@ -42,7 +42,7 @@ public interface SubIndexHash {
      * @param alias The alias to compute the sub index by (optional)
      * @param ids   The set of ids to compute the sub index by (optional)
      * @return The hashed sub index
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     String mapSubIndex(String alias, Property[] ids) throws SearchEngineException;
 }

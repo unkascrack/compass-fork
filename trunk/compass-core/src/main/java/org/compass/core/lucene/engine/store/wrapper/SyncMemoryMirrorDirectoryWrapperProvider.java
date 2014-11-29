@@ -23,10 +23,10 @@ import org.apache.lucene.store.wrapper.SyncMemoryMirrorDirectoryWrapper;
 import org.compass.core.engine.SearchEngineException;
 
 /**
- * Wraps a Lucene {@link Directory} with {@link SyncMemoryMirrorDirectoryWrapper}.
+ * Wraps a Lucene {@link org.apache.lucene.store.Directory} with {@link org.apache.lucene.store.wrapper.SyncMemoryMirrorDirectoryWrapper}.
  *
  * @author kimchy
- * @see SyncMemoryMirrorDirectoryWrapper
+ * @see org.apache.lucene.store.wrapper.SyncMemoryMirrorDirectoryWrapper
  */
 public class SyncMemoryMirrorDirectoryWrapperProvider implements DirectoryWrapperProvider {
 

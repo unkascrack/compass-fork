@@ -20,7 +20,7 @@ import java.text.Format;
 import java.text.ParseException;
 
 /**
- * A {@link org.compass.core.converter.basic.format.Formatter} implementation that uses
+ * A {@link Formatter} implementation that uses
  * {@link java.text.Format}.
  *
  * @author kimchy

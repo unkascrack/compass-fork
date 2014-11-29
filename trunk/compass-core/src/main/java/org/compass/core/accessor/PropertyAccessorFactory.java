@@ -30,10 +30,10 @@ import org.compass.core.mapping.MappingException;
 import org.compass.core.util.ClassUtils;
 
 /**
- * A factory that creates a {@link PropertyAccessor}.
+ * A factory that creates a {@link org.compass.core.accessor.PropertyAccessor}.
  * <p/>
  * Acts as a registry for property accessors, with two default implementations,
- * {@link BasicPropertyAccessor} registered under "property", and {@link DirectPropertyAccessor}
+ * {@link org.compass.core.accessor.BasicPropertyAccessor} registered under "property", and {@link org.compass.core.accessor.DirectPropertyAccessor}
  * registered under "field".
  * <p/>
  * Allows for configuration of new property accessors, and register them under new/same names.
@@ -84,7 +84,7 @@ public class PropertyAccessorFactory implements CompassConfigurable {
 
     /**
      * Returns a new property accessor that match the given type. If the type is <code>null</code>
-     * will return the {@link BasicPropertyAccessor}. If the type can be found in the pre
+     * will return the {@link org.compass.core.accessor.BasicPropertyAccessor}. If the type can be found in the pre
      * configured registry of property accessors, will return it. If nothing is found in
      * the registry will try to instanciate it using the type as the class name.
      */

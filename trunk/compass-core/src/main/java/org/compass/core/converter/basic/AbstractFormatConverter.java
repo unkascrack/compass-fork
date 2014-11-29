@@ -29,12 +29,12 @@ import org.compass.core.converter.basic.format.ThreadSafeFormat;
 import org.compass.core.util.StringUtils;
 
 /**
- * A base class that can handle {@link ThreadSafeFormat} and provide formatting support.
- * The format is read from a configuration setting {@link CompassEnvironment.Converter.Format#FORMAT}.
- * Uses a pool of formatters for better performance, using {@link CompassEnvironment.Converter.Format#MIN_POOL_SIZE},
- * and {@link CompassEnvironment.Converter.Format#MAX_POOL_SIZE} as configuration settings for the pool size.
+ * A base class that can handle {@link org.compass.core.converter.basic.format.ThreadSafeFormat} and provide formatting support.
+ * The format is read from a configuration setting {@link org.compass.core.config.CompassEnvironment.Converter.Format#FORMAT}.
+ * Uses a pool of formatters for better performance, using {@link org.compass.core.config.CompassEnvironment.Converter.Format#MIN_POOL_SIZE},
+ * and {@link org.compass.core.config.CompassEnvironment.Converter.Format#MAX_POOL_SIZE} as configuration settings for the pool size.
  *
- * <p>If specific locale is required for the formatted, the {@link CompassEnvironment.Converter.Format#LOCALE} can
+ * <p>If specific locale is required for the formatted, the {@link org.compass.core.config.CompassEnvironment.Converter.Format#LOCALE} can
  * be used to specify the required locale.
  *
  * <p>Allows to specify the default format if none is provided by overriding {@link #doGetDefaultFormat()}.

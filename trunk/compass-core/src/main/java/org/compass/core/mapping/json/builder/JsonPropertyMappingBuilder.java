@@ -30,7 +30,7 @@ import org.compass.core.mapping.json.Naming;
  * A builder allowing to constrcut json property mapping definition.
  *
  * @author kimchy
- * @see JSEM#property(String)
+ * @see org.compass.core.mapping.json.builder.JSEM#property(String)
  */
 public class JsonPropertyMappingBuilder {
 

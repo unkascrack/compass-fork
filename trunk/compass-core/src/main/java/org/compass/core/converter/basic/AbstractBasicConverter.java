@@ -139,16 +139,16 @@ public abstract class AbstractBasicConverter<T> implements ContextResourceProper
     }
 
     /**
-     * <p>A simple extension point that allows to set the boost value for the created {@link Property}.
+     * <p>A simple extension point that allows to set the boost value for the created {@link org.compass.core.Property}.
      *
      * <p>The default implemenation uses the statically defined boost value in the mapping definition
      * ({@link org.compass.core.mapping.ResourcePropertyMapping#getBoost()}) to set the boost level
-     * using {@link Property#setBoost(float)}
+     * using {@link org.compass.core.Property#setBoost(float)}
      *
      * @param property                The property to set the boost on
      * @param root                    The object that is marshalled into a property
      * @param resourcePropertyMapping The Resource Property Mapping definition
-     * @throws ConversionException
+     * @throws org.compass.core.converter.ConversionException
      */
     protected void doSetBoost(Property property, T root, ResourcePropertyMapping resourcePropertyMapping,
                               MarshallingContext context) throws ConversionException {

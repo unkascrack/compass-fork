@@ -208,8 +208,8 @@ public final class ResourcePropertyLookup {
      * <code>false</code>), the provided value will be returned.
      *
      * <p>If none of the above happens, will convert it
-     * {@link org.compass.core.converter.mapping.ResourcePropertyConverter#fromString(String, org.compass.core.mapping.ResourcePropertyMapping)}
-     * and then {@link org.compass.core.converter.mapping.ResourcePropertyConverter#toString(Object, org.compass.core.mapping.ResourcePropertyMapping)}.
+     * {@link org.compass.core.converter.mapping.ResourcePropertyConverter#fromString(String, ResourcePropertyMapping)}
+     * and then {@link org.compass.core.converter.mapping.ResourcePropertyConverter#toString(Object, ResourcePropertyMapping)}.
      */
     public String normalizeString(String value) throws ConversionException {
         if (!hasSpecificConverter()) {

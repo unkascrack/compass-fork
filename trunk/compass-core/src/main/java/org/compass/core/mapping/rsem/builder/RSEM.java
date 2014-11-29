@@ -60,7 +60,7 @@ public abstract class RSEM {
 
     /**
      * Constructs a new resource id mapping using the specified name. Can then be added
-     * to a resource mapping builder using {@link ResourceMappingBuilder#add(ResourceIdMappingBuilder)}.
+     * to a resource mapping builder using {@link org.compass.core.mapping.rsem.builder.ResourceMappingBuilder#add(org.compass.core.mapping.rsem.builder.ResourceIdMappingBuilder)}.
      */
     public static ResourceIdMappingBuilder id(String name) {
         return new ResourceIdMappingBuilder(name);
@@ -68,7 +68,7 @@ public abstract class RSEM {
 
     /**
      * Constructs a new resource property mapping using the specified name. Can then be added
-     * to a resource mapping builder using {@link ResourceMappingBuilder#add(ResourcePropertyMappingBuilder)}.
+     * to a resource mapping builder using {@link org.compass.core.mapping.rsem.builder.ResourceMappingBuilder#add(org.compass.core.mapping.rsem.builder.ResourcePropertyMappingBuilder)}.
      */
     public static ResourcePropertyMappingBuilder property(String name) {
         return new ResourcePropertyMappingBuilder(name);
@@ -76,7 +76,7 @@ public abstract class RSEM {
 
     /**
      * Constructs a new resource analyzer property mapping using the specified name. Can then be added
-     * to a resource mapping builder using {@link ResourceMappingBuilder#add(ResourceAnalyzerMappingBuilder)}.
+     * to a resource mapping builder using {@link org.compass.core.mapping.rsem.builder.ResourceMappingBuilder#add(org.compass.core.mapping.rsem.builder.ResourceAnalyzerMappingBuilder)}.
      */
     public static ResourceAnalyzerMappingBuilder analyzer(String name) {
         return new ResourceAnalyzerMappingBuilder(name);
@@ -84,7 +84,7 @@ public abstract class RSEM {
 
     /**
      * Constructs a new resource boost property mapping using the specified name. Can then be added
-     * to a resource mapping builder using {@link ResourceMappingBuilder#add(ResourceBoostMappingBuilder)}.
+     * to a resource mapping builder using {@link org.compass.core.mapping.rsem.builder.ResourceMappingBuilder#add(org.compass.core.mapping.rsem.builder.ResourceBoostMappingBuilder)}.
      */
     public static ResourceBoostMappingBuilder boost(String name) {
         return new ResourceBoostMappingBuilder(name);
@@ -92,7 +92,7 @@ public abstract class RSEM {
 
     /**
      * Constructs a new all mapping definition that can be added to a resource mapping builder using
-     * {@link ResourceMappingBuilder#all(ResourceAllMappingBuilder)}.
+     * {@link org.compass.core.mapping.rsem.builder.ResourceMappingBuilder#all(org.compass.core.mapping.rsem.builder.ResourceAllMappingBuilder)}.
      */
     public static ResourceAllMappingBuilder all() {
         return new ResourceAllMappingBuilder();

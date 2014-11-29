@@ -1,15 +1,15 @@
 package org.compass.core.engine.naming;
 
 /**
- * A naming strategy that uses {@link DynamicPropertyPath} when building
- * {@link PropertyPath}.
+ * A naming strategy that uses {@link org.compass.core.engine.naming.DynamicPropertyPath} when building
+ * {@link org.compass.core.engine.naming.PropertyPath}.
  *
  * @author kimchy
  * @author lexi
- * @see PropertyPath
- * @see DynamicPropertyPath
- * @see PropertyNamingStrategyFactory
- * @see DefaultPropertyNamingStrategyFactory
+ * @see org.compass.core.engine.naming.PropertyPath
+ * @see org.compass.core.engine.naming.DynamicPropertyPath
+ * @see org.compass.core.engine.naming.PropertyNamingStrategyFactory
+ * @see org.compass.core.engine.naming.DefaultPropertyNamingStrategyFactory
  */
 public class DynamicPropertyNamingStrategy implements PropertyNamingStrategy {
 

@@ -90,7 +90,7 @@ public interface SearchEngineIndexManager {
     /**
      * Creates an index data. If exists, deletes it and creates a new one.
      *
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     void createIndex() throws SearchEngineException;
 
@@ -100,14 +100,14 @@ public interface SearchEngineIndexManager {
      * exists, and it's {@link org.compass.core.lucene.LuceneEnvironment.SearchEngineIndex#USE_COMPOUND_FILE}
      * changed it's settings, will compound / un-compound the index accordingly.
      *
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     boolean verifyIndex() throws SearchEngineException;
 
     /**
      * Deletes the index.
      *
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     void deleteIndex() throws SearchEngineException;
 
@@ -182,7 +182,7 @@ public interface SearchEngineIndexManager {
     /**
      * Refresh any internal caching done by the index.
      *
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     void refreshCache() throws SearchEngineException;
 
@@ -190,14 +190,14 @@ public interface SearchEngineIndexManager {
      * Notifies all the compass instances that are working with the same index to
      * clear cache.
      *
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     void notifyAllToClearCache() throws SearchEngineException;
 
     /**
      * Manual check if the notified to clear the cache globally. If it does, will clear the cache.
      *
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     void checkAndClearIfNotifiedAllToClearCache() throws SearchEngineException;
 

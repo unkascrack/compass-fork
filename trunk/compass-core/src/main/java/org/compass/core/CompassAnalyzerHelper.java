@@ -31,7 +31,7 @@ public interface CompassAnalyzerHelper {
      *
      * @param analyzerName The analyzer name that will be used.
      * @return the analyzer helper
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassAnalyzerHelper setAnalyzer(String analyzerName) throws CompassException;
 
@@ -42,7 +42,7 @@ public interface CompassAnalyzerHelper {
      *
      * @param resource The resource to derive the analyzer from
      * @return the analyzer helper
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassAnalyzerHelper setAnalyzer(Resource resource) throws CompassException;
 
@@ -54,7 +54,7 @@ public interface CompassAnalyzerHelper {
      *
      * @param alias The alias to derive the analyzer from
      * @return the analyzer helper
-     * @throws CompassException If the analyzer if not found
+     * @throws org.compass.core.CompassException If the analyzer if not found
      */
     CompassAnalyzerHelper setAnalyzerByAlias(String alias) throws CompassException;
 
@@ -63,7 +63,7 @@ public interface CompassAnalyzerHelper {
      *
      * @param text The text to analyze
      * @return The first token.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassToken analyzeSingle(String text) throws CompassException;
 
@@ -72,19 +72,19 @@ public interface CompassAnalyzerHelper {
      *
      * @param text The text to analyze
      * @return A set of tokens resulting from the analysis process.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassToken[] analyze(String text) throws CompassException;
 
     /**
      * Analyzes the given text, using (if needed) the anlayzer that is bound
-     * to the supplied property. Should be used with {@link #setAnalyzer(Resource)}
+     * to the supplied property. Should be used with {@link #setAnalyzer(org.compass.core.Resource)}
      * so the analyzer can be dynamically detected from the resource.
      *
      * @param propertyName The property name for analyze bound properties
      * @param text The text to analyze
      * @return A set of tokens resulting from the analysis process.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassToken[] analyze(String propertyName, String text) throws CompassException;
 
@@ -93,19 +93,19 @@ public interface CompassAnalyzerHelper {
      *
      * @param textReader The text to analyze
      * @return A set of tokens resulting from the analysis process.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassToken[] analyze(Reader textReader) throws CompassException;
 
     /**
      * Analyzes the given text, using (if needed) the anlayzer that is bound
-     * to the supplied property. Should be used with {@link #setAnalyzer(Resource)}
+     * to the supplied property. Should be used with {@link #setAnalyzer(org.compass.core.Resource)}
      * so the analyzer can be dynamically detected from the resource.
      *
      * @param propertyName The property name for analyze bound properties
      * @param textReader The text to analyze
      * @return A set of tokens resulting from the analysis process.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassToken[] analyze(String propertyName, Reader textReader) throws CompassException;
 

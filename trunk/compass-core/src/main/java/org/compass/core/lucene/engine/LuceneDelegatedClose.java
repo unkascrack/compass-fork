@@ -19,7 +19,7 @@ package org.compass.core.lucene.engine;
 import org.compass.core.engine.SearchEngineException;
 
 /**
- * Some operations that return results from {@link LuceneSearchEngine} do not have
+ * Some operations that return results from {@link org.compass.core.lucene.engine.LuceneSearchEngine} do not have
  * to be closed, and they will be closed automatically when the transaction commits/rollsback.
  * 
  * @author kimchy
@@ -28,7 +28,7 @@ public interface LuceneDelegatedClose {
 
     /**
      * Closes the delegate. Note, there is no need to remove the delegate using
-     * {@link LuceneSearchEngine#removeDelegatedClose(org.compass.core.lucene.engine.LuceneDelegatedClose)}.
+     * {@link org.compass.core.lucene.engine.LuceneSearchEngine#removeDelegatedClose(org.compass.core.lucene.engine.LuceneDelegatedClose)}.
      */
     void closeDelegate() throws SearchEngineException;
 }

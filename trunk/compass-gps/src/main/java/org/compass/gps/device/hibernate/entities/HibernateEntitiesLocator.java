@@ -21,7 +21,7 @@ import org.compass.gps.device.hibernate.HibernateGpsDeviceException;
 import org.hibernate.SessionFactory;
 
 /**
- * Resposible for locating entities for the index process. Most of the times the {@link org.compass.gps.device.hibernate.entities.DefaultHibernateEntitiesLocator}
+ * Resposible for locating entities for the index process. Most of the times the {@link DefaultHibernateEntitiesLocator}
  * should suffice, but this interface allows for pluggable strategies for finding indexable entities.
  *
  * @author kimchy
@@ -34,7 +34,7 @@ public interface HibernateEntitiesLocator {
      * @param sessionFactory The <code>SessionFactory<code> to be optionally used for locating the entities.
      * @param device         The Hibernate device that called this locator.
      * @return An array of the enteties that need to be indexed during the index operation.
-     * @throws HibernateGpsDeviceException
+     * @throws org.compass.gps.device.hibernate.HibernateGpsDeviceException
      */
     EntityInformation[] locate(SessionFactory sessionFactory, HibernateGpsDevice device) throws HibernateGpsDeviceException;
 }

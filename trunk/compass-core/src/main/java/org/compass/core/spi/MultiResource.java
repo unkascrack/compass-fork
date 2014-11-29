@@ -19,30 +19,30 @@ package org.compass.core.spi;
 import org.compass.core.Resource;
 
 /**
- * A multiple resource implementation. Exposes {@link Resource} operations as well, which
- * are performed against the current {@link Resource}.
+ * A multiple resource implementation. Exposes {@link org.compass.core.Resource} operations as well, which
+ * are performed against the current {@link org.compass.core.Resource}.
  *
  * @author kimchy
  */
 public interface MultiResource extends InternalResource {
 
     /**
-     * Returns the number of {@link Resource}s.
+     * Returns the number of {@link org.compass.core.Resource}s.
      */
     int size();
 
     /**
-     * Adds another {@link Resource}, and moves the current resource to the newly created one.
+     * Adds another {@link org.compass.core.Resource}, and moves the current resource to the newly created one.
      */
     void addResource();
 
     /**
-     * Returns the curren {@link Resource}.
+     * Returns the curren {@link org.compass.core.Resource}.
      */
     Resource currentResource();
 
     /**
-     * Returns the {@link Resource} at the given postion.
+     * Returns the {@link org.compass.core.Resource} at the given postion.
      */
     Resource resource(int i);
 

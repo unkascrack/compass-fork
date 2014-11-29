@@ -77,7 +77,7 @@ public abstract class CollectionUtils {
      *
      * @param source the (potentially primitive) array
      * @return the converted List result
-     * @see ObjectUtils#toObjectArray(Object)
+     * @see org.compass.core.util.ObjectUtils#toObjectArray(Object)
      */
     public static List arrayToList(Object source) {
         return Arrays.asList(ObjectUtils.toObjectArray(source));

@@ -22,7 +22,7 @@ import org.compass.core.converter.Converter;
 import org.compass.core.mapping.ResourcePropertyMapping;
 
 /**
- * A specialized converter that can convert to and from strings as well. Handles {@link ResourcePropertyMapping}.
+ * A specialized converter that can convert to and from strings as well. Handles {@link org.compass.core.mapping.ResourcePropertyMapping}.
  *
  * @author kimchy
  */
@@ -47,7 +47,7 @@ public interface ResourcePropertyConverter<T> extends Converter<T> {
      * @param o                       The Object to convert from
      * @param resourcePropertyMapping The resource proeprty mapping
      * @return The String converted from the Object
-     * @throws ConversionException
+     * @throws org.compass.core.converter.ConversionException
      */
     String toString(T o, ResourcePropertyMapping resourcePropertyMapping) throws ConversionException;
 

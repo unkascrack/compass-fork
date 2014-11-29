@@ -355,8 +355,8 @@ public class ConverterLookupMappingProcessor implements MappingProcessor {
         }
 
         /**
-         * Called for any resource property mapping type (for example, {@link ClassPropertyMetaDataMapping}
-         * and {@link ConstantMetaDataMapping}.
+         * Called for any resource property mapping type (for example, {@link org.compass.core.mapping.osem.ClassPropertyMetaDataMapping}
+         * and {@link org.compass.core.mapping.osem.ConstantMetaDataMapping}.
          *
          * @param resourcePropertyMapping The mapping of the callback
          */

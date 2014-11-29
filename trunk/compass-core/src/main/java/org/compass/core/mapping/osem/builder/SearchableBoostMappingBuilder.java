@@ -22,8 +22,8 @@ import org.compass.core.mapping.osem.ClassBoostPropertyMapping;
  * Allows to dynamically define the boost value of the resource based on a Class property value.
  *
  * @author kimchy
- * @see OSEM#boost(String)
- * @see SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableBoostMappingBuilder)
+ * @see org.compass.core.mapping.osem.builder.OSEM#boost(String)
+ * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableBoostMappingBuilder)
  */
 public class SearchableBoostMappingBuilder {
 

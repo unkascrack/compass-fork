@@ -257,7 +257,7 @@ public class DefaultCompassMapping implements InternalCompassMapping {
     }
 
     /**
-     * Finds the {@link ResourcePropertyMapping} definition for the specified path. The
+     * Finds the {@link org.compass.core.mapping.ResourcePropertyMapping} definition for the specified path. The
      * path is in the format of: [alias].[class property mapping].[meta data mapping] in
      * case of class mapping, and [alias].[resource property mapping] in case of resource
      * mapping. The format of [alias].[class property mapping] can also be applied, and

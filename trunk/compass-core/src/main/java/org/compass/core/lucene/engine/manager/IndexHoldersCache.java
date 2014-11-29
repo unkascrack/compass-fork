@@ -37,10 +37,10 @@ import org.compass.core.lucene.LuceneEnvironment;
 import org.compass.core.transaction.context.TransactionContextCallback;
 
 /**
- * A cache of {@link org.compass.core.lucene.engine.manager.LuceneIndexHolder}. Provides APIs to get an
+ * A cache of {@link LuceneIndexHolder}. Provides APIs to get an
  * index holder, manage its cache invalidation (either async or sync).
  *
- * <p>NOTE: All operations are not perfomed within a transactional context. The {@link org.compass.core.lucene.engine.manager.LuceneSearchEngineIndexManager}
+ * <p>NOTE: All operations are not perfomed within a transactional context. The {@link LuceneSearchEngineIndexManager}
  * provides transactionaly context for some of the operations.
  *
  * @author kimchy
@@ -66,7 +66,7 @@ public class IndexHoldersCache {
     private final ConcurrentMap<String, AtomicInteger> debugOpenHoldersCount;
 
     private final boolean debug;
-    
+
     public IndexHoldersCache(LuceneSearchEngineIndexManager indexManager) {
         this.indexManager = indexManager;
         for (String subIndex : indexManager.getSubIndexes()) {
@@ -83,16 +83,20 @@ public class IndexHoldersCache {
     }
 
     public void start() {
-        cacheAsyncInvalidation = indexManager.getSettings().getSettings().getSettingAsBoolean(LuceneEnvironment.SearchEngineIndex.CACHE_ASYNC_INVALIDATION, true);
-        long cacheInvalidationInterval = indexManager.getSettings().getCacheInvalidationInterval();
-        if (cacheInvalidationInterval > 0 && cacheAsyncInvalidation) {
-            if (logger.isInfoEnabled()) {
-                logger.info("Starting scheduled refresh cache with period [" + cacheInvalidationInterval + "ms]");
+        if (!indexManager.getExecutorManager().isDisabled()) {
+            cacheAsyncInvalidation = indexManager.getSettings().getSettings().getSettingAsBoolean(LuceneEnvironment.SearchEngineIndex.CACHE_ASYNC_INVALIDATION, true);
+            long cacheInvalidationInterval = indexManager.getSettings().getCacheInvalidationInterval();
+            if (cacheInvalidationInterval > 0 && cacheAsyncInvalidation) {
+                if (logger.isInfoEnabled()) {
+                    logger.info("Starting scheduled refresh cache with period [" + cacheInvalidationInterval + "ms]");
+                }
+                ScheduledRefreshCacheRunnable scheduledRefreshCacheRunnable = new ScheduledRefreshCacheRunnable();
+                scheduledRefreshCacheFuture = indexManager.getExecutorManager().scheduleWithFixedDelay(scheduledRefreshCacheRunnable, cacheInvalidationInterval, cacheInvalidationInterval, TimeUnit.MILLISECONDS);
+            } else {
+                logger.info("Scheduled refresh cache is disabled");
             }
-            ScheduledRefreshCacheRunnable scheduledRefreshCacheRunnable = new ScheduledRefreshCacheRunnable();
-            scheduledRefreshCacheFuture = indexManager.getExecutorManager().scheduleWithFixedDelay(scheduledRefreshCacheRunnable, cacheInvalidationInterval, cacheInvalidationInterval, TimeUnit.MILLISECONDS);
         } else {
-            logger.info("Not starting scheduled refresh cache");
+            logger.info("Scheduled refresh cache is disabled since executor manager is disabled");
         }
     }
 
@@ -107,7 +111,7 @@ public class IndexHoldersCache {
         if (indexManager.getSearchEngineFactory().isDebug()) {
             for (Map.Entry<String, AtomicInteger> entry : debugOpenHoldersCount.entrySet()) {
                 if (entry.getValue().get() > 0) {
-                    logger.error("[CACHE HOLDER] Sub Index [" + entry.getKey() +  "] has [" + entry.getValue() + "] holder(s) open");
+                    logger.error("[CACHE HOLDER] Sub Index [" + entry.getKey() + "] has [" + entry.getValue() + "] holder(s) open");
                 }
             }
         }
@@ -249,7 +253,7 @@ public class IndexHoldersCache {
 
     /**
      * Returns an <b>acquired</b> index holder for the specified sub index. Make sure to call
-     * {@link LuceneIndexHolder#release()} once it is no longer needed.
+     * {@link org.compass.core.lucene.engine.manager.LuceneIndexHolder#release()} once it is no longer needed.
      */
     public LuceneIndexHolder getHolder(String subIndex) throws SearchEngineException {
         try {

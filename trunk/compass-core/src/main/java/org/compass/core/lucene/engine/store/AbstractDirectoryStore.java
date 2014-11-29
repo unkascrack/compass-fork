@@ -26,7 +26,7 @@ import org.compass.core.engine.SearchEngineException;
 import org.compass.core.engine.event.SearchEngineEventManager;
 
 /**
- * Base class for different {@link org.compass.core.lucene.engine.store.DirectoryStore} implementations. 
+ * Base class for different {@link DirectoryStore} implementations.
  *
  * @author kimchy
  */

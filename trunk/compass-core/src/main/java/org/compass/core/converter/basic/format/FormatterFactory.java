@@ -19,7 +19,7 @@ package org.compass.core.converter.basic.format;
 import java.util.Locale;
 
 /**
- * A factory that creates {@link Formatter}s.
+ * A factory that creates {@link org.compass.core.converter.basic.format.Formatter}s.
  *
  * @author kimchy
  */
@@ -31,7 +31,7 @@ public interface FormatterFactory {
     void configure(String format, Locale locale);
 
     /**
-     * Creates a new {@link Formatter} instance.
+     * Creates a new {@link org.compass.core.converter.basic.format.Formatter} instance.
      */
     Formatter create();
 }

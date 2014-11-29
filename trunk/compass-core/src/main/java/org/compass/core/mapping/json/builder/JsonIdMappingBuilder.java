@@ -27,7 +27,7 @@ import org.compass.core.mapping.json.JsonIdMapping;
  * A builder allowing to constrcut json id mapping definition.
  *
  * @author kimchy
- * @see JSEM#id(String)
+ * @see org.compass.core.mapping.json.builder.JSEM#id(String)
  */
 public class JsonIdMappingBuilder {
 

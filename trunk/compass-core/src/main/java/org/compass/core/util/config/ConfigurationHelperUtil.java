@@ -161,7 +161,7 @@ public class ConfigurationHelperUtil {
     }
 
     /**
-     * Create an DOM {@link org.w3c.dom.Element} from a {@link ConfigurationHelper} object.
+     * Create an DOM {@link org.w3c.dom.Element} from a {@link org.compass.core.util.config.ConfigurationHelper} object.
      */
     private static Element createElement(final Document document, final ConfigurationHelper configuration) {
         final Element element = document.createElement(configuration.getName());

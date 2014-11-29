@@ -178,7 +178,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param jo    A JSONObject.
      * @param names An array of strings.
-     * @throws DefaultJSONException If a value is a non-finite number.
+     * @throws org.compass.core.json.impl.DefaultJSONException If a value is a non-finite number.
      */
     public DefaultJSONObject(DefaultJSONObject jo, String[] names) throws DefaultJSONException {
         this();
@@ -192,7 +192,7 @@ public class DefaultJSONObject implements JsonObject {
      * Construct a JSONObject from a JSONTokener.
      *
      * @param x A JSONTokener object containing the source string.
-     * @throws DefaultJSONException If there is a syntax error in the source string.
+     * @throws org.compass.core.json.impl.DefaultJSONException If there is a syntax error in the source string.
      */
     public DefaultJSONObject(DefaultJSONTokener x) throws DefaultJSONException {
         this();
@@ -347,7 +347,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param source A string beginning
      *               with <code>{</code>&nbsp;<small>(left brace)</small> and ending
      *               with <code>}</code>&nbsp;<small>(right brace)</small>.
-     * @throws DefaultJSONException If there is a syntax error in the source string.
+     * @throws org.compass.core.json.impl.DefaultJSONException If there is a syntax error in the source string.
      */
     public DefaultJSONObject(String source) throws DefaultJSONException {
         this(new DefaultJSONTokener(source));
@@ -364,7 +364,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param key   A key string.
      * @param value An object to be accumulated under the key.
      * @return this.
-     * @throws DefaultJSONException If the value is an invalid number
+     * @throws org.compass.core.json.impl.DefaultJSONException If the value is an invalid number
      *                       or if the key is null.
      */
     public DefaultJSONObject accumulate(String key, Object value)
@@ -393,7 +393,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param key   A key string.
      * @param value An object to be accumulated under the key.
      * @return this.
-     * @throws DefaultJSONException If the key is null or if the current value
+     * @throws org.compass.core.json.impl.DefaultJSONException If the key is null or if the current value
      *                       associated with the key is not a JSONArray.
      */
     public DefaultJSONObject append(String key, Object value)
@@ -444,7 +444,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param key A key string.
      * @return The object associated with the key.
-     * @throws DefaultJSONException if the key is not found.
+     * @throws org.compass.core.json.impl.DefaultJSONException if the key is not found.
      */
     public Object get(String key) throws DefaultJSONException {
         Object o = opt(key);
@@ -461,7 +461,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param key A key string.
      * @return The truth.
-     * @throws DefaultJSONException if the value is not a Boolean or the String "true" or "false".
+     * @throws org.compass.core.json.impl.DefaultJSONException if the value is not a Boolean or the String "true" or "false".
      */
     public boolean getBoolean(String key) throws DefaultJSONException {
         Object o = get(key);
@@ -484,7 +484,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param key A key string.
      * @return The numeric value.
-     * @throws DefaultJSONException if the key is not found or
+     * @throws org.compass.core.json.impl.DefaultJSONException if the key is not found or
      *                       if the value is not a Number object and cannot be converted to a number.
      */
     public double getDouble(String key) throws DefaultJSONException {
@@ -506,7 +506,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param key A key string.
      * @return The integer value.
-     * @throws DefaultJSONException if the key is not found or if the value cannot
+     * @throws org.compass.core.json.impl.DefaultJSONException if the key is not found or if the value cannot
      *                       be converted to an integer.
      */
     public int getInt(String key) throws DefaultJSONException {
@@ -521,7 +521,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param key A key string.
      * @return A JSONArray which is the value.
-     * @throws DefaultJSONException if the key is not found or
+     * @throws org.compass.core.json.impl.DefaultJSONException if the key is not found or
      *                       if the value is not a JSONArray.
      */
     public DefaultJSONArray getJSONArray(String key) throws DefaultJSONException {
@@ -539,7 +539,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param key A key string.
      * @return A JSONObject which is the value.
-     * @throws DefaultJSONException if the key is not found or
+     * @throws org.compass.core.json.impl.DefaultJSONException if the key is not found or
      *                       if the value is not a JSONObject.
      */
     public DefaultJSONObject getJSONObject(String key) throws DefaultJSONException {
@@ -558,7 +558,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param key A key string.
      * @return The long value.
-     * @throws DefaultJSONException if the key is not found or if the value cannot
+     * @throws org.compass.core.json.impl.DefaultJSONException if the key is not found or if the value cannot
      *                       be converted to a long.
      */
     public long getLong(String key) throws DefaultJSONException {
@@ -617,7 +617,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param key A key string.
      * @return A string which is the value.
-     * @throws DefaultJSONException if the key is not found.
+     * @throws org.compass.core.json.impl.DefaultJSONException if the key is not found.
      */
     public String getString(String key) throws DefaultJSONException {
         return get(key).toString();
@@ -689,7 +689,7 @@ public class DefaultJSONObject implements JsonObject {
      *
      * @param n A Number
      * @return A String.
-     * @throws DefaultJSONException If n is a non-finite number.
+     * @throws org.compass.core.json.impl.DefaultJSONException If n is a non-finite number.
      */
     static public String numberToString(Number n)
             throws DefaultJSONException {
@@ -762,7 +762,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param key   A key string.
      * @param value A Collection value.
      * @return this.
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      */
     public DefaultJSONObject put(String key, Collection value) throws DefaultJSONException {
         put(key, new DefaultJSONArray(value));
@@ -932,7 +932,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param key   A key string.
      * @param value A boolean which is the value.
      * @return this.
-     * @throws DefaultJSONException If the key is null.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the key is null.
      */
     public DefaultJSONObject put(String key, boolean value) throws DefaultJSONException {
         put(key, value ? Boolean.TRUE : Boolean.FALSE);
@@ -946,7 +946,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param key   A key string.
      * @param value A double which is the value.
      * @return this.
-     * @throws DefaultJSONException If the key is null or if the number is invalid.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the key is null or if the number is invalid.
      */
     public DefaultJSONObject put(String key, double value) throws DefaultJSONException {
         put(key, new Double(value));
@@ -960,7 +960,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param key   A key string.
      * @param value An int which is the value.
      * @return this.
-     * @throws DefaultJSONException If the key is null.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the key is null.
      */
     public DefaultJSONObject put(String key, int value) throws DefaultJSONException {
         put(key, new Integer(value));
@@ -974,7 +974,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param key   A key string.
      * @param value A long which is the value.
      * @return this.
-     * @throws DefaultJSONException If the key is null.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the key is null.
      */
     public DefaultJSONObject put(String key, long value) throws DefaultJSONException {
         put(key, new Long(value));
@@ -989,7 +989,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param key   A key string.
      * @param value A Map value.
      * @return this.
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      */
     public DefaultJSONObject put(String key, Map<String, Object> value) throws DefaultJSONException {
         put(key, new DefaultJSONObject(value));
@@ -1006,7 +1006,7 @@ public class DefaultJSONObject implements JsonObject {
      *              types: Boolean, Double, Integer, JSONArray, JSONObject, Long, String,
      *              or the JSONObject.NULL object.
      * @return this.
-     * @throws DefaultJSONException If the value is non-finite number
+     * @throws org.compass.core.json.impl.DefaultJSONException If the value is non-finite number
      *                       or if the key is null.
      */
     public DefaultJSONObject put(String key, Object value) throws DefaultJSONException {
@@ -1032,7 +1032,7 @@ public class DefaultJSONObject implements JsonObject {
      *              types: Boolean, Double, Integer, JSONArray, JSONObject, Long, String,
      *              or the JSONObject.NULL object.
      * @return this.
-     * @throws DefaultJSONException If the value is a non-finite number.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the value is a non-finite number.
      */
     public DefaultJSONObject putOpt(String key, Object value) throws DefaultJSONException {
         if (key != null && value != null) {
@@ -1133,7 +1133,7 @@ public class DefaultJSONObject implements JsonObject {
      * Throw an exception if the object is an NaN or infinite number.
      *
      * @param o The object to test.
-     * @throws DefaultJSONException If o is a non-finite number.
+     * @throws org.compass.core.json.impl.DefaultJSONException If o is a non-finite number.
      */
     static void testValidity(Object o) throws DefaultJSONException {
         if (o != null) {
@@ -1159,7 +1159,7 @@ public class DefaultJSONObject implements JsonObject {
      * @param names A JSONArray containing a list of key strings. This
      *              determines the sequence of the values in the result.
      * @return A JSONArray of values.
-     * @throws DefaultJSONException If any of the values are non-finite numbers.
+     * @throws org.compass.core.json.impl.DefaultJSONException If any of the values are non-finite numbers.
      */
     public DefaultJSONArray toJSONArray(DefaultJSONArray names) throws DefaultJSONException {
         if (names == null || names.length() == 0) {
@@ -1217,7 +1217,7 @@ public class DefaultJSONObject implements JsonObject {
      *         representation of the object, beginning
      *         with <code>{</code>&nbsp;<small>(left brace)</small> and ending
      *         with <code>}</code>&nbsp;<small>(right brace)</small>.
-     * @throws DefaultJSONException If the object contains an invalid number.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the object contains an invalid number.
      */
     public String toString(int indentFactor) throws DefaultJSONException {
         return toString(indentFactor, 0);
@@ -1236,7 +1236,7 @@ public class DefaultJSONObject implements JsonObject {
      *         representation of the object, beginning
      *         with <code>{</code>&nbsp;<small>(left brace)</small> and ending
      *         with <code>}</code>&nbsp;<small>(right brace)</small>.
-     * @throws DefaultJSONException If the object contains an invalid number.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the object contains an invalid number.
      */
     String toString(int indentFactor, int indent) throws DefaultJSONException {
         int j;
@@ -1302,7 +1302,7 @@ public class DefaultJSONObject implements JsonObject {
      *         representation of the object, beginning
      *         with <code>{</code>&nbsp;<small>(left brace)</small> and ending
      *         with <code>}</code>&nbsp;<small>(right brace)</small>.
-     * @throws DefaultJSONException If the value is or contains an invalid number.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the value is or contains an invalid number.
      */
     static String valueToString(Object value) throws DefaultJSONException {
         if (value == null || value.equals(null)) {
@@ -1353,7 +1353,7 @@ public class DefaultJSONObject implements JsonObject {
      *         representation of the object, beginning
      *         with <code>{</code>&nbsp;<small>(left brace)</small> and ending
      *         with <code>}</code>&nbsp;<small>(right brace)</small>.
-     * @throws DefaultJSONException If the object contains an invalid number.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the object contains an invalid number.
      */
     static String valueToString(Object value, int indentFactor, int indent)
             throws DefaultJSONException {
@@ -1402,7 +1402,7 @@ public class DefaultJSONObject implements JsonObject {
      * Warning: This method assumes that the data structure is acyclical.
      *
      * @return The writer.
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      */
     public Writer write(Writer writer) throws DefaultJSONException {
         try {

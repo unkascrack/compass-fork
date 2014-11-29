@@ -1,15 +1,21 @@
-mvn install:install-file -Dfile= -DgroupId=com.sun.jndi -DartifactId=fscontext -Dversion=1.2.1 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
-mvn install:install-file -Dfile= -DgroupId=com.sun.jndi -DartifactId=providerutil -Dversion=1.2.1 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=com.sun.jndi -DartifactId=fscontext -Dversion=1.2.1 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=com.sun.jndi -DartifactId=providerutil -Dversion=1.2.1 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
 
-mvn install:install-file -Dfile= -DgroupId=com.gigaspaces -DartifactId=gigaspaces -Dversion=6.6.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
-mvn install:install-file -Dfile= -DgroupId=org.gigaspaces -DartifactId=gs-boot -Dversion=6.6.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
-mvn install:install-file -Dfile= -DgroupId=org.gigaspaces -DartifactId=gs-lib -Dversion=6.6.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
-mvn install:install-file -Dfile= -DgroupId=org.openspaces -DartifactId=openspaces -Dversion=6.6.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=com.gigaspaces -DartifactId=gigaspaces -Dversion=6.6.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=org.gigaspaces -DartifactId=gs-boot -Dversion=6.6.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=org.gigaspaces -DartifactId=gs-lib -Dversion=6.6.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=org.openspaces -DartifactId=openspaces -Dversion=6.6.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
 
-mvn install:install-file -Dfile= -DgroupId=net.jini -DartifactId=jsk-lib -Dversion=2.0 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
-mvn install:install-file -Dfile= -DgroupId=net.jini -DartifactId=jsk-platform -Dversion=2.0 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=net.jini -DartifactId=jsk-lib -Dversion=2.0 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=net.jini -DartifactId=jsk-platform -Dversion=2.0 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
 
 
-mvn install:install-file -Dfile= -DgroupId=org.terracotta.modules -DartifactId=tim-concurrent-collections -Dversion=2.7.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=org.terracotta.modules -DartifactId=tim-concurrent-collections -Dversion=2.7.3 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
 
-mvn install:install-file -Dfile= -DgroupId=com.oracle.coherence -DartifactId=coherence -Dversion=3.4.2 -Dpackaging=jar -DlocalRepositoryPath=~/compass-parent/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=com.oracle.coherence -DartifactId=coherence -Dversion=3.4.2 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+
+mvn install:install-file -Dfile= -DgroupId=com.google.appengine -DartifactId=appengine-api -Dversion=1.0 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=com.google.appengine -DartifactId=appengine-api-labs -Dversion=1.0 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=com.google.appengine -DartifactId=appengine-api-stub -Dversion=1.0 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+mvn install:install-file -Dfile= -DgroupId=com.google.appengine -DartifactId=appengine-local-runtime -Dversion=1.0 -Dpackaging=jar -DlocalRepositoryPath=~/compass/compass-repository/src/repository
+

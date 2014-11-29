@@ -19,7 +19,7 @@ package org.compass.core.json.impl;
 import org.compass.core.json.AliasedJsonObject;
 
 /**
- * An aliased {@link DefaultJSONObject}.
+ * An aliased {@link org.compass.core.json.impl.DefaultJSONObject}.
  *
  * @author kimchy
  */
@@ -53,7 +53,7 @@ public class DefaultAliasedJSONObject extends DefaultJSONObject implements Alias
      *
      * @param alias   The alias name
      * @param tokener The JSON tokener
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      */
     public DefaultAliasedJSONObject(String alias, DefaultJSONTokener tokener) throws DefaultJSONException {
         super(tokener);

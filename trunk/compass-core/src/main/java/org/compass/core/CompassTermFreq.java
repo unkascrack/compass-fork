@@ -21,8 +21,8 @@ package org.compass.core;
  * it is associated with.
  *
  * @author kimchy
- * @see org.compass.core.CompassSession#termFreqsBuilder(String[])
- * @see org.compass.core.CompassTermFreqsBuilder
+ * @see CompassSession#termFreqsBuilder(String[])
+ * @see CompassTermFreqsBuilder
  */
 public interface CompassTermFreq {
 

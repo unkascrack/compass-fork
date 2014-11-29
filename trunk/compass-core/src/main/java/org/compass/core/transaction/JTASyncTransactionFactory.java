@@ -20,10 +20,10 @@ import org.compass.core.CompassException;
 import org.compass.core.spi.InternalCompassSession;
 
 /**
- * Factory for {@link JTASyncTransaction}s.
+ * Factory for {@link org.compass.core.transaction.JTASyncTransaction}s.
  *
  * @author kimchy
- * @see JTASyncTransaction
+ * @see org.compass.core.transaction.JTASyncTransaction
  */
 public class JTASyncTransactionFactory extends AbstractJTATransactionFactory {
 

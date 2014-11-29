@@ -19,7 +19,7 @@ package org.compass.core.lucene.engine.transaction;
 import org.compass.core.lucene.engine.LuceneSearchEngine;
 
 /**
- * A transaction processor factory resposible for creating {@link org.compass.core.lucene.engine.transaction.TransactionProcessor}
+ * A transaction processor factory resposible for creating {@link TransactionProcessor}
  * instances.
  *
  * <p>Possibly, the factory can hold state (such as connection) that the processor can use (processors are

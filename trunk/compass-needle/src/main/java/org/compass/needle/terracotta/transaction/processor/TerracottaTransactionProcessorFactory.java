@@ -51,15 +51,15 @@ import org.compass.core.util.StringUtils;
  * to a shared work queue (partitioned by sub index) to be processed later by worker processors.
  *
  * <p>By default, the transaction processor factory acts as a worker processor as well. In order to disable it (and make
- * it only a producer node) set the {@link TerracottaTransactionProcessorEnvironment#PROCESS} to <code>false</code>.
+ * it only a producer node) set the {@link org.compass.needle.terracotta.transaction.processor.TerracottaTransactionProcessorEnvironment#PROCESS} to <code>false</code>.
  *
  * <p>By default, each worker processor node will try and processes jobs from all sub indexes (you can start as many
  * as you like). In order to pin down the worker processor to work only on specific sub indexes, set then using
- * {@link TerracottaTransactionProcessorEnvironment#SUB_INDEXES} setting.
+ * {@link org.compass.needle.terracotta.transaction.processor.TerracottaTransactionProcessorEnvironment#SUB_INDEXES} setting.
  *
  * <p>The processor itself, once it identifies that there is a transactional job to be processed, will try and get
  * more transactional jobs in a non blocking manner for better utilization of an already opened IndexWriter. By default
- * it will try and get 5 more, and it can be controlled using {@link TerracottaTransactionProcessorEnvironment#NON_BLOCKING_BATCH_JOBS_SIZE}.
+ * it will try and get 5 more, and it can be controlled using {@link org.compass.needle.terracotta.transaction.processor.TerracottaTransactionProcessorEnvironment#NON_BLOCKING_BATCH_JOBS_SIZE}.
  *
  * <p>Transactions visibility (once a transaction commits, how long till the other nodes, including the one that committed
  * will see the result) can be controlld using {@link org.compass.core.lucene.LuceneEnvironment.SearchEngineIndex#CACHE_INTERVAL_INVALIDATION}.

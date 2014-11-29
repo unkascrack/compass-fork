@@ -39,7 +39,7 @@ import org.compass.core.spi.InternalCompass;
  * in a reliable async manner. The Compass data source allows to mirror changes done to the
  * Space into the search engine using Compass.
  *
- * <p>This extenal data source can be injected with a {@link Compass} instance, or it can be
+ * <p>This extenal data source can be injected with a {@link org.compass.core.Compass} instance, or it can be
  * configured using the extenal data source proeprties configuration to create a Compass instance.
  * The proeprty <code>compass-config-file</code> will point to Compass configuration file.
  *
@@ -158,7 +158,7 @@ public class CompassDataSource implements DataPersister<Object>, BulkDataPersist
     }
 
     /**
-     * Execute given bulk of operations. Each {@link BulkItem} contains one of
+     * Execute given bulk of operations. Each {@link com.gigaspaces.datasource.BulkItem} contains one of
      * the following operation -<br>
      *
      * <p>
@@ -226,9 +226,9 @@ public class CompassDataSource implements DataPersister<Object>, BulkDataPersist
      * Creates and returns an iterator over all the entries that should be
      * loaded into space.
      *
-     * @return a {@link DataIterator} or null if no data should be loaded into
+     * @return a {@link com.gigaspaces.datasource.DataIterator} or null if no data should be loaded into
      *         space
-     * @throws DataSourceException
+     * @throws com.gigaspaces.datasource.DataSourceException
      */
     public DataIterator<Object> initialLoad() throws DataSourceException {
         throw new UnsupportedOperationException();

@@ -24,7 +24,7 @@ import org.compass.core.mapping.internal.DefaultAllMapping;
  * A builder allowing to constrcut resource all mapping definition.
  *
  * @author kimchy
- * @see RSEM#all()
+ * @see org.compass.core.mapping.rsem.builder.RSEM#all()
  */
 public class ResourceAllMappingBuilder {
 

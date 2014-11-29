@@ -17,8 +17,8 @@
 package org.compass.core;
 
 /**
- * A filter used to filter out query results. In order to create filters, please use {@link CompassQueryFilterBuilder}
- * using {@link org.compass.core.CompassSession#queryFilterBuilder()}.
+ * A filter used to filter out query results. In order to create filters, please use {@link org.compass.core.CompassQueryFilterBuilder}
+ * using {@link CompassSession#queryFilterBuilder()}.
  *
  * @author kimchy
  */

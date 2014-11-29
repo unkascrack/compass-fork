@@ -41,7 +41,7 @@ import org.compass.core.mapping.CompassMapping;
 import org.compass.core.mapping.ResourcePropertyLookup;
 
 /**
- * Extends Lucene {@link org.apache.lucene.queryParser.QueryParser} and overrides {@link #getRangeQuery(String,String,String,boolean)}
+ * Extends Lucene {@link QueryParser} and overrides {@link #getRangeQuery(String,String,String,boolean)}
  * since lucene performs data parsing which is a performance killer. Anyhow, handling dates in Compass
  * is different and simpler than Lucene.
  *

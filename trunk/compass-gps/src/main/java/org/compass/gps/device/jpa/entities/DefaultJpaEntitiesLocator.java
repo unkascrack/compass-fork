@@ -77,13 +77,13 @@ public class DefaultJpaEntitiesLocator implements JpaEntitiesLocator {
      * Creates the {@link org.compass.gps.device.jpa.entities.EntityInformation} for a given class. If return <code>null</code>
      * the class will be filtered out.
      * <p/>
-     * Implementation filters out classes that do not have the {@link Entity} annotation (i.e.
+     * Implementation filters out classes that do not have the {@link javax.persistence.Entity} annotation (i.e.
      * return <code>null</code> for such a case).
      *
      * @param clazz           The class to create the {@link org.compass.gps.device.jpa.entities.EntityInformation} for
      * @param resourceMapping The Compass resource mapping (used for sub indexes extraction)
      * @return The entity information, or <code>null</code> to filter it out
-     * @throws JpaGpsDeviceException
+     * @throws org.compass.gps.device.jpa.JpaGpsDeviceException
      */
     protected EntityInformation createEntityInformation(Class<?> clazz, ResourceMapping resourceMapping)
             throws JpaGpsDeviceException {
@@ -103,7 +103,7 @@ public class DefaultJpaEntitiesLocator implements JpaEntitiesLocator {
     /**
      * Return <code>true</code> if the entity should be filtered out from the index operation.
      * <p/>
-     * Implementation filters out classes that one of the super classes has the {@link Inheritance}
+     * Implementation filters out classes that one of the super classes has the {@link javax.persistence.Inheritance}
      * annotation and the super class has compass mappings.
      *
      * @param entityInformation The entity information to check if it should be filtered

@@ -25,7 +25,7 @@ import org.compass.gps.device.jpa.embedded.openjpa.OpenJPAHelper;
 import org.compass.gps.device.jpa.embedded.toplink.TopLinkHelper;
 
 /**
- * The generic embedded JPA helper can extract a {@link Compass} and a {@link org.compass.gps.device.jpa.embedded.JpaCompassGps}
+ * The generic embedded JPA helper can extract a {@link org.compass.core.Compass} and a {@link org.compass.gps.device.jpa.embedded.JpaCompassGps}
  * out of either Hibernate JPA, OpenJPA, TopLink or EclipseLink by identifying it automatically.
  *
  * @author kimchy
@@ -95,7 +95,7 @@ public class GenericJpaHelper {
     }
 
     /**
-     * Returns the {@link Compass} instnace embedded within the JPA EMF.
+     * Returns the {@link org.compass.core.Compass} instnace embedded within the JPA EMF.
      */
     public Compass getCompass() {
         return this.compass;

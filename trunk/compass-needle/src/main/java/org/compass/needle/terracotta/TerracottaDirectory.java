@@ -73,7 +73,7 @@ public class TerracottaDirectory extends Directory {
     }
 
     /**
-     * Constructs an empty {@link Directory}.
+     * Constructs an empty {@link org.apache.lucene.store.Directory}.
      */
     public TerracottaDirectory(int bufferSize, int flushRate, int chmInitialCapacity, float chmLoadFactor, int chmConcurrencyLevel) {
         this.bufferSize = bufferSize;

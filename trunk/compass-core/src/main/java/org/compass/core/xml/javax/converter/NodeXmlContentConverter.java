@@ -47,7 +47,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
 /**
- * <p>Uses JSE to convert an xml content to and from {@link NodeAliasedXmlObject}.
+ * <p>Uses JSE to convert an xml content to and from {@link org.compass.core.xml.javax.NodeAliasedXmlObject}.
  *
  * @author kimchy
  */
@@ -103,12 +103,12 @@ public class NodeXmlContentConverter implements XmlContentConverter, CompassConf
 
     /**
      * Uses the already created {@link javax.xml.parsers.DocumentBuilder}
-     * and parse the given xml into a {@link NodeAliasedXmlObject}.
+     * and parse the given xml into a {@link org.compass.core.xml.javax.NodeAliasedXmlObject}.
      *
-     * @param alias The alias that will be associated with the {@link NodeAliasedXmlObject}
-     * @param xml   The xml string to parse into {@link NodeAliasedXmlObject}
-     * @return A {@link NodeAliasedXmlObject} parsed from the given xml string and associated with the given alias
-     * @throws ConversionException In case the xml parsing failed
+     * @param alias The alias that will be associated with the {@link org.compass.core.xml.javax.NodeAliasedXmlObject}
+     * @param xml   The xml string to parse into {@link org.compass.core.xml.javax.NodeAliasedXmlObject}
+     * @return A {@link org.compass.core.xml.javax.NodeAliasedXmlObject} parsed from the given xml string and associated with the given alias
+     * @throws org.compass.core.converter.ConversionException In case the xml parsing failed
      */
     public AliasedXmlObject fromXml(String alias, Reader xml) throws ConversionException {
         Document document;
@@ -121,12 +121,12 @@ public class NodeXmlContentConverter implements XmlContentConverter, CompassConf
     }
 
     /**
-     * Converts a {@link NodeXmlObject} into an xml string.
+     * Converts a {@link org.compass.core.xml.javax.NodeXmlObject} into an xml string.
      * Uses the created {@link javax.xml.transform.Transformer} to do it.
      *
-     * @param xmlObject The {@link NodeXmlObject} to convert into an xml string
-     * @return The xml string representation of the given {@link NodeXmlObject}
-     * @throws ConversionException Should not really happen...
+     * @param xmlObject The {@link org.compass.core.xml.javax.NodeXmlObject} to convert into an xml string
+     * @return The xml string representation of the given {@link org.compass.core.xml.javax.NodeXmlObject}
+     * @throws org.compass.core.converter.ConversionException Should not really happen...
      */
     public String toXml(XmlObject xmlObject) throws ConversionException {
         NodeXmlObject nodeXmlObject = (NodeXmlObject) xmlObject;

@@ -74,7 +74,7 @@ public class TerracottaDirectoryStore extends AbstractDirectoryStore implements 
     /**
      * Allows to control which type of terracotta store will be used. Options are:
      * <ul>
-     * <li>managed: Uses {@link ManagedTerracottaDirectory}</li>
+     * <li>managed: Uses {@link org.compass.needle.terracotta.ManagedTerracottaDirectory}</li>
      * <li>chm: Uses {@link org.compass.needle.terracotta.TerracottaDirectory}</li>
      * <li>csm: USes {@link org.compass.needle.terracotta.CSMTerracottaDirectory}</li>.
      * </ul>

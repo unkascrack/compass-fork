@@ -32,7 +32,7 @@ import org.compass.core.util.StringUtils;
  *
  * @author kimchy
  * @author lexi
- * @see DynamicPropertyNamingStrategy
+ * @see org.compass.core.engine.naming.DynamicPropertyNamingStrategy
  */
 public class DynamicPropertyPath implements PropertyPath {
 

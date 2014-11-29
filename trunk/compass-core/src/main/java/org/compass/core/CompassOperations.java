@@ -28,7 +28,7 @@ public interface CompassOperations {
      * have the defined ids in the mapping files set and an alias set.
      *
      * @param resource The resource to be deleted.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(Resource resource) throws CompassException;
 
@@ -41,7 +41,7 @@ public interface CompassOperations {
      * @param clazz The class that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The resource, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource getResource(Class clazz, Object id) throws CompassException;
 
@@ -52,7 +52,7 @@ public interface CompassOperations {
      * @param clazz The class that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The resource, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource getResource(Class clazz, Object... ids) throws CompassException;
 
@@ -66,7 +66,7 @@ public interface CompassOperations {
      * @param alias The alias that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource getResource(String alias, Object id) throws CompassException;
 
@@ -78,7 +78,7 @@ public interface CompassOperations {
      * @param alias The alias that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource getResource(String alias, Object... ids) throws CompassException;
 
@@ -91,7 +91,7 @@ public interface CompassOperations {
      * @param clazz The class that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource loadResource(Class clazz, Object id) throws CompassException;
 
@@ -103,7 +103,7 @@ public interface CompassOperations {
      * @param clazz The class that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource loadResource(Class clazz, Object... ids) throws CompassException;
 
@@ -116,7 +116,7 @@ public interface CompassOperations {
      * @param alias The alias that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource loadResource(String alias, Object id) throws CompassException;
 
@@ -128,7 +128,7 @@ public interface CompassOperations {
      * @param alias The alias that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The resource
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Resource loadResource(String alias, Object... ids) throws CompassException;
 
@@ -137,7 +137,7 @@ public interface CompassOperations {
      * by Compass or it's ids must be set if already known.
      *
      * @param obj The object to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(Object obj) throws CompassException;
 
@@ -148,7 +148,7 @@ public interface CompassOperations {
      *
      * @param alias The alias that the objects maps under
      * @param obj   The object to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(String alias, Object obj) throws CompassException;
 
@@ -158,7 +158,7 @@ public interface CompassOperations {
      *
      * @param alias The alias that the objects maps under
      * @param ids   The ids of the object to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(String alias, Object... ids) throws CompassException;
 
@@ -169,7 +169,7 @@ public interface CompassOperations {
      *
      * @param clazz The class that represtents the required mapping
      * @param obj   The object to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(Class clazz, Object obj) throws CompassException;
 
@@ -179,7 +179,7 @@ public interface CompassOperations {
      *
      * @param clazz The class that represtents the required mapping
      * @param ids   The object ids to delete
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(Class clazz, Object... ids) throws CompassException;
 
@@ -192,7 +192,7 @@ public interface CompassOperations {
      * @param clazz The class that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The object, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     <T> T get(Class<T> clazz, Object id) throws CompassException;
 
@@ -204,7 +204,7 @@ public interface CompassOperations {
      * @param clazz The class that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The object, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     <T> T get(Class<T> clazz, Object... ids) throws CompassException;
 
@@ -217,7 +217,7 @@ public interface CompassOperations {
      * @param alias The alias that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The object, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object get(String alias, Object id) throws CompassException;
 
@@ -229,7 +229,7 @@ public interface CompassOperations {
      * @param alias The alias that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The object, returns <code>null</code> if not found
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object get(String alias, Object... ids) throws CompassException;
 
@@ -242,7 +242,7 @@ public interface CompassOperations {
      * @param clazz The class that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The object
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     <T> T load(Class<T> clazz, Object id) throws CompassException;
 
@@ -253,7 +253,7 @@ public interface CompassOperations {
      * @param clazz The class that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The object
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     <T> T load(Class<T> clazz, Object... ids) throws CompassException;
 
@@ -266,7 +266,7 @@ public interface CompassOperations {
      * @param alias The alias that represents the required mapping
      * @param id    The id that identifies the resource
      * @return The object
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object load(String alias, Object id) throws CompassException;
 
@@ -277,7 +277,7 @@ public interface CompassOperations {
      * @param alias The alias that represents the required mapping
      * @param ids   The ids that identifies the resource
      * @return The object
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     Object load(String alias, Object... ids) throws CompassException;
 
@@ -285,7 +285,7 @@ public interface CompassOperations {
      * Deletes all entries in the index that match the given query.
      *
      * @param query The query to delete by
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void delete(CompassQuery query) throws CompassException;
 
@@ -313,7 +313,7 @@ public interface CompassOperations {
      *
      * @param query The query string to search by
      * @return A hits of objects that matches the query string
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     CompassHits find(String query) throws CompassException;
 
@@ -324,7 +324,7 @@ public interface CompassOperations {
      * won't be deleted.
      *
      * @param obj The object to save.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void create(Object obj) throws CompassException;
 
@@ -337,7 +337,7 @@ public interface CompassOperations {
      *
      * @param alias The alias that match the object mappings
      * @param obj   The object to save
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void create(String alias, Object obj) throws CompassException;
 
@@ -346,7 +346,7 @@ public interface CompassOperations {
      * mapping files will be indexed and saved for later searching.
      *
      * @param obj The object to save.
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void save(Object obj) throws CompassException;
 
@@ -357,7 +357,7 @@ public interface CompassOperations {
      *
      * @param alias The alias that match the object mappings
      * @param obj   The object to save
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     void save(String alias, Object obj) throws CompassException;
 

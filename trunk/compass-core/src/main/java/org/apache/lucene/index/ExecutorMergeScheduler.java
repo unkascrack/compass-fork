@@ -24,7 +24,7 @@ import org.compass.core.transaction.context.TransactionContext;
 import org.compass.core.transaction.context.TransactionalRunnable;
 
 /**
- * The executor merge scheduler is similar to Lucene {@link org.apache.lucene.index.ConcurrentMergeScheduler}
+ * The executor merge scheduler is similar to Lucene {@link ConcurrentMergeScheduler}
  * but instead of spawning threads it uses Compass {@link org.compass.core.executor.ExecutorManager} in order
  * to execute the merges.
  *

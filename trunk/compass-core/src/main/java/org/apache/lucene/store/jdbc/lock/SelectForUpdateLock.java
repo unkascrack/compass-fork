@@ -35,7 +35,7 @@ import org.apache.lucene.store.jdbc.support.JdbcTemplate;
  * <p/>
  * Also note, that when using select for update locking, when the database is created, the commit and write
  * locks will be created and the select for update will be performed on them. If one wishes to switch to
- * {@link PhantomReadLock}, they must be manually deleted.
+ * {@link org.apache.lucene.store.jdbc.lock.PhantomReadLock}, they must be manually deleted.
  * <p/>
  * The lock is released when the transaction is committed, and not when the release method is called.
 

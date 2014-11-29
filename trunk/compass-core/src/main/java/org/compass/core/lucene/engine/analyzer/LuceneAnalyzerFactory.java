@@ -42,7 +42,7 @@ public interface LuceneAnalyzerFactory {
      * @param analyzerName The analyzer name
      * @param settings     The settings boudned to the specific analyzer
      * @return An instnace of Lucene Analyzer
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     public Analyzer createAnalyzer(String analyzerName, CompassSettings settings) throws SearchEngineException;
 }

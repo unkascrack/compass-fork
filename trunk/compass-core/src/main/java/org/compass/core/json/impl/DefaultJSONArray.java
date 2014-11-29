@@ -102,7 +102,7 @@ public class DefaultJSONArray implements JsonArray {
     /**
      * Construct a JSONArray from a JSONTokener.
      * @param x A JSONTokener
-     * @throws DefaultJSONException If there is a syntax error.
+     * @throws org.compass.core.json.impl.DefaultJSONException If there is a syntax error.
      */
     public DefaultJSONArray(DefaultJSONTokener x) throws DefaultJSONException {
         this();
@@ -154,7 +154,7 @@ public class DefaultJSONArray implements JsonArray {
      * @param source     A string that begins with
      * <code>[</code>&nbsp;<small>(left bracket)</small>
      *  and ends with <code>]</code>&nbsp;<small>(right bracket)</small>.
-     *  @throws DefaultJSONException If there is a syntax error.
+     *  @throws org.compass.core.json.impl.DefaultJSONException If there is a syntax error.
      */
     public DefaultJSONArray(String source) throws DefaultJSONException {
         this(new DefaultJSONTokener(source));
@@ -174,7 +174,7 @@ public class DefaultJSONArray implements JsonArray {
 
     /**
      * Construct a JSONArray from an array
-     * @throws DefaultJSONException If not an array.
+     * @throws org.compass.core.json.impl.DefaultJSONException If not an array.
      */
     public DefaultJSONArray(Object array) throws DefaultJSONException {
         this();
@@ -194,7 +194,7 @@ public class DefaultJSONArray implements JsonArray {
      * @param index
      *  The index must be between 0 and length() - 1.
      * @return An object value.
-     * @throws DefaultJSONException If there is no value for the index.
+     * @throws org.compass.core.json.impl.DefaultJSONException If there is no value for the index.
      */
     public Object get(int index) throws DefaultJSONException {
         Object o = opt(index);
@@ -211,7 +211,7 @@ public class DefaultJSONArray implements JsonArray {
      *
      * @param index The index must be between 0 and length() - 1.
      * @return      The truth.
-     * @throws DefaultJSONException If there is no value for the index or if the
+     * @throws org.compass.core.json.impl.DefaultJSONException If there is no value for the index or if the
      *  value is not convertable to boolean.
      */
     public boolean getBoolean(int index) throws DefaultJSONException {
@@ -234,7 +234,7 @@ public class DefaultJSONArray implements JsonArray {
      *
      * @param index The index must be between 0 and length() - 1.
      * @return      The value.
-     * @throws DefaultJSONException If the key is not found or if the value cannot
+     * @throws org.compass.core.json.impl.DefaultJSONException If the key is not found or if the value cannot
      *  be converted to a number.
      */
     public double getDouble(int index) throws DefaultJSONException {
@@ -255,7 +255,7 @@ public class DefaultJSONArray implements JsonArray {
      *
      * @param index The index must be between 0 and length() - 1.
      * @return      The value.
-     * @throws DefaultJSONException If the key is not found or if the value cannot
+     * @throws org.compass.core.json.impl.DefaultJSONException If the key is not found or if the value cannot
      *  be converted to a number.
      *  if the value cannot be converted to a number.
      */
@@ -270,7 +270,7 @@ public class DefaultJSONArray implements JsonArray {
      * Get the JSONArray associated with an index.
      * @param index The index must be between 0 and length() - 1.
      * @return      A JSONArray value.
-     * @throws DefaultJSONException If there is no value for the index. or if the
+     * @throws org.compass.core.json.impl.DefaultJSONException If there is no value for the index. or if the
      * value is not a JSONArray
      */
     public DefaultJSONArray getJSONArray(int index) throws DefaultJSONException {
@@ -287,7 +287,7 @@ public class DefaultJSONArray implements JsonArray {
      * Get the JSONObject associated with an index.
      * @param index subscript
      * @return      A JSONObject value.
-     * @throws DefaultJSONException If there is no value for the index or if the
+     * @throws org.compass.core.json.impl.DefaultJSONException If there is no value for the index or if the
      * value is not a JSONObject
      */
     public DefaultJSONObject getJSONObject(int index) throws DefaultJSONException {
@@ -305,7 +305,7 @@ public class DefaultJSONArray implements JsonArray {
      *
      * @param index The index must be between 0 and length() - 1.
      * @return      The value.
-     * @throws DefaultJSONException If the key is not found or if the value cannot
+     * @throws org.compass.core.json.impl.DefaultJSONException If the key is not found or if the value cannot
      *  be converted to a number.
      */
     public long getLong(int index) throws DefaultJSONException {
@@ -319,7 +319,7 @@ public class DefaultJSONArray implements JsonArray {
      * Get the string associated with an index.
      * @param index The index must be between 0 and length() - 1.
      * @return      A string value.
-     * @throws DefaultJSONException If there is no value for the index.
+     * @throws org.compass.core.json.impl.DefaultJSONException If there is no value for the index.
      */
     public String getString(int index) throws DefaultJSONException {
         return get(index).toString();
@@ -342,7 +342,7 @@ public class DefaultJSONArray implements JsonArray {
      * Warning: This method assumes that the data structure is acyclical.
      * @param separator A string that will be inserted between the elements.
      * @return a string.
-     * @throws DefaultJSONException If the array contains an invalid number.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the array contains an invalid number.
      */
     public String join(String separator) throws DefaultJSONException {
         int len = length();
@@ -583,7 +583,7 @@ public class DefaultJSONArray implements JsonArray {
      * Append a double value. This increases the array's length by one.
      *
      * @param value A double value.
-     * @throws DefaultJSONException if the value is not finite.
+     * @throws org.compass.core.json.impl.DefaultJSONException if the value is not finite.
      * @return this.
      */
     public DefaultJSONArray put(double value) throws DefaultJSONException {
@@ -650,7 +650,7 @@ public class DefaultJSONArray implements JsonArray {
      * @param index The subscript.
      * @param value A boolean value.
      * @return this.
-     * @throws DefaultJSONException If the index is negative.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the index is negative.
      */
     public DefaultJSONArray put(int index, boolean value) throws DefaultJSONException {
         put(index, value ? Boolean.TRUE : Boolean.FALSE);
@@ -664,7 +664,7 @@ public class DefaultJSONArray implements JsonArray {
      * @param index The subscript.
      * @param value A Collection value.
      * @return      this.
-     * @throws DefaultJSONException If the index is negative or if the value is
+     * @throws org.compass.core.json.impl.DefaultJSONException If the index is negative or if the value is
      * not finite.
      */
     public DefaultJSONArray put(int index, Collection value) throws DefaultJSONException {
@@ -680,7 +680,7 @@ public class DefaultJSONArray implements JsonArray {
      * @param index The subscript.
      * @param value A double value.
      * @return this.
-     * @throws DefaultJSONException If the index is negative or if the value is
+     * @throws org.compass.core.json.impl.DefaultJSONException If the index is negative or if the value is
      * not finite.
      */
     public DefaultJSONArray put(int index, double value) throws DefaultJSONException {
@@ -696,7 +696,7 @@ public class DefaultJSONArray implements JsonArray {
      * @param index The subscript.
      * @param value An int value.
      * @return this.
-     * @throws DefaultJSONException If the index is negative.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the index is negative.
      */
     public DefaultJSONArray put(int index, int value) throws DefaultJSONException {
         put(index, new Integer(value));
@@ -711,7 +711,7 @@ public class DefaultJSONArray implements JsonArray {
      * @param index The subscript.
      * @param value A long value.
      * @return this.
-     * @throws DefaultJSONException If the index is negative.
+     * @throws org.compass.core.json.impl.DefaultJSONException If the index is negative.
      */
     public DefaultJSONArray put(int index, long value) throws DefaultJSONException {
         put(index, new Long(value));
@@ -725,7 +725,7 @@ public class DefaultJSONArray implements JsonArray {
      * @param index The subscript.
      * @param value The Map value.
      * @return      this.
-     * @throws DefaultJSONException If the index is negative or if the the value is
+     * @throws org.compass.core.json.impl.DefaultJSONException If the index is negative or if the the value is
      *  an invalid number.
      */
     public DefaultJSONArray put(int index, Map value) throws DefaultJSONException {
@@ -743,7 +743,7 @@ public class DefaultJSONArray implements JsonArray {
      *  Boolean, Double, Integer, JSONArray, JSONObject, Long, or String, or the
      *  JSONObject.NULL object.
      * @return this.
-     * @throws DefaultJSONException If the index is negative or if the the value is
+     * @throws org.compass.core.json.impl.DefaultJSONException If the index is negative or if the the value is
      *  an invalid number.
      */
     public DefaultJSONArray put(int index, Object value) throws DefaultJSONException {
@@ -770,7 +770,7 @@ public class DefaultJSONArray implements JsonArray {
      * paired with the values.
      * @return A JSONObject, or null if there are no names or if this JSONArray
      * has no values.
-     * @throws DefaultJSONException If any of the names are null.
+     * @throws org.compass.core.json.impl.DefaultJSONException If any of the names are null.
      */
     public DefaultJSONObject toJSONObject(DefaultJSONArray names) throws DefaultJSONException {
         if (names == null || names.length() == 0 || length() == 0) {
@@ -813,7 +813,7 @@ public class DefaultJSONArray implements JsonArray {
      *  representation of the object, beginning
      *  with <code>[</code>&nbsp;<small>(left bracket)</small> and ending
      *  with <code>]</code>&nbsp;<small>(right bracket)</small>.
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      */
     public String toString(int indentFactor) throws DefaultJSONException {
         return toString(indentFactor, 0);
@@ -828,7 +828,7 @@ public class DefaultJSONArray implements JsonArray {
      * @param indent The indention of the top level.
      * @return a printable, displayable, transmittable
      *  representation of the array.
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      */
     String toString(int indentFactor, int indent) throws DefaultJSONException {
         int len = length();
@@ -870,7 +870,7 @@ public class DefaultJSONArray implements JsonArray {
      * Warning: This method assumes that the data structure is acyclical.
      *
      * @return The writer.
-     * @throws DefaultJSONException
+     * @throws org.compass.core.json.impl.DefaultJSONException
      */
     public Writer write(Writer writer) throws DefaultJSONException {
         try {

@@ -17,7 +17,7 @@
 package org.compass.core.json;
 
 /**
- * Extends {@link RawJsonObject} and adds association with an alias.
+ * Extends {@link org.compass.core.json.RawJsonObject} and adds association with an alias.
  *
  * @author kimchy
  */

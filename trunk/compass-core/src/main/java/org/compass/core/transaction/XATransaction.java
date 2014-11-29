@@ -34,9 +34,9 @@ import org.compass.core.spi.InternalCompassSession;
  * <p>Enlists an {@link javax.transaction.xa.XAResource} Compass implementation
  * with a current JTA {@link javax.transaction.Transaction}.
  *
- * <p>Transaction management is done by {@link org.compass.core.transaction.XATransactionFactory}
+ * <p>Transaction management is done by {@link XATransactionFactory}
  * so there is no need to implement suspend and resume (works the same way
- * {@link org.compass.core.transaction.JTASyncTransaction} does).
+ * {@link JTASyncTransaction} does).
  *
  * @author kimchy
  */

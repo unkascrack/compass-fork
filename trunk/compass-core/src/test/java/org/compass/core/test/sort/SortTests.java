@@ -28,6 +28,7 @@ import org.compass.core.test.AbstractTestCase;
 
 public class SortTests extends AbstractTestCase {
 
+    @Override
     protected String[] getMappings() {
         return new String[] { "sort/sort.cpm.xml" };
     }
@@ -38,6 +39,7 @@ public class SortTests extends AbstractTestCase {
         settings.setBooleanSetting(LuceneEnvironment.Transaction.Processor.ReadCommitted.CONCURRENT_OPERATIONS, false);
     }
 
+    @Override
     protected void setUp() throws Exception {
         super.setUp();
         CompassSession session = openSession();
@@ -187,7 +189,7 @@ public class SortTests extends AbstractTestCase {
         CompassTransaction tr = session.beginTransaction();
 
         CompassQuery query = session.queryBuilder().queryString("test").toQuery();
-        query.addSort("value", CompassQuery.SortPropertyType.STRING, CompassQuery.SortDirection.REVERSE);
+        query.addSort("value", CompassQuery.SortPropertyType.STRING, SortDirection.REVERSE);
         CompassHits hits = query.hits();
         assertEquals(4, hits.length());
         assertAId(4, 0, hits);
@@ -221,7 +223,7 @@ public class SortTests extends AbstractTestCase {
         CompassTransaction tr = session.beginTransaction();
 
         CompassQuery query = session.queryBuilder().queryString("test").toQuery();
-        query.addSort("intValue", CompassQuery.SortPropertyType.INT, CompassQuery.SortDirection.REVERSE);
+        query.addSort("intValue", CompassQuery.SortPropertyType.INT, SortDirection.REVERSE);
         CompassHits hits = query.hits();
         assertEquals(4, hits.length());
         assertAId(3, 0, hits);
@@ -255,7 +257,7 @@ public class SortTests extends AbstractTestCase {
         CompassTransaction tr = session.beginTransaction();
 
         CompassQuery query = session.queryBuilder().queryString("test").toQuery();
-        query.addSort("floatValue", CompassQuery.SortPropertyType.FLOAT, CompassQuery.SortDirection.REVERSE);
+        query.addSort("floatValue", CompassQuery.SortPropertyType.FLOAT, SortDirection.REVERSE);
         CompassHits hits = query.hits();
         assertEquals(4, hits.length());
         assertAId(4, 0, hits);

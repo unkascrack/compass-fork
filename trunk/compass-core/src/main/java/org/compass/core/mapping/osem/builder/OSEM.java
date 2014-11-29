@@ -51,7 +51,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchdble id mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableIdMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableIdMappingBuilder)
      */
     public static SearchableIdMappingBuilder id(String name) {
         return new SearchableIdMappingBuilder(name);
@@ -60,7 +60,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable id component mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableIdComponentMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableIdComponentMappingBuilder)
      */
     public static SearchableIdComponentMappingBuilder idComponent(String name) {
         return new SearchableIdComponentMappingBuilder(name);
@@ -69,7 +69,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable component mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableComponentMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableComponentMappingBuilder)
      */
     public static SearchableComponentMappingBuilder component(String name) {
         return new SearchableComponentMappingBuilder(name);
@@ -78,7 +78,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable referennce mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableReferenceMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableReferenceMappingBuilder)
      */
     public static SearchableReferenceMappingBuilder reference(String name) {
         return new SearchableReferenceMappingBuilder(name);
@@ -87,7 +87,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable constant mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableConstantMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableConstantMappingBuilder)
      */
     public static SearchableConstantMappingBuilder constant(String name) {
         return new SearchableConstantMappingBuilder(name);
@@ -97,7 +97,7 @@ public abstract class OSEM {
      * Constructs a new searchable dynamic meta data mapping builder based on the name, the
      * converter (jexl, velocity, groovy, ...) and the dynamic expression to use.
      *
-     * @see SearchableMappingBuilder#add(SearchableDynamicMetaDataMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableDynamicMetaDataMappingBuilder)
      */
     public static SearchableDynamicMetaDataMappingBuilder dynamicMetadata(String name, String converter, String expression) {
         return new SearchableDynamicMetaDataMappingBuilder(name, converter, expression);
@@ -106,7 +106,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable property mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchablePropertyMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchablePropertyMappingBuilder)
      */
     public static SearchablePropertyMappingBuilder property(String name) {
         return new SearchablePropertyMappingBuilder(name);
@@ -115,7 +115,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable dynamic property mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableDynamicPropertyMappingBuilder) 
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableDynamicPropertyMappingBuilder)
      */
     public static SearchableDynamicPropertyMappingBuilder dynamicProperty(String name) {
         return new SearchableDynamicPropertyMappingBuilder(name);
@@ -124,8 +124,8 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable metadata mapping builder.
      *
-     * @see SearchablePropertyMappingBuilder#add(SearchableMetaDataMappingBuilder)
-     * @see SearchableIdMappingBuilder#add(SearchableMetaDataMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchablePropertyMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableMetaDataMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableIdMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableMetaDataMappingBuilder)
      */
     public static SearchableMetaDataMappingBuilder metadata(String name) {
         return new SearchableMetaDataMappingBuilder(name);
@@ -134,7 +134,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable analyzer property mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableAnalyzerMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableAnalyzerMappingBuilder)
      */
     public static SearchableAnalyzerMappingBuilder analyzer(String name) {
         return new SearchableAnalyzerMappingBuilder(name);
@@ -143,7 +143,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable cascade mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableCascadeMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableCascadeMappingBuilder)
      */
     public static SearchableCascadeMappingBuilder cascade(String name) {
         return new SearchableCascadeMappingBuilder(name);
@@ -152,7 +152,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable parent mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableParentMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableParentMappingBuilder)
      */
     public static SearchableParentMappingBuilder parent(String name) {
         return new SearchableParentMappingBuilder(name);
@@ -161,7 +161,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable boost mapping builder.
      *
-     * @see SearchableMappingBuilder#add(SearchableBoostMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#add(org.compass.core.mapping.osem.builder.SearchableBoostMappingBuilder)
      */
     public static SearchableBoostMappingBuilder boost(String name) {
         return new SearchableBoostMappingBuilder(name);
@@ -170,7 +170,7 @@ public abstract class OSEM {
     /**
      * Constructs a new searchable all mapping builder.
      *
-     * @see SearchableMappingBuilder#all(SearchableAllMappingBuilder)
+     * @see org.compass.core.mapping.osem.builder.SearchableMappingBuilder#all(org.compass.core.mapping.osem.builder.SearchableAllMappingBuilder)
      */
     public static SearchableAllMappingBuilder all() {
         return new SearchableAllMappingBuilder();

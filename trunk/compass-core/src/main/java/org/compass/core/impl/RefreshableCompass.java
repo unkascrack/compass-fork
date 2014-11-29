@@ -2,8 +2,6 @@ package org.compass.core.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.naming.NamingException;
-import javax.naming.Reference;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -34,7 +32,7 @@ import org.compass.core.transaction.LocalTransactionFactory;
 import org.compass.core.transaction.TransactionFactory;
 
 /**
- * A wrapper around an actual implemenation of {@link Compass} that allows to rebuild it
+ * A wrapper around an actual implemenation of {@link org.compass.core.Compass} that allows to rebuild it
  * after changes that are perfomed on the {@link #getConfig()} configuration.
  *
  * @author kimchy
@@ -200,10 +198,6 @@ public class RefreshableCompass implements InternalCompass {
 
     public boolean isClosed() {
         return compass.isClosed();
-    }
-
-    public Reference getReference() throws NamingException {
-        return compass.getReference();
     }
 
     private class CloseCompassRunnable implements Runnable {

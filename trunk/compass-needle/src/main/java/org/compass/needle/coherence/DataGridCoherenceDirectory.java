@@ -42,9 +42,9 @@ import org.apache.lucene.store.IndexOutput;
  * (such as size and timestamp), and includes one or more buckets using
  * {@link FileBucketKey} and {@link FileBucketValue}.
  *
- * <p>Locking is done using {@link DefaultCoherenceLockFactory}.
+ * <p>Locking is done using {@link org.compass.needle.coherence.DefaultCoherenceLockFactory}.
  *
- * <p>Note, if possible with the coherence edition, it is preferable to use {@link InvocableCoherenceDirectory}.
+ * <p>Note, if possible with the coherence edition, it is preferable to use {@link org.compass.needle.coherence.InvocableCoherenceDirectory}.
  *
  * @author kimchy
  */

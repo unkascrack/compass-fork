@@ -27,7 +27,7 @@ import org.compass.core.config.CompassSettings;
  * Uses the {@link org.compass.core.config.CompassEnvironment.NamingStrategy#TYPE}
  * setting for the fully qualified class name of the property naming strategy.
  * If non is set, defaults to the
- * {@link DefaultPropertyNamingStrategy}
+ * {@link org.compass.core.engine.naming.DefaultPropertyNamingStrategy}
  * <p/>
  * The {@link org.compass.core.config.CompassConfiguration} creates the factory,
  * which can be set using the

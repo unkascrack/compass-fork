@@ -3,7 +3,7 @@ package org.compass.core.converter.xsem;
 import org.compass.core.config.ConfigurationException;
 
 /**
- * Some actual implementations of {@link XmlContentConverter} might not suppoer a certain
+ * Some actual implementations of {@link org.compass.core.converter.xsem.XmlContentConverter} might not suppoer a certain
  * wrapper strategy (probably some will have problem with a singleton wrapper). This gives
  * the actual implementation a chance to vote on which wrapper implementation it supports.
  *

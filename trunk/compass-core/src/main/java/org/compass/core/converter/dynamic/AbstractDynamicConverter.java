@@ -14,10 +14,10 @@ import org.compass.core.mapping.ResourcePropertyMapping;
 import org.compass.core.marshall.MarshallingContext;
 
 /**
- * A simple base class for {@link DynamicConverter}. Requires implementation of
+ * A simple base class for {@link org.compass.core.converter.dynamic.DynamicConverter}. Requires implementation of
  * {@link #evaluate(Object,org.compass.core.mapping.ResourcePropertyMapping)}.
  *
- * <p>Also holds a {@link FormatConverter} for expression that return formatable
+ * <p>Also holds a {@link org.compass.core.converter.basic.FormatConverter} for expression that return formatable
  * objects (like Date).
  *
  * @author kimchy
@@ -99,7 +99,7 @@ public abstract class AbstractDynamicConverter extends AbstractBasicConverter im
      * @param o                       The data object
      * @param resourcePropertyMapping The resource mapping
      * @return The object returned as a result of expression evaluation
-     * @throws ConversionException
+     * @throws org.compass.core.converter.ConversionException
      */
     protected abstract Object evaluate(Object o, ResourcePropertyMapping resourcePropertyMapping) throws ConversionException;
 

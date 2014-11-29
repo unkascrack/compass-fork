@@ -24,7 +24,7 @@ import org.compass.core.mapping.osem.ManagedId;
  * be.
  *
  * <p>Mostly used by converters that can't/won't unmarshall data, thus returning
- * {@link ManagedId#FALSE}.
+ * {@link org.compass.core.mapping.osem.ManagedId#FALSE}.
  *
  * @author kimchy
  */

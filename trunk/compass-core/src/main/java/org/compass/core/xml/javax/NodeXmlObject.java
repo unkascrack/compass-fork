@@ -32,7 +32,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
- * A java 5 implementation of {@link XmlObject} wrapping a {@link org.w3c.dom.Node}.
+ * A java 5 implementation of {@link org.compass.core.xml.XmlObject} wrapping a {@link org.w3c.dom.Node}.
  *
  * @author kimchy
  */
@@ -75,7 +75,7 @@ public class NodeXmlObject implements XmlObject {
 
     /**
      * Returns the node value, using {@link org.w3c.dom.Node#getNodeValue()} with the
-     * exception of element, which has special handling using {@link DomUtils#getTextValue(org.w3c.dom.Element)}.
+     * exception of element, which has special handling using {@link org.compass.core.util.DomUtils#getTextValue(org.w3c.dom.Element)}.
      */
     public String getValue() {
         if (node.getNodeType() == Node.ELEMENT_NODE) {

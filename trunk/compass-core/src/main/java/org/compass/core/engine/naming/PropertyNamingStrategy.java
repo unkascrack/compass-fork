@@ -19,12 +19,12 @@ package org.compass.core.engine.naming;
 
 /**
  * The property naming strategy that compass will use for hidden properties.
- * Created using {@link PropertyNamingStrategyFactory}
+ * Created using {@link org.compass.core.engine.naming.PropertyNamingStrategyFactory}
  *
  * @author kimchy
- * @see PropertyNamingStrategyFactory
- * @see StaticPropertyNamingStrategy
- * @see DynamicPropertyNamingStrategy
+ * @see org.compass.core.engine.naming.PropertyNamingStrategyFactory
+ * @see org.compass.core.engine.naming.StaticPropertyNamingStrategy
+ * @see org.compass.core.engine.naming.DynamicPropertyNamingStrategy
  */
 public interface PropertyNamingStrategy {
 

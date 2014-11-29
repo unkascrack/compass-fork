@@ -28,7 +28,7 @@ import org.compass.core.mapping.xsem.XmlPropertyAnalyzerController;
  * within Compass. If no analyzer is found, the {@link #nullAnalyzer(String)} will be used (if specified).
  *
  * @author kimchy
- * @see XSEM#analyzer(String, String)
+ * @see org.compass.core.mapping.xsem.builder.XSEM#analyzer(String, String)
  */
 public class XmlAnalyzerMappingBuilder {
 

@@ -113,7 +113,7 @@ public class AccessorUtils {
 
     /**
      * Returns the Java 5 generics collection parameter. If it is an array,
-     * returns the component of the array (use {@link #isMapValueParameterArray(Getter)} in order
+     * returns the component of the array (use {@link #isMapValueParameterArray(org.compass.core.accessor.Getter)} in order
      * to know if it was an array).
      */
     public static Class getMapValueParameter(Getter getter) {

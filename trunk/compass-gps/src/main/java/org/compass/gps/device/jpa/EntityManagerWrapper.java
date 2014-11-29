@@ -54,14 +54,14 @@ public interface EntityManagerWrapper {
     /**
      * Closes the current <code>EntityManager</code>, commiting the transaction if necessary.
      *
-     * @throws JpaGpsDeviceException
+     * @throws org.compass.gps.device.jpa.JpaGpsDeviceException
      */
     void close() throws JpaGpsDeviceException, PersistenceException;
 
     /**
      * Closes the current <code>EntityManager</code>, rollback the transaction if necessary.
      *
-     * @throws JpaGpsDeviceException
+     * @throws org.compass.gps.device.jpa.JpaGpsDeviceException
      */
     void closeOnError() throws JpaGpsDeviceException, PersistenceException;
 

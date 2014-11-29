@@ -18,7 +18,7 @@ public interface LocalCompassBeanPostProcessor {
      * instance.
      *
      * @param config The Compass configuration that will be used to creat the Compass instance
-     * @throws ConfigurationException
+     * @throws org.compass.core.config.ConfigurationException
      */
     void process(CompassConfiguration config) throws ConfigurationException;
 }

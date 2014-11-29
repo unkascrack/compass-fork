@@ -22,7 +22,7 @@ import org.compass.core.engine.SearchEngineException;
 
 /**
  * Mainly used by the
- * {@link org.compass.core.lucene.engine.analyzer.DefaultLuceneAnalyzerFactory}
+ * {@link DefaultLuceneAnalyzerFactory}
  * to create analyzers and decoupling it from the class loader.
  * 
  * @author kimchy

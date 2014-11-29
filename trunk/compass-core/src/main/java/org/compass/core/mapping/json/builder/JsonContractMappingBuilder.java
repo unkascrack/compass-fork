@@ -25,7 +25,7 @@ import org.compass.core.mapping.internal.DefaultContractMapping;
  * share common mapping definitions.
  *
  * @author kimchy
- * @see org.compass.core.mapping.json.builder.JSEM#contract(String)
+ * @see JSEM#contract(String)
  */
 public class JsonContractMappingBuilder implements ContractMappingProvider {
 

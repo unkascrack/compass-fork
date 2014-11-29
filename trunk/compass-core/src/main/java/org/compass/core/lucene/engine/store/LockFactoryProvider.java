@@ -35,7 +35,7 @@ public interface LockFactoryProvider {
      * @param subIndex  The sub index within the index (under the sub context).
      * @param settings  Additional configuration settings
      * @return The actual lock factory
-     * @throws SearchEngineException
+     * @throws org.compass.core.engine.SearchEngineException
      */
     LockFactory createLockFactory(String path, String subContex, String subIndex, CompassSettings settings) throws SearchEngineException;
 }

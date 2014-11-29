@@ -11,8 +11,8 @@ import org.compass.core.xml.AliasedXmlObject;
 import org.compass.core.xml.XmlObject;
 
 /**
- * An {@link XmlContentConverter} implementation that wraps the actual {@link XmlContentConverter}
- * configured (based on the settings) and creates and configures a pool of {@link XmlContentConverter}s
+ * An {@link org.compass.core.converter.xsem.XmlContentConverter} implementation that wraps the actual {@link org.compass.core.converter.xsem.XmlContentConverter}
+ * configured (based on the settings) and creates and configures a pool of {@link org.compass.core.converter.xsem.XmlContentConverter}s
  * for both {@link #toXml(org.compass.core.xml.XmlObject)} and {@link #fromXml(String, java.io.Reader)}.
  * <p/>
  * The pool has a maximum capacity, to limit overhead. If all instances in the
@@ -36,8 +36,8 @@ public class PoolXmlContentConverterWrapper implements XmlContentConverterWrappe
     private final Object mutex = new Object();
 
     /**
-     * Configures the pool used from {@link CompassEnvironment.Xsem.XmlContent#MIN_POOL_SIZE} and
-     * {@link CompassEnvironment.Xsem.XmlContent#MAX_POOL_SIZE}.
+     * Configures the pool used from {@link org.compass.core.config.CompassEnvironment.Xsem.XmlContent#MIN_POOL_SIZE} and
+     * {@link org.compass.core.config.CompassEnvironment.Xsem.XmlContent#MAX_POOL_SIZE}.
      */
     public void configure(CompassSettings settings) throws CompassException {
         this.settings = settings;
@@ -49,10 +49,10 @@ public class PoolXmlContentConverterWrapper implements XmlContentConverterWrappe
     }
 
     /**
-     * Converts the {@link XmlObject} into raw xml by using the pool of
-     * {@link XmlContentConverter}s implementation.
+     * Converts the {@link org.compass.core.xml.XmlObject} into raw xml by using the pool of
+     * {@link org.compass.core.converter.xsem.XmlContentConverter}s implementation.
      *
-     * @see XmlContentConverter#toXml(org.compass.core.xml.XmlObject)
+     * @see org.compass.core.converter.xsem.XmlContentConverter#toXml(org.compass.core.xml.XmlObject)
      */
     public String toXml(XmlObject xmlObject) throws ConversionException {
         XmlContentConverter converter = fetchFromPool();
@@ -64,10 +64,10 @@ public class PoolXmlContentConverterWrapper implements XmlContentConverterWrappe
     }
 
     /**
-     * Converts a raw xml and an alias into an {@link AliasedXmlObject} by using the pool of
-     * {@link XmlContentConverter}s implementation.
+     * Converts a raw xml and an alias into an {@link org.compass.core.xml.AliasedXmlObject} by using the pool of
+     * {@link org.compass.core.converter.xsem.XmlContentConverter}s implementation.
      *
-     * @see XmlContentConverter#fromXml(String, java.io.Reader)
+     * @see org.compass.core.converter.xsem.XmlContentConverter#fromXml(String, java.io.Reader)
      */
     public AliasedXmlObject fromXml(String alias, Reader xml) throws ConversionException {
         XmlContentConverter converter = fetchFromPool();

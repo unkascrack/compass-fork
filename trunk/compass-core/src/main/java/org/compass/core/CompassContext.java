@@ -22,8 +22,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * A compass context annotation allowing to inject either a {@link org.compass.core.Compass} or
- * a {@link org.compass.core.CompassSession} into another class. Currently used for Spring injection,
+ * A compass context annotation allowing to inject either a {@link Compass} or
+ * a {@link CompassSession} into another class. Currently used for Spring injection,
  * but might be used by other vendors or implemented for other frameworks.
  *
  * @author kimchy

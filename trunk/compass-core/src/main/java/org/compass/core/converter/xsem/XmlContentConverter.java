@@ -23,7 +23,7 @@ import org.compass.core.xml.AliasedXmlObject;
 import org.compass.core.xml.XmlObject;
 
 /**
- * Converts an {@link XmlObject} to and from an xml string.
+ * Converts an {@link org.compass.core.xml.XmlObject} to and from an xml string.
  *
  * @author kimchy
  */
@@ -45,7 +45,7 @@ public interface XmlContentConverter {
      * @param alias The alias the aliases xml object is associated with
      * @param xml   The xml string that will be converted into an aliases xml object
      * @return The aliases xml object that is the restult of the xml parsed
-     * @throws ConversionException
+     * @throws org.compass.core.converter.ConversionException
      */
     AliasedXmlObject fromXml(String alias, Reader xml) throws ConversionException;
 

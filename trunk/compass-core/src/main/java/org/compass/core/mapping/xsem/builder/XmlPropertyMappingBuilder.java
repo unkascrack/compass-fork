@@ -29,7 +29,7 @@ import org.compass.core.mapping.xsem.XmlPropertyMapping;
  * A builder allowing to constrcut XML property mapping definition.
  *
  * @author kimchy
- * @see XSEM#property(String)
+ * @see org.compass.core.mapping.xsem.builder.XSEM#property(String)
  */
 public class XmlPropertyMappingBuilder {
 

@@ -257,6 +257,23 @@
         </dependency>
 
         <dependency>
+            <groupId>javax.jdo</groupId>
+            <artifactId>jdo2-api</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-core</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-jpa</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>compass-core</artifactId>
             <classifier>tests</classifier>
@@ -300,6 +317,22 @@
                 <exclusion>
                     <groupId>com.oracle.coherence</groupId>
                     <artifactId>coherence</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.appengine</groupId>
+                    <artifactId>appengine-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.appengine</groupId>
+                    <artifactId>appengine-api-labs</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.appengine</groupId>
+                    <artifactId>appengine-api-stubs</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.appengine</groupId>
+                    <artifactId>appengine-local-runtime</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>

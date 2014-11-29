@@ -28,7 +28,7 @@ import org.compass.gps.device.jdbc.JdbcUtils;
 
 /**
  * A specialized form of
- * {@link org.compass.gps.device.jdbc.mapping.ResultSetToResourceMapping},
+ * {@link ResultSetToResourceMapping},
  * mapping a specfic database table to a resource.
  * <p>
  * Since the mapping works against a table, most of the parameters can be
@@ -40,7 +40,7 @@ import org.compass.gps.device.jdbc.JdbcUtils;
  * <p>
  * If no data column mappings are provided, the
  * <code>indexUnMappedColumns</code> from
- * {@link org.compass.gps.device.jdbc.mapping.ResultSetToResourceMapping} can be
+ * {@link ResultSetToResourceMapping} can be
  * user to auto map all the table columns as data columns.
  * <p>
  * For real time mirroring, at least one version column mapping ({@link VersionColumnMapping})

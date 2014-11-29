@@ -26,12 +26,12 @@ import org.compass.core.lucene.engine.transaction.TransactionProcessorFactory;
  * index itself without taking into account any transactional operations.
  *
  * @author kimchy
- * @see org.compass.core.lucene.engine.transaction.lucene.LuceneTransactionProcessor
+ * @see LuceneTransactionProcessor
  */
 public class LuceneTransactionProcessorFactory implements TransactionProcessorFactory {
 
     /**
-     * Creates a new {@link org.compass.core.lucene.engine.transaction.lucene.LuceneTransactionProcessor}.
+     * Creates a new {@link LuceneTransactionProcessor}.
      */
     public TransactionProcessor create(LuceneSearchEngine searchEngine) {
         return new LuceneTransactionProcessor(searchEngine);

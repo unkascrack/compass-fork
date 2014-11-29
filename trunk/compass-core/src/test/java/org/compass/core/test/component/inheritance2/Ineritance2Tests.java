@@ -24,7 +24,7 @@ import org.compass.core.test.AbstractTestCase;
 /**
  * This test verifies that with ploymprphic relationship, on the component
  * of the component mapping, things works. Also verifies that no intenral
- * id is created for {@link org.compass.core.test.component.inheritance2.GrandChild#value}.
+ * id is created for {@link GrandChild#value}.
  *
  * @author kimchy
  */

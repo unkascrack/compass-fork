@@ -54,7 +54,7 @@ import org.compass.core.lucene.engine.transaction.support.job.TransactionJobs;
 import org.compass.core.transaction.context.TransactionalCallable;
 
 /**
- * A transaction processor that created {@link org.compass.core.lucene.engine.transaction.async.AsyncTransactionProcessor}
+ * A transaction processor that created {@link AsyncTransactionProcessor}
  * instances. Supports async execution of transactions against the index. A transaction (which includes several dirty
  * operations) is packaged into a single operation which is then applied to the index asynchronously.
  *
@@ -202,7 +202,7 @@ public class AsyncTransactionProcessorFactory implements TransactionProcessorFac
     }
 
     /**
-     * Creates a new {@link org.compass.core.lucene.engine.transaction.async.AsyncTransactionProcessor}.
+     * Creates a new {@link AsyncTransactionProcessor}.
      */
     public TransactionProcessor create(LuceneSearchEngine searchEngine) {
         return new AsyncTransactionProcessor(searchEngine, this);

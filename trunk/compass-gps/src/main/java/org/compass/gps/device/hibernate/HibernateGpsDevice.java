@@ -66,7 +66,7 @@ import org.hibernate.SessionFactory;
  * <p>Mirroring can be turned off using the {@link #setMirrorDataChanges(boolean)} to <code>false</code>.
  * It defaults to <code>true<code>.
  *
- * <p>The device allows for {@link org.compass.gps.device.hibernate.NativeHibernateExtractor} to be set,
+ * <p>The device allows for {@link NativeHibernateExtractor} to be set,
  * for applications that use a framework or by themself wrap the actual
  * <code>SessionFactory</code> implementation.
  *
@@ -289,7 +289,7 @@ public class HibernateGpsDevice extends AbstractParallelGpsDevice implements Pas
      *
      * <p>Note, when using {@link org.compass.gps.device.hibernate.indexer.ScrollableHibernateIndexEntitiesIndexer}
      * it is preferable not to use this mehotd, instead use
-     * {@link #setIndexQueryProvider(Class, HibernateQueryProvider)} and return a
+     * {@link #setIndexQueryProvider(Class, org.compass.gps.device.hibernate.HibernateQueryProvider)} and return a
      * Hibernate <code>Criteria</code> object instead.
      *
      * <p>Note, this information is used when the device starts.
@@ -307,7 +307,7 @@ public class HibernateGpsDevice extends AbstractParallelGpsDevice implements Pas
      *
      * <p>Note, when using {@link org.compass.gps.device.hibernate.indexer.ScrollableHibernateIndexEntitiesIndexer}
      * it is preferable not to use this mehotd, instead use
-     * {@link #setIndexQueryProvider(String, HibernateQueryProvider)} and return a
+     * {@link #setIndexQueryProvider(String, org.compass.gps.device.hibernate.HibernateQueryProvider)} and return a
      * Hibernate <code>Criteria</code> object instead.
      *
      * <p>Note, this information is used when the device starts.
@@ -342,8 +342,8 @@ public class HibernateGpsDevice extends AbstractParallelGpsDevice implements Pas
     }
 
     /**
-     * Allows to set {@link org.compass.gps.device.hibernate.HibernateEntityIndexInfo} which results
-     * in calling {@link #setIndexQueryProvider(String, HibernateQueryProvider)}.
+     * Allows to set {@link HibernateEntityIndexInfo} which results
+     * in calling {@link #setIndexQueryProvider(String, org.compass.gps.device.hibernate.HibernateQueryProvider)}.
      */
     public void setindexEntityInfo(HibernateEntityIndexInfo indexInfo) {
         if (indexInfo.getEntityName() == null) {
@@ -353,8 +353,8 @@ public class HibernateGpsDevice extends AbstractParallelGpsDevice implements Pas
     }
 
     /**
-     * Allows to set an array of {@link org.compass.gps.device.hibernate.HibernateEntityIndexInfo} which results
-     * in calling {@link #setIndexQueryProvider(String, HibernateQueryProvider)}.
+     * Allows to set an array of {@link HibernateEntityIndexInfo} which results
+     * in calling {@link #setIndexQueryProvider(String, org.compass.gps.device.hibernate.HibernateQueryProvider)}.
      */
     public void setindexEntityInfos(HibernateEntityIndexInfo[] indexInfos) {
         for (HibernateEntityIndexInfo indexInfo : indexInfos) {

@@ -163,7 +163,7 @@ public interface ReflectionMethod {
     Object invoke(Object obj, Object... args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException;
 
     /**
-     * Return a reference to the {@link java.lang.reflect.Method} that this {@link org.compass.core.util.reflection.ReflectionMethod}
+     * Return a reference to the {@link java.lang.reflect.Method} that this {@link ReflectionMethod}
      * represent.
      */
     Method getMethod();

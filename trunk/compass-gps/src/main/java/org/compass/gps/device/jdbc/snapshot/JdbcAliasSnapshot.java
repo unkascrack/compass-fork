@@ -23,7 +23,7 @@ import java.util.Iterator;
 /**
  * An alias (usually <code>ResultSet</code>) level snapshot. Holds a
  * collection of
- * {@link org.compass.gps.device.jdbc.snapshot.JdbcAliasRowSnapshot}s.
+ * {@link JdbcAliasRowSnapshot}s.
  * 
  * @author kimchy
  */

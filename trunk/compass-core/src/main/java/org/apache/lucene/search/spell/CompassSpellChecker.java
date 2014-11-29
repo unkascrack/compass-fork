@@ -365,7 +365,7 @@ public class CompassSpellChecker {
     }
 
     /**
-     * Indexes the data from the given {@link Dictionary}.
+     * Indexes the data from the given {@link org.apache.lucene.search.spell.Dictionary}.
      * @param dict Dictionary to index
      * @param mergeFactor mergeFactor to use when indexing
      * @param ramMB the max amount or memory in MB to use

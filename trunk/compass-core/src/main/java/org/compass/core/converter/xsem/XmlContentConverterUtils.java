@@ -15,14 +15,14 @@ import org.compass.core.xml.jdom.converter.SAXBuilderXmlContentConverter;
 import org.compass.core.xml.jdom.converter.STAXBuilderXmlContentConverter;
 
 /**
- * A set of utilities for {@link XmlContentConverter}.
+ * A set of utilities for {@link org.compass.core.converter.xsem.XmlContentConverter}.
  *
  * @author kimchy
  */
 public abstract class XmlContentConverterUtils {
 
     /**
-     * Creates a new {@link XmlContentConverter} based on the given settings.
+     * Creates a new {@link org.compass.core.converter.xsem.XmlContentConverter} based on the given settings.
      */
     public static XmlContentConverter createXmlContentConverter(CompassSettings settings) throws ConfigurationException {
         String type = settings.getGloablSettings().getSetting(CompassEnvironment.Xsem.XmlContent.TYPE);

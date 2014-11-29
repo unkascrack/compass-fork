@@ -106,7 +106,7 @@ public class ClassMapping extends AbstractResourceMapping implements ResourceMap
     /**
      * Post process by using the dynamic find operations to cache them.
      *
-     * @throws MappingException
+     * @throws org.compass.core.mapping.MappingException
      */
     protected void doPostProcess() throws MappingException {
         PostProcessMappingCallback callback = new PostProcessMappingCallback();
@@ -148,7 +148,7 @@ public class ClassMapping extends AbstractResourceMapping implements ResourceMap
     }
 
     /**
-     * Dynamically finds all the {@link ClassIdPropertyMapping}s for the class.
+     * Dynamically finds all the {@link org.compass.core.mapping.osem.ClassIdPropertyMapping}s for the class.
      */
     public List<ClassIdPropertyMapping> findClassPropertyIdMappings() {
         ArrayList<ClassIdPropertyMapping> idMappingList = new ArrayList<ClassIdPropertyMapping>();

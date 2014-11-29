@@ -17,8 +17,8 @@
 package org.compass.core.engine.naming;
 
 /**
- * The default implementation of {@link PropertyPath}, extending
- * {@link DynamicPropertyPath}, but return a {@link StaticPropertyPath}
+ * The default implementation of {@link org.compass.core.engine.naming.PropertyPath}, extending
+ * {@link org.compass.core.engine.naming.DynamicPropertyPath}, but return a {@link org.compass.core.engine.naming.StaticPropertyPath}
  * when {@link #hintStatic()} is called.
  *
  * @author kimchy

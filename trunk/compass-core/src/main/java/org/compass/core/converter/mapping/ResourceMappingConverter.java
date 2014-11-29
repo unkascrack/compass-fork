@@ -23,7 +23,7 @@ import org.compass.core.mapping.ResourceMapping;
 import org.compass.core.marshall.MarshallingContext;
 
 /**
- * A converter associated with a {@link ResourceMapping} implementation. Allows to marhsall/unmarshall
+ * A converter associated with a {@link org.compass.core.mapping.ResourceMapping} implementation. Allows to marhsall/unmarshall
  * just ids as well.
  *
  * @author kimchy

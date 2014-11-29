@@ -147,17 +147,17 @@ public class LuceneSearchEngineQueryBuilder implements SearchEngineQueryBuilder 
 
     public SearchEngineSpanQuery spanEq(String resourcePropertyName, String value) {
         SpanQuery spanQuery = new SpanTermQuery(new Term(resourcePropertyName, value));
-        return new LuceneSearchEngineQuery.LuceneSearchEngineSpanQuery(searchEngineFactory, spanQuery);
+        return new LuceneSearchEngineSpanQuery(searchEngineFactory, spanQuery);
     }
 
     public SearchEngineSpanQuery spanFirst(SearchEngineSpanQuery searchEngineSpanQuery, int end) {
         SpanQuery spanQuery = new SpanFirstQuery(((LuceneSearchEngineSpanQuery) searchEngineSpanQuery).toSpanQuery(), end);
-        return new LuceneSearchEngineQuery.LuceneSearchEngineSpanQuery(searchEngineFactory, spanQuery);
+        return new LuceneSearchEngineSpanQuery(searchEngineFactory, spanQuery);
     }
 
     public SearchEngineSpanQuery spanFirst(String resourcePropertyName, String value, int end) {
         SpanQuery spanQuery = new SpanFirstQuery(new SpanTermQuery(new Term(resourcePropertyName, value)), end);
-        return new LuceneSearchEngineQuery.LuceneSearchEngineSpanQuery(searchEngineFactory, spanQuery);
+        return new LuceneSearchEngineSpanQuery(searchEngineFactory, spanQuery);
     }
 
     public SearchEngineQuerySpanNearBuilder spanNear(String resourcePropertyName) {
@@ -167,7 +167,7 @@ public class LuceneSearchEngineQueryBuilder implements SearchEngineQueryBuilder 
     public SearchEngineSpanQuery spanNot(SearchEngineSpanQuery include, SearchEngineSpanQuery exclude) {
         SpanNotQuery spanNotQuery = new SpanNotQuery(((LuceneSearchEngineSpanQuery) include).toSpanQuery(),
                 ((LuceneSearchEngineSpanQuery) exclude).toSpanQuery());
-        return new LuceneSearchEngineQuery.LuceneSearchEngineSpanQuery(searchEngineFactory, spanNotQuery);
+        return new LuceneSearchEngineSpanQuery(searchEngineFactory, spanNotQuery);
     }
 
     public SearchEngineQuerySpanOrBuilder spanOr() {

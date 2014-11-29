@@ -25,7 +25,7 @@ import org.compass.core.mapping.internal.DefaultContractMapping;
  * common mapping definitions.
  *
  * @author kimchy
- * @see org.compass.core.mapping.xsem.builder.XSEM#contract(String)
+ * @see XSEM#contract(String)
  */
 public class XmlContractMappingBuilder implements ContractMappingProvider {
 

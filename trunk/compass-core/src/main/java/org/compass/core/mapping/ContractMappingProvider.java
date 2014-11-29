@@ -17,7 +17,7 @@
 package org.compass.core.mapping;
 
 /**
- * An interface allowing for implemenations to provide a {@link ContractMapping}
+ * An interface allowing for implemenations to provide a {@link org.compass.core.mapping.ContractMapping}
  * instance.
  *
  * @author kimchy

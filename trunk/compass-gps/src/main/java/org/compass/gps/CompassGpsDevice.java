@@ -67,7 +67,7 @@ public interface CompassGpsDevice {
      * Starts the device. Optional, since it is preferable to manage the all the
      * devices through the CompassGps API.
      * 
-     * @throws CompassGpsException
+     * @throws org.compass.gps.CompassGpsException
      */
     void start() throws CompassGpsException;
 
@@ -75,7 +75,7 @@ public interface CompassGpsDevice {
      * Stops the device. Optional, since it is preferable to manage the all the
      * devices through the CompassGps API.
      * 
-     * @throws CompassGpsException
+     * @throws org.compass.gps.CompassGpsException
      */
     void stop() throws CompassGpsException;
 
@@ -95,7 +95,7 @@ public interface CompassGpsDevice {
     /**
      * Index the device using the given index plan
      * 
-     * @throws CompassGpsException
+     * @throws org.compass.gps.CompassGpsException
      * @throws IllegalStateException
      */
     void index(IndexPlan indexPlan) throws CompassGpsException, IllegalStateException;

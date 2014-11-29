@@ -119,7 +119,7 @@ import org.hibernate.transaction.JTATransactionFactory;
  * filter out mirror operations. In order to configure one, the <code>compass.hibernate.mirrorFilter</code>
  * can be used with the implementation class FQN.
  *
- * <p>In order to get the {@link Compass} instnace bounded to this Hibernate configuration, the
+ * <p>In order to get the {@link org.compass.core.Compass} instnace bounded to this Hibernate configuration, the
  * {@link org.compass.gps.device.hibernate.embedded.HibernateHelper} can be used. This is mainly used in order to perform search operations on the
  * index and get a Compass Gps in order to reindex the database.
  *

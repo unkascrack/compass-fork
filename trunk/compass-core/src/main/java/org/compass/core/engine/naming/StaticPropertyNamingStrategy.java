@@ -17,14 +17,14 @@
 package org.compass.core.engine.naming;
 
 /**
- * A naming strategy that uses {@link StaticPropertyPath} when building
- * {@link PropertyPath}.
+ * A naming strategy that uses {@link org.compass.core.engine.naming.StaticPropertyPath} when building
+ * {@link org.compass.core.engine.naming.PropertyPath}.
  *
  * @author kimchy
- * @see PropertyPath
- * @see StaticPropertyPath
- * @see PropertyNamingStrategyFactory
- * @see DefaultPropertyNamingStrategyFactory
+ * @see org.compass.core.engine.naming.PropertyPath
+ * @see org.compass.core.engine.naming.StaticPropertyPath
+ * @see org.compass.core.engine.naming.PropertyNamingStrategyFactory
+ * @see org.compass.core.engine.naming.DefaultPropertyNamingStrategyFactory
  */
 public class StaticPropertyNamingStrategy implements PropertyNamingStrategy {
 

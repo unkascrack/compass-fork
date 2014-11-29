@@ -38,9 +38,9 @@ import org.compass.gps.device.jdbc.dialect.JdbcDialect;
  * {@link org.compass.gps.device.jdbc.dialect.JdbcDialect}. Also
  * provides template like support for processing database indexing using the
  * <code>IndexExecution</code> object hint, and a set of callback methods:
- * {@link #processResultSet(Object, java.sql.ResultSet, CompassSession)},
- * {@link #processRow(Object, java.sql.ResultSet, CompassSession)}, and
- * {@link #processRowValue(Object, java.sql.ResultSet, CompassSession)}. One of the
+ * {@link #processResultSet(Object, java.sql.ResultSet, org.compass.core.CompassSession)},
+ * {@link #processRow(Object, java.sql.ResultSet, org.compass.core.CompassSession)}, and
+ * {@link #processRowValue(Object, java.sql.ResultSet, org.compass.core.CompassSession)}. One of the
  * callback mehtods should be overriden by the derived class otherwize the class
  * won't index anyhting.
  *
@@ -112,11 +112,13 @@ public abstract class AbstractJdbcGpsDevice extends AbstractGpsDevice implements
             throw new IllegalArgumentException("dataSource property must be set");
         }
 
-        try {
-            this.dialect = new DialectResolver(true).getDialect(dataSource);
-        } catch (Exception e) {
-            log.warn("Failed to detect database dialect", e);
-            throw new JdbcGpsDeviceException("Failed to detect database dialect", e);
+        if (dialect == null) {
+            try {
+                this.dialect = new DialectResolver(true).getDialect(dataSource);
+            } catch (Exception e) {
+                log.warn("Failed to detect database dialect", e);
+                throw new JdbcGpsDeviceException("Failed to detect database dialect", e);
+            }
         }
     }
 
@@ -133,7 +135,7 @@ public abstract class AbstractJdbcGpsDevice extends AbstractGpsDevice implements
      * an open connection to get the list of {@link org.compass.gps.device.jdbc.AbstractJdbcGpsDevice.IndexExecution} to perform.
      * <p/>
      * For each {@link org.compass.gps.device.jdbc.AbstractJdbcGpsDevice.IndexExecution}, executes the select query, and calls
-     * the {@link #processResultSet(Object, java.sql.ResultSet, CompassSession)} for the
+     * the {@link #processResultSet(Object, java.sql.ResultSet, org.compass.core.CompassSession)} for the
      * returned <code>ResultSet</code>.
      */
     protected void doIndex(CompassSession session) throws CompassGpsException {
@@ -185,7 +187,7 @@ public abstract class AbstractJdbcGpsDevice extends AbstractGpsDevice implements
      * {@link #doGetIndexExecutions(java.sql.Connection)} with the <code>ResultSet</code>.
      * Can be override by derived classes, if not override, than iterates threw
      * the <code>ResultSet</code> and calls
-     * {@link #processRow(Object, java.sql.ResultSet, CompassSession)} for each row.
+     * {@link #processRow(Object, java.sql.ResultSet, org.compass.core.CompassSession)} for each row.
      */
     protected void processResultSet(Object description, ResultSet rs, CompassSession session) throws SQLException,
             CompassException {
@@ -198,7 +200,7 @@ public abstract class AbstractJdbcGpsDevice extends AbstractGpsDevice implements
      * Called for each row in the <code>ResultSet</code> which maps to an
      * {@link org.compass.gps.device.jdbc.AbstractJdbcGpsDevice.IndexExecution}. Can be override by derived classes, if not
      * override, than calls
-     * {@link #processRowValue(Object, java.sql.ResultSet, CompassSession)} and uses it's
+     * {@link #processRowValue(Object, java.sql.ResultSet, org.compass.core.CompassSession)} and uses it's
      * return value to save it in the <code>CompassSession</code>. The return
      * value can be an OSEM enables object, a <code>Resource</code>, or an
      * array of one of them.

@@ -21,7 +21,7 @@ import org.compass.core.engine.naming.PropertyPath;
 import org.compass.core.mapping.Mapping;
 
 /**
- * An extension to the {@link Mapping} interface allowing to making it mutable.
+ * An extension to the {@link org.compass.core.mapping.Mapping} interface allowing to making it mutable.
  *
  * @author kimchy
  */

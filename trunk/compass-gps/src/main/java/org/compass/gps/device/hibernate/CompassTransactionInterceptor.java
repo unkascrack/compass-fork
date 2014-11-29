@@ -43,7 +43,7 @@ import org.hibernate.type.Type;
  *
  * <p>For another option of integrating Compass transactions and Hibernate, please see
  * {@link org.compass.core.transaction.JTASyncTransactionFactory}, {@link org.compass.core.transaction.XATransactionFactory}
- * or {@link org.compass.gps.device.hibernate.HibernateSyncTransactionFactory}.
+ * or {@link HibernateSyncTransactionFactory}.
  *
  * @author kimchy
  */

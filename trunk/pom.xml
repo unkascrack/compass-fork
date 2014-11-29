@@ -16,6 +16,41 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <id>kimchy@gmail.com</id>
+            <name>Shay Banon</name>
+            <url>http://www.kimchy.org</url>
+            <email>kimchy@gmail.com</email>
+            <roles>
+                <role>Project Creator</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>carlos.alonso.gonzalez_at_gmail.com</id>
+            <name>Carlos Alonso</name>
+            <url>https://compass-fork.googlecode.com</url>
+            <email>carlos.alonso.gonzalez_at_gmail.com</email>
+            <roles>
+                <role>Fork Maintainer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>google</system>
+        <url>http://code.google.com/p/compass-fork/issues/list</url>
+    </issueManagement>
+    <scm>
+        <connection>scm:svn:http://compass-fork.googlecode.com/svn/trunk/</connection>
+        <developerConnection>scm:svn:https://compass-fork.googlecode.com/svn/trunk/</developerConnection>
+        <url>http://compass-fork.googlecode.com/svn/trunk/</url>
+    </scm>
+
+    <prerequisites>
+        <maven>3.0.4</maven>
+    </prerequisites>
+
     <modules>
         <module>compass-repository</module>
         <module>compass-core</module>

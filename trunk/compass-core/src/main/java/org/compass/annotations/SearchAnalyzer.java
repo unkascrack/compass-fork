@@ -24,23 +24,23 @@ import java.lang.annotation.Target;
 import org.apache.lucene.analysis.Analyzer;
 
 /**
- * Configure {@link Analyzer} to be used within Compass.
+ * Configure {@link org.apache.lucene.analysis.Analyzer} to be used within Compass.
  * Set on package definition (<code>package-info.java</code>).
  *
- * <p>The {@link Analyzer} is registed under a lookup name ({@link #name()}), which can then
+ * <p>The {@link org.apache.lucene.analysis.Analyzer} is registed under a lookup name ({@link #name()}), which can then
  * be reference in the different mapping definitions.
  *
  * <p>Allows for simple configuration of all analyzers that come with Compass using {@link #type()}.
- * If the {@link #type()} is set to {@link AnalyzerType#Snowball}, the {@link #snowballType()}
+ * If the {@link #type()} is set to {@link org.compass.annotations.AnalyzerType#Snowball}, the {@link #snowballType()}
  * can be used to further configure the snowball analyzer. If a custom converter needs to be
- * registered with Compass, the {@link AnalyzerType#CustomAnalyzer} needs to be set on {@link #type()},
+ * registered with Compass, the {@link org.compass.annotations.AnalyzerType#CustomAnalyzer} needs to be set on {@link #type()},
  * and the {@link #analyzerClass()} needs to be configured with the class that implements it.
  *
  * <p>A set of stop words can be added/replace the stop words the internal analyzers are configured
  * with. The stop words will be added if the {@link #addStopWords()} is set to <code>true</code>.
  *
  * <p>Further settings can be set for a specialized analyzer using {@link #settings()}. If the
- * specialized {@link Analyzer} requires settings to be injected, it needs to implement the
+ * specialized {@link org.apache.lucene.analysis.Analyzer} requires settings to be injected, it needs to implement the
  * {@link org.compass.core.config.CompassConfigurable} interface.
  *
  * <p>To replace Compas default analyzer, the {@link #name()} should be set
@@ -65,27 +65,27 @@ public @interface SearchAnalyzer {
     String name();
 
     /**
-     * The type of the analyzer. For custom {@link Analyzer} implementation
-     * the {@link AnalyzerType#CustomAnalyzer} should be set, and the {@link #analyzerClass()}
-     * should have the custom {@link Analyzer} class set.
+     * The type of the analyzer. For custom {@link org.apache.lucene.analysis.Analyzer} implementation
+     * the {@link org.compass.annotations.AnalyzerType#CustomAnalyzer} should be set, and the {@link #analyzerClass()}
+     * should have the custom {@link org.apache.lucene.analysis.Analyzer} class set.
      */
     AnalyzerType type();
 
     /**
-     * If the {@link #type()} is set to {@link AnalyzerType#Snowball}, controls
+     * If the {@link #type()} is set to {@link org.compass.annotations.AnalyzerType#Snowball}, controls
      * the snowball analyzer type.
      */
     SnowballType snowballType() default SnowballType.Porter;
 
     /**
-     * The custom {@link Analyzer} implementation. Used when the {@link #type()}
-     * is set to {@link AnalyzerType#CustomAnalyzer}.
+     * The custom {@link org.apache.lucene.analysis.Analyzer} implementation. Used when the {@link #type()}
+     * is set to {@link org.compass.annotations.AnalyzerType#CustomAnalyzer}.
      */
     Class<? extends Analyzer> analyzerClass() default Analyzer.class;
 
     /**
      * A set of {@link org.compass.core.lucene.engine.analyzer.LuceneAnalyzerTokenFilterProvider}s
-     * lookup names to be used with the {@link Analyzer}.
+     * lookup names to be used with the {@link org.apache.lucene.analysis.Analyzer}.
      *
      * <p>Filters can be configured using {@link SearchAnalyzerFilter} or using Compass configuration.
      */
@@ -95,7 +95,7 @@ public @interface SearchAnalyzer {
      * A set of stop words that will be added/replace the stop words that comes with Compass intenral
      * analyzers.
      *
-     * <p>Only applies when using one of Compass internal analyzer types, and not the {@link AnalyzerType#CustomAnalyzer}.
+     * <p>Only applies when using one of Compass internal analyzer types, and not the {@link org.compass.annotations.AnalyzerType#CustomAnalyzer}.
      */
     String[] stopWords() default {};
 
@@ -103,12 +103,12 @@ public @interface SearchAnalyzer {
      * Add the set of {@link #stopWords()} to the default set of stop words if set to <code>true</code>.
      * Replaces them if set to <code>false</code>.
      * <p/>
-     * Only applies when using one of Compass internal analyzer types, and not the {@link AnalyzerType#CustomAnalyzer}.
+     * Only applies when using one of Compass internal analyzer types, and not the {@link org.compass.annotations.AnalyzerType#CustomAnalyzer}.
      */
     boolean addStopWords() default true;
 
     /**
-     * Further settings for a custom {@link Analyzer} implementation.
+     * Further settings for a custom {@link org.apache.lucene.analysis.Analyzer} implementation.
      */
     SearchSetting[] settings() default {};
 }

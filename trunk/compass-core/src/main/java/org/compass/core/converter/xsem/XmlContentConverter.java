@@ -45,7 +45,7 @@ public interface XmlContentConverter {
      * @param alias The alias the aliases xml object is associated with
      * @param xml   The xml string that will be converted into an aliases xml object
      * @return The aliases xml object that is the restult of the xml parsed
-     * @throws org.compass.core.converter.ConversionException
+     * @throws ConversionException
      */
     AliasedXmlObject fromXml(String alias, Reader xml) throws ConversionException;
 

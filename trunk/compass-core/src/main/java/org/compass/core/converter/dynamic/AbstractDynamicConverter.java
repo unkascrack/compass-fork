@@ -99,7 +99,7 @@ public abstract class AbstractDynamicConverter extends AbstractBasicConverter im
      * @param o                       The data object
      * @param resourcePropertyMapping The resource mapping
      * @return The object returned as a result of expression evaluation
-     * @throws org.compass.core.converter.ConversionException
+     * @throws ConversionException
      */
     protected abstract Object evaluate(Object o, ResourcePropertyMapping resourcePropertyMapping) throws ConversionException;
 

@@ -27,12 +27,12 @@ import org.compass.core.converter.Converter;
  * Specifies a class as being "convertable" by Compass.
  *
  * <p>Mostly used to convert classes into a String value that
- * will be stored in the index. Applies to {@link Searchable} class
- * {@link SearchableId} and {@link SearchableProperty} annotations.
+ * will be stored in the index. Applies to {@link org.compass.annotations.Searchable} class
+ * {@link org.compass.annotations.SearchableId} and {@link org.compass.annotations.SearchableProperty} annotations.
  *
  * Requires a converter that implements the {@link Converter} interface. Usually
  * <p>will extend the {@link org.compass.core.converter.basic.AbstractBasicConverter}
- * (since for other cases, the {@link SearchableComponent} can be used).
+ * (since for other cases, the {@link org.compass.annotations.SearchableComponent} can be used).
  *
  * <p>Alloes for additional settings to be passes to the converter using {@link #settings()}.
  * For the converter to be injected with the specified settings, it need to implement the
@@ -48,7 +48,7 @@ public @interface SearchableClassConverter {
      * The converter that will be used to convert the class.
      *
      * <p>Usually will be a converter that converts the class into a String
-     * stored in the search engine index (since for other cases, the {@link SearchableComponent}
+     * stored in the search engine index (since for other cases, the {@link org.compass.annotations.SearchableComponent}
      * can be used). Compass comes with a handy class for such converters:
      * {@link org.compass.core.converter.basic.AbstractBasicConverter}.
      */

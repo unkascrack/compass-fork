@@ -189,7 +189,7 @@ public class CompassConfiguration {
     }
 
     /**
-     * Registers a {@link org.compass.core.converter.Converter} under the given name. The name can then be used in the mapping
+     * Registers a {@link Converter} under the given name. The name can then be used in the mapping
      * definitions as a logical name to the converter.
      *
      * @param converterName the converter name the converter will be registered under
@@ -202,7 +202,7 @@ public class CompassConfiguration {
     }
 
     /**
-     * Regsiters a {@link org.compass.core.converter.Converter} under the given name. This converter will apply to all the given
+     * Regsiters a {@link Converter} under the given name. This converter will apply to all the given
      * types that match the given type.
      *
      * @param converterName The name of the converter
@@ -218,7 +218,7 @@ public class CompassConfiguration {
 
     /**
      * Build compass with the configurations set. Creates a copy of all the
-     * current settings and mappings, configures a {@link org.compass.core.Compass} instance and
+     * current settings and mappings, configures a {@link Compass} instance and
      * starts it.
      * <p/>
      * Note that the <code>CompassConfiguration</code> class can be used to
@@ -322,7 +322,7 @@ public class CompassConfiguration {
      *
      * @param url URL from which you wish to load the configuration
      * @return A configuration configured via the file
-     * @throws org.compass.core.config.ConfigurationException
+     * @throws ConfigurationException
      */
     public CompassConfiguration configure(URL url) throws ConfigurationException {
         log.info("Configuring from url [" + url.toExternalForm() + "]");
@@ -336,7 +336,7 @@ public class CompassConfiguration {
      * @param configFile <code>File</code> from which you wish to load the
      *                   configuration
      * @return A configuration configured via the file
-     * @throws org.compass.core.config.ConfigurationException
+     * @throws ConfigurationException
      */
     public CompassConfiguration configure(File configFile) throws ConfigurationException {
         log.info("Configuring from file [" + configFile.getAbsolutePath() + "]");
@@ -422,7 +422,7 @@ public class CompassConfiguration {
     }
 
     /**
-     * Uses a class that implements the {@link org.compass.core.config.InputStreamMappingResolver} for auto
+     * Uses a class that implements the {@link InputStreamMappingResolver} for auto
      * generation of mapping definitions.
      *
      * @param mappingResolver The mapping resolver
@@ -607,7 +607,7 @@ public class CompassConfiguration {
      *
      * @param searchableClass The searchable class to add
      * @return <code>true</code> if the class was added, <code>false</code> otherwise
-     * @throws org.compass.core.config.ConfigurationException
+     * @throws ConfigurationException
      */
     public boolean tryAddClass(Class searchableClass) throws ConfigurationException {
         boolean hasAddedResource = getMappingBinding().addClass(searchableClass);

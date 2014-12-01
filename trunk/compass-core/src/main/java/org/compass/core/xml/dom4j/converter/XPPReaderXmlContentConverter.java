@@ -62,7 +62,7 @@ public class XPPReaderXmlContentConverter extends AbstractXmlWriterXmlContentCon
      * @param alias The alias that will be associated with the {@link org.compass.core.xml.AliasedXmlObject}
      * @param xml   The xml string to convert into an {@link org.compass.core.xml.dom4j.Dom4jAliasedXmlObject}
      * @return A {@link org.compass.core.xml.dom4j.Dom4jAliasedXmlObject} parsed from the given xml string and associated with the given alias
-     * @throws org.compass.core.converter.ConversionException In case the xml parsing failed
+     * @throws ConversionException In case the xml parsing failed
      */
     public AliasedXmlObject fromXml(String alias, Reader xml) throws ConversionException {
         Document doc;

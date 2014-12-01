@@ -49,14 +49,14 @@ public interface ResourcePropertyMapping extends Mapping {
     /**
      * Returns the boost level.
      *
-     * @see org.compass.core.Property#setBoost(float)
+     * @see Property#setBoost(float)
      */
     float getBoost();
 
     /**
      * Should the reosurce property omit norms or not.
      *
-     * @see org.compass.core.Property#setOmitNorms(boolean)
+     * @see Property#setOmitNorms(boolean)
      */
     Boolean isOmitNorms();
 
@@ -65,7 +65,7 @@ public interface ResourcePropertyMapping extends Mapping {
      *
      * If set, omit tf from postings of this indexed field.
      *
-     * @see org.compass.core.Property#setOmitTf(boolean)
+     * @see Property#setOmitTf(boolean)
      */
     Boolean isOmitTf();
 

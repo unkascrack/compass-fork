@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Defines a collection of {@link SearchAnalyzer}s.
+ * Defines a collection of {@link org.compass.annotations.SearchAnalyzer}s.
  * Set on package definition (<code>package-info.java</code>).
  *
  * @author kimchy

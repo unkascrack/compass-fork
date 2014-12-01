@@ -21,7 +21,7 @@ import org.compass.core.mapping.ResourceMapping;
 
 /**
  * Responsible for marhslling and unmarashlling high level objects (a.k.a root object)
- * to and from {@link org.compass.core.Resource}.
+ * to and from {@link Resource}.
  *
  * @author kimchy
  */
@@ -29,7 +29,7 @@ public interface MarshallingStrategy {
 
     /**
      * Unmarshalls the given resource to an Object based on the {@link org.compass.core.mapping.ResourceMapping}
-     * regsitered under the {@link org.compass.core.Resource} alias.
+     * regsitered under the {@link Resource} alias.
      *
      * @param resource The resource to unmarshall from
      * @return The object unmarshalled from the resource
@@ -38,7 +38,7 @@ public interface MarshallingStrategy {
 
     /**
      * Unmarshalls the given resource to an Object based on the {@link org.compass.core.mapping.ResourceMapping}
-     * regsitered under the {@link org.compass.core.Resource} alias WITHIN the given marshalling context.
+     * regsitered under the {@link Resource} alias WITHIN the given marshalling context.
      *
      * @param resource The resource to unmarshall from
      * @param context  The context to unmarshall the resource within
@@ -47,7 +47,7 @@ public interface MarshallingStrategy {
     Object unmarshall(Resource resource, MarshallingContext context);
 
     /**
-     * Marshalls the given Object into a {@link org.compass.core.Resource} based on the {@link org.compass.core.mapping.ResourceMapping}
+     * Marshalls the given Object into a {@link Resource} based on the {@link org.compass.core.mapping.ResourceMapping}
      * associated with the provided alias. Returns <code>null</code> if there are no mappings.
      *
      * @param alias The alias to look up the {@link org.compass.core.mapping.ResourceMapping}
@@ -57,7 +57,7 @@ public interface MarshallingStrategy {
     Resource marshall(String alias, Object root);
 
     /**
-     * Marshalls the given Object into a {@link org.compass.core.Resource} based on the {@link org.compass.core.mapping.ResourceMapping}
+     * Marshalls the given Object into a {@link Resource} based on the {@link org.compass.core.mapping.ResourceMapping}
      * associated with the provided object. If the object implements {@link org.compass.core.spi.AliasedObject},
      * the alias will be used to look up the {@link org.compass.core.mapping.ResourceMapping}, otherwise, the object class will be used.
      *
@@ -76,7 +76,7 @@ public interface MarshallingStrategy {
      *
      * <p>Will return <code>null</code> if no mappins are found
      *
-     * @param id The id to marshall into a {@link org.compass.core.Resource}
+     * @param id The id to marshall into a {@link Resource}
      * @return A resource having its id properties set
      */
     Resource marshallIds(Object id);
@@ -92,7 +92,7 @@ public interface MarshallingStrategy {
      * <p>Will return <code>null</code> if no mappins are found
      *
      * @param alias The alias to look up the {@link org.compass.core.mapping.ResourceMapping} based
-     * @param id    The id to marshall into a {@link org.compass.core.Resource}
+     * @param id    The id to marshall into a {@link Resource}
      * @return A resource having its id properties set
      */
     Resource marshallIds(String alias, Object id);
@@ -108,7 +108,7 @@ public interface MarshallingStrategy {
      * <p>Will return <code>null</code> if no mappins are found
      *
      * @param clazz The class to look up the {@link org.compass.core.mapping.ResourceMapping} based
-     * @param id    The id to marshall into a {@link org.compass.core.Resource}
+     * @param id    The id to marshall into a {@link Resource}
      * @return A resource having its id properties set
      */
     Resource marshallIds(Class clazz, Object id);
@@ -120,7 +120,7 @@ public interface MarshallingStrategy {
      * or if a single id, the actual id object.
      *
      * @param resourceMapping The resource mapping holding how to marhsall the ids
-     * @param id              The id to marshall into a {@link org.compass.core.Resource}
+     * @param id              The id to marshall into a {@link Resource}
      * @return A resource having its id properties set
      */
     Resource marshallIds(ResourceMapping resourceMapping, Object id);
@@ -133,8 +133,8 @@ public interface MarshallingStrategy {
      *
      * @param resource        The resource to marhsll the ids into
      * @param resourceMapping The resource mapping holding how to marhsall the ids
-     * @param id              The id to marshall into a {@link org.compass.core.Resource}
-     * @return <code>true</code> if stored properties were added to the {@link org.compass.core.Resource}.
+     * @param id              The id to marshall into a {@link Resource}
+     * @return <code>true</code> if stored properties were added to the {@link Resource}.
      */
     boolean marshallIds(Resource resource, ResourceMapping resourceMapping, Object id, MarshallingContext context);
 

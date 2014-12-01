@@ -25,10 +25,10 @@ import org.compass.core.lucene.engine.transaction.support.AbstractJobBasedTransa
 import org.compass.core.lucene.engine.transaction.support.job.TransactionJobs;
 
 /**
- * Processes transaction asynchronously. For more information see {@link AsyncTransactionProcessorFactory}.
+ * Processes transaction asynchronously. For more information see {@link org.compass.core.lucene.engine.transaction.async.AsyncTransactionProcessorFactory}.
  *
  * @author kimchy
- * @see AsyncTransactionProcessorFactory
+ * @see org.compass.core.lucene.engine.transaction.async.AsyncTransactionProcessorFactory
  */
 public class AsyncTransactionProcessor extends AbstractJobBasedTransactionProcessor {
 
@@ -40,7 +40,7 @@ public class AsyncTransactionProcessor extends AbstractJobBasedTransactionProces
 
     /**
      * Constructs a new processor (for a given transaction) with a back reference to the
-     * {@link org.compass.core.lucene.engine.transaction.async.AsyncTransactionProcessorFactory} in order to add (at commit) the
+     * {@link AsyncTransactionProcessorFactory} in order to add (at commit) the
      * {@link org.compass.core.lucene.engine.transaction.support.job.TransactionJobs}.
      */
     public AsyncTransactionProcessor(LuceneSearchEngine searchEngine, AsyncTransactionProcessorFactory processorFactory) {

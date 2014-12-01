@@ -22,8 +22,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Defines a collection of {@link SearchableConstant} associated with a
- * {@link Searchable} class.
+ * Defines a collection of {@link org.compass.annotations.SearchableConstant} associated with a
+ * {@link org.compass.annotations.Searchable} class.
  *
  * @author kimchy
  */
@@ -32,7 +32,7 @@ import java.lang.annotation.Target;
 public @interface SearchableConstants {
 
     /**
-     * Collection of {@link SearchableConstant} associated with a {@link Searchable} class.
+     * Collection of {@link org.compass.annotations.SearchableConstant} associated with a {@link org.compass.annotations.Searchable} class.
      */
     SearchableConstant[] value();
 }

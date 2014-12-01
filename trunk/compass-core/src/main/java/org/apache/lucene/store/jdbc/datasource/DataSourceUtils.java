@@ -48,7 +48,7 @@ public abstract class DataSourceUtils {
     }
 
     /**
-     * Returns <code>true</code> if the connection was created by the {@link org.apache.lucene.store.jdbc.datasource.TransactionAwareDataSourceProxy} and it
+     * Returns <code>true</code> if the connection was created by the {@link TransactionAwareDataSourceProxy} and it
      * controls the connection (i.e. it is the most outer connection created).
      */
     public static boolean controlConnection(Connection connection) {
@@ -72,8 +72,8 @@ public abstract class DataSourceUtils {
      * useful for typical finally blocks in manual JDBC code.
      * <p/>
      * Will only close the connection under two conditions:
-     * If the connection was not created by the {@link org.apache.lucene.store.jdbc.datasource.TransactionAwareDataSourceProxy}, or if it was created
-     * by {@link org.apache.lucene.store.jdbc.datasource.TransactionAwareDataSourceProxy}, and the connection controls the connection
+     * If the connection was not created by the {@link TransactionAwareDataSourceProxy}, or if it was created
+     * by {@link TransactionAwareDataSourceProxy}, and the connection controls the connection
      * (i.e. it is the most outer connection created).
      */
     public static void releaseConnection(Connection con) {

@@ -25,7 +25,7 @@ public interface AliasMapping extends MultipleMapping {
 
     /**
      * Performs a shalow copy of this mapping, not including any internal mappings
-     * belonging to {@link org.compass.core.mapping.MultipleMapping}.
+     * belonging to {@link MultipleMapping}.
      */
     AliasMapping shallowCopy();
 

@@ -94,7 +94,7 @@ public @interface SearchableDynamicMetaData {
      * Specifies if this meta-data should be excluded from the generated
      * "all" meta-data.
      *
-     * @see SearchableAllMetaData#enable() 
+     * @see org.compass.annotations.SearchableAllMetaData#enable()
      */
     ExcludeFromAll excludeFromAll() default ExcludeFromAll.NO;
     

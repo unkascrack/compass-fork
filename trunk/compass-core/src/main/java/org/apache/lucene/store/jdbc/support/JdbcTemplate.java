@@ -33,11 +33,11 @@ import org.apache.lucene.store.jdbc.datasource.DataSourceUtils;
 
 /**
  * Helper class that isused to encapsulate resource and transaction handling related to <code>DataSource</code>,
- * <code>Statement</code>, and <code>ResultSet</code>. {@link org.apache.lucene.store.jdbc.datasource.DataSourceUtils} is used to open/cose relevant
+ * <code>Statement</code>, and <code>ResultSet</code>. {@link DataSourceUtils} is used to open/cose relevant
  * resources.
  *
  * @author kimchy
- * @see org.apache.lucene.store.jdbc.datasource.DataSourceUtils
+ * @see DataSourceUtils
  */
 public class JdbcTemplate {
 

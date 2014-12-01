@@ -176,7 +176,7 @@ public @interface Searchable {
     SupportUnmarshall supportUnmarshall() default SupportUnmarshall.NA;
 
     /**
-     * Controls if the {@link org.compass.annotations.Searchable} class should filter duplciates. Duplciates
+     * Controls if the {@link Searchable} class should filter duplciates. Duplciates
      * are objects that have already been marshalled during the marshalling process of a single root object
      * (and its object graph). Filtering them out means reducing the size of the index (content, of course,
      * is still searchable), though object graph queries and possible "boost" information by having it several

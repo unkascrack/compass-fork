@@ -24,7 +24,7 @@ package org.compass.core;
  * Also allows for highlighting using {@link #highlighter(int)}, and any highlighting
  * operation (that returns a single <code>String</code>) will be cached within the
  * hits (and also moved to the detached hits, if {@link #detach(int, int)} is called),
- * and can be used by {@link org.compass.core.CompassHitsOperations#highlightedText(int)}.
+ * and can be used by {@link CompassHitsOperations#highlightedText(int)}.
  *
  * @author kimchy
  */
@@ -37,7 +37,7 @@ public interface CompassHits extends CompassHitsOperations {
      * LONG time to load a large hits result set.
      *
      * @return A detached hits.
-     * @throws org.compass.core.CompassException
+     * @throws CompassException 
      */
     CompassDetachedHits detach() throws CompassException;
 
@@ -49,7 +49,7 @@ public interface CompassHits extends CompassHitsOperations {
      * @param from The index that the sub hits starts from.
      * @param size The size of the sub hits.
      * @return A detached sub hits.
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     CompassDetachedHits detach(int from, int size) throws CompassException, IllegalArgumentException;
 
@@ -59,11 +59,11 @@ public interface CompassHits extends CompassHitsOperations {
      * Note, that any highlighting operation (that returns a single <code>String</code>)
      * will be cached within the hits (and also moved to the detached hits, if
      * {@link #detach(int, int)} is called), and can be used by
-     * {@link org.compass.core.CompassHitsOperations#highlightedText(int)}.
+     * {@link CompassHitsOperations#highlightedText(int)}.
      *
      * @param n The n'th hit.
      * @return The highlighter.
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     CompassHighlighter highlighter(int n) throws CompassException;
 
@@ -73,7 +73,7 @@ public interface CompassHits extends CompassHitsOperations {
      * <p/>
      * It is provided for more controlled resource management
      *
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     void close() throws CompassException;
 }

@@ -32,7 +32,7 @@ public class ExpirationTimeDeletionPolicy implements IndexDeletionPolicy, Direct
 
     /**
      * Configures the expiration time of the deletion policy. Can be controlled using
-     * {@link org.compass.core.lucene.LuceneEnvironment.IndexDeletionPolicy.ExpirationTime#EXPIRATION_TIME_IN_SECONDS}.
+     * {@link LuceneEnvironment.IndexDeletionPolicy.ExpirationTime#EXPIRATION_TIME_IN_SECONDS}.
      *
      * <p>Defaults to the cache invalidation time * 3.
      */

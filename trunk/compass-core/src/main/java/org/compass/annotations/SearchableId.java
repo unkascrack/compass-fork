@@ -22,7 +22,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Target;
 
 /**
- * Specifies a searchable id on property or field of the {@link Searchable} class.
+ * Specifies a searchable id on property or field of the {@link org.compass.annotations.Searchable} class.
  *
  * <p>Each searchable class must have at least one id annotation. The type
  * of the field/property can be a simple type, or a custom class. In case
@@ -47,7 +47,7 @@ import java.lang.annotation.Target;
  * meta-data id can be done using {@link #managedId()} and {@link #managedIdIndex()}.
  *
  * @author kimchy
- * @see Searchable
+ * @see org.compass.annotations.Searchable
  * @see SearchableClassConverter
  * @see SearchableMetaData
  * @see SearchableMetaDatas

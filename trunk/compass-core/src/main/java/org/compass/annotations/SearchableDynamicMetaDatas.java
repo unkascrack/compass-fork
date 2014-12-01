@@ -22,8 +22,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Defines a collection of {@link org.compass.annotations.SearchableDynamicMetaData} associated with
- * a {@link org.compass.annotations.Searchable} class.
+ * Defines a collection of {@link SearchableDynamicMetaData} associated with
+ * a {@link Searchable} class.
  *
  * @author kimchy
  */
@@ -32,7 +32,7 @@ import java.lang.annotation.Target;
 public @interface SearchableDynamicMetaDatas {
 
     /**
-     * Colleciton of dynamci meta-data that will be associated with a {@link org.compass.annotations.Searchable} class.
+     * Colleciton of dynamci meta-data that will be associated with a {@link Searchable} class.
      */
     SearchableDynamicMetaData[] value();
 }

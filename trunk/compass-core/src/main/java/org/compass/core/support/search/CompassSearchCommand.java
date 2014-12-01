@@ -28,7 +28,7 @@ import org.compass.core.CompassQuery;
  *
  * @author kimchy
  * @see CompassSearchHelper
- * @see CompassSearchResults
+ * @see org.compass.core.support.search.CompassSearchResults
  */
 public class CompassSearchCommand {
 

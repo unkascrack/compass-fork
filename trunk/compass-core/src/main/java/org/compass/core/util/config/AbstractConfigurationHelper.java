@@ -30,7 +30,7 @@ public abstract class AbstractConfigurationHelper implements ConfigurationHelper
      * all Configuration implementations though.
      * 
      * @return A non-null String (defaults to "")
-     * @throws org.compass.core.config.ConfigurationException
+     * @throws ConfigurationException
      *             if no prefix was defined (prefix is <code>null</code>.
      */
     protected abstract String getPrefix() throws ConfigurationException;

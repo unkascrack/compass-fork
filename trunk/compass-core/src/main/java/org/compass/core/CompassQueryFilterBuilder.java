@@ -18,13 +18,13 @@ package org.compass.core;
 
 /**
  * The query builder is used to construct
- * {@link CompassQueryFilter} programmatically. Simple
+ * {@link org.compass.core.CompassQueryFilter} programmatically. Simple
  * queries, like {@link #le(String, Object)}, will generate a
- * {@link CompassQueryFilter}. More complex ones, will
+ * {@link org.compass.core.CompassQueryFilter}. More complex ones, will
  * return their repective builder to continue and bulid them (like
  * {@link #bool()}).
  * <p/>
- * The generated filter can be set on the query itself using {@link CompassQuery#setFilter(CompassQueryFilter)}.
+ * The generated filter can be set on the query itself using {@link org.compass.core.CompassQuery#setFilter(org.compass.core.CompassQueryFilter)}.
  *
  * @author kimchy
  */
@@ -32,7 +32,7 @@ public interface CompassQueryFilterBuilder {
 
     /**
      * A general interface for internal builders that will create a
-     * {@link CompassQueryFilter}.
+     * {@link org.compass.core.CompassQueryFilter}.
      *
      * @author kimchy
      */

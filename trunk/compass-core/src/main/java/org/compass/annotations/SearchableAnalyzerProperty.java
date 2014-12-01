@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Specifies a {@link Searchable} class field/property that dynamically
+ * Specifies a {@link org.compass.annotations.Searchable} class field/property that dynamically
  * controls the anlayzer that will be used to analyze the class content.
  * <p/>
  * The value of the field/property will be used as analyzer lookup name

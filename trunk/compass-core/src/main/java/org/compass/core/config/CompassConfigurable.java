@@ -29,7 +29,7 @@ public interface CompassConfigurable {
      * Configure using the given settings.
      *
      * @param settings The settings for the configured object
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     void configure(CompassSettings settings) throws CompassException;
 }

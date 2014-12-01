@@ -364,7 +364,7 @@ public class LateBindingOsemMappingProcessor implements MappingProcessor {
         /**
          * In case we do not need to support unmarshalling, we need to perform simple cyclic detection
          * and return <code>false</code> (won't iterate into this class mapping) if we already passed
-         * this class mapping. We will remove the marker in the {@link #onEndClassMapping(org.compass.core.mapping.osem.ClassMapping)}.
+         * this class mapping. We will remove the marker in the {@link #onEndClassMapping(ClassMapping)}.
          */
         public boolean onBeginClassMapping(ClassMapping classMapping) {
             if (cyclicClassMappings.contains(classMapping.getAlias())) {

@@ -39,7 +39,7 @@ import org.compass.core.engine.spellcheck.SearchEngineSpellCheckManager;
  * optimiser lifecycle.
  *
  * @author kimchy
- * @see org.compass.core.CompassSession
+ * @see CompassSession
  * @see org.compass.core.config.CompassConfiguration
  */
 public interface Compass extends Serializable {
@@ -62,7 +62,7 @@ public interface Compass extends Serializable {
      * transaction.
      *
      * @return CompassSession The compass session
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     CompassSession openSession() throws CompassException;
 
@@ -84,7 +84,7 @@ public interface Compass extends Serializable {
      * transaction.
      *
      * @return CompassSession The compass session
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     CompassSearchSession openSearchSession() throws CompassException;
 
@@ -106,7 +106,7 @@ public interface Compass extends Serializable {
      * transaction.
      *
      * @return CompassSession The compass session
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     CompassIndexSession openIndexSession() throws CompassException;
 
@@ -116,7 +116,7 @@ public interface Compass extends Serializable {
      * (such as file descriptor when storing the index within the file system) that
      * will not be released otherwise.
      *
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     void close() throws CompassException;
 
@@ -139,8 +139,8 @@ public interface Compass extends Serializable {
     CompassQueryBuilder queryBuilder() throws CompassException;
 
     /**
-     * Creates a new query filter builder that can create {@link CompassQueryFilter}s
-     * that can later be added to {@link CompassQuery#setFilter(org.compass.core.CompassQueryFilter)}.
+     * Creates a new query filter builder that can create {@link org.compass.core.CompassQueryFilter}s
+     * that can later be added to {@link org.compass.core.CompassQuery#setFilter(CompassQueryFilter)}.
      */
     CompassQueryFilterBuilder queryFilterBuilder() throws CompassException;
 

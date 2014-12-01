@@ -62,7 +62,7 @@ public class ModuloSubIndexHash implements SubIndexHash, CompassConfigurable {
      * and <code>size</code> as the modulo right hand side operation.
      *
      * @param settings The setting to configure by
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     public void configure(CompassSettings settings) throws CompassException {
         prefix = settings.getSetting("prefix", null);

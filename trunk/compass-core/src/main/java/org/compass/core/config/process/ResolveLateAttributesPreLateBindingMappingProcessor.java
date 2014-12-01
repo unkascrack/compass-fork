@@ -39,7 +39,7 @@ import org.compass.core.mapping.osem.LazyMapping;
 import org.compass.core.mapping.osem.internal.InternalLazyMapping;
 
 /**
- * Reolves late attributes associated usually with {@link org.compass.core.mapping.osem.ClassMapping}, they are:
+ * Reolves late attributes associated usually with {@link ClassMapping}, they are:
  *
  * <p>SupportUnmarshall: One can set globally if ClassMappings will support unmarshalling or not.
  *

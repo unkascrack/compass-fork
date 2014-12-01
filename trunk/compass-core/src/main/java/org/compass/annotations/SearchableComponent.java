@@ -22,10 +22,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Specifies a searchable component on property or field of the {@link Searchable} class.
+ * Specifies a searchable component on property or field of the {@link org.compass.annotations.Searchable} class.
  *
  * <p>A searchable component is a class field/property that reference another class, which
- * content need to be embedded into the content of its {@link Searchable} class. It will
+ * content need to be embedded into the content of its {@link org.compass.annotations.Searchable} class. It will
  * results in searches performed on the component class to return the component field/property
  * searchable class.
  *
@@ -47,7 +47,7 @@ import java.lang.annotation.Target;
  * referenced searchable class mapping definitions.
  *
  * @author kimchy
- * @see Searchable
+ * @see org.compass.annotations.Searchable
  * @see SearchableReference
  */
 @Target({ElementType.METHOD, ElementType.FIELD})

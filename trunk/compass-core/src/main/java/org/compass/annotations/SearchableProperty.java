@@ -22,11 +22,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Specifies a searchable property on property or field of the {@link Searchable} class.
+ * Specifies a searchable property on property or field of the {@link org.compass.annotations.Searchable} class.
  *
- * <p>The searchable property will automatically create a {@link SearchableMetaData},
+ * <p>The searchable property will automatically create a {@link org.compass.annotations.SearchableMetaData},
  * with its name being the field/property name. It will not be created if the
- * {@link #name()} is not set AND there are either {@link SearchableMetaData} or
+ * {@link #name()} is not set AND there are either {@link org.compass.annotations.SearchableMetaData} or
  * {@link SearchableMetaDatas} annotating the class field/property. Most of
  * the attributes that can control the meta-data are provided in the searchable
  * property as well, they are marked in the java doc.
@@ -104,109 +104,109 @@ public @interface SearchableProperty {
     // Generated MetaData definitions
 
     /**
-     * The name of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#name()}.
+     * The name of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#name()}.
      * If no value is defined, will default to the class field/property name.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     String name() default "";
 
     /**
-     * The boost of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#boost()}.
+     * The boost of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#boost()}.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     float boost() default 1.0f;
 
     /**
-     * The store of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#store()}.
+     * The store of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#store()}.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     Store store() default Store.NA;
 
     /**
-     * The index of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#index()}.
+     * The index of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#index()}.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     Index index() default Index.NA;
 
     /**
-     * The termVector of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#termVector()}.
+     * The termVector of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#termVector()}.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     TermVector termVector() default TermVector.NA;
 
     /**
-     * The omitNorms of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link SearchableMetaData#omitNorms()}.
+     * The omitNorms of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link org.compass.annotations.SearchableMetaData#omitNorms()}.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     OmitNorms omitNorms() default OmitNorms.NA;
 
     /**
-     * The omitTf of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#omitTf()}.
+     * The omitTf of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#omitTf()}.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     OmitTf omitTf() default OmitTf.NA;
 
     /**
-     * The reverse of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#reverse()}.
+     * The reverse of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#reverse()}.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     Reverse reverse() default Reverse.NO;
 
     /**
-     * The analyzer of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#analyzer()}.
+     * The analyzer of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#analyzer()}.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     String analyzer() default "";
 
     /**
-     * The exclude from all of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#excludeFromAll()}.
+     * The exclude from all of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#excludeFromAll()}.
      *
      * <p>The meta-data will NOT be auto generated if the field/property have
-     * {@link SearchableMetaData}/{@link SearchableMetaDatas} AND the
+     * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} AND the
      * {@link #name()} is not set.
      */
     ExcludeFromAll excludeFromAll() default ExcludeFromAll.NO;
 
     /**
-     * The converter of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#converter()}.
+     * The converter of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#converter()}.
      * The meta-data will be auto generated only if the name has a value.
      *
      * <p>This converter will also be used for an internal meta-data id (if required to be
@@ -215,8 +215,8 @@ public @interface SearchableProperty {
     String converter() default "";
 
     /**
-     * The format of the auto generated {@link SearchableMetaData}. Maps to
-     * {@link org.compass.annotations.SearchableMetaData#format()}.
+     * The format of the auto generated {@link org.compass.annotations.SearchableMetaData}. Maps to
+     * {@link SearchableMetaData#format()}.
      * The meta-data will be auto generated only if the name has a value.
      *
      * <p>This format will also be used for an internal meta-data id (if required to be

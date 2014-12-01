@@ -60,7 +60,7 @@ public abstract class XSEM {
 
     /**
      * Constructs a new xml id mapping using the specified xpath. Can then be added
-     * to a root xml mapping builder using {@link org.compass.core.mapping.xsem.builder.XmlMappingBuilder#add(org.compass.core.mapping.xsem.builder.XmlIdMappingBuilder)}.
+     * to a root xml mapping builder using {@link XmlMappingBuilder#add(XmlIdMappingBuilder)}.
      */
     public static XmlIdMappingBuilder id(String xpath) {
         return new XmlIdMappingBuilder(xpath);
@@ -68,7 +68,7 @@ public abstract class XSEM {
 
     /**
      * Constructs a new xml property mapping using the specified xpath. Can then be added
-     * to a root xml mapping builder using {@link org.compass.core.mapping.xsem.builder.XmlMappingBuilder#add(org.compass.core.mapping.xsem.builder.XmlPropertyMappingBuilder)}.
+     * to a root xml mapping builder using {@link XmlMappingBuilder#add(XmlPropertyMappingBuilder)}.
      */
     public static XmlPropertyMappingBuilder property(String xpath) {
         return new XmlPropertyMappingBuilder(xpath);
@@ -76,7 +76,7 @@ public abstract class XSEM {
 
     /**
      * Constructs a new xml analyzer mapping using the name and the xpath defined. Can be added
-     * to a root xml mapping builder using {@link org.compass.core.mapping.xsem.builder.XmlMappingBuilder#add(org.compass.core.mapping.xsem.builder.XmlAnalyzerMappingBuilder)}
+     * to a root xml mapping builder using {@link XmlMappingBuilder#add(XmlAnalyzerMappingBuilder)}
      */
     public static XmlAnalyzerMappingBuilder analyzer(String name, String xpath) {
         return new XmlAnalyzerMappingBuilder(name, xpath);
@@ -84,7 +84,7 @@ public abstract class XSEM {
 
     /**
      * Constructs a new xml boost mapping using the name and the xpath defined. Can be added
-     * to a root xml mapping builder using {@link org.compass.core.mapping.xsem.builder.XmlMappingBuilder#add(org.compass.core.mapping.xsem.builder.XmlBoostMappingBuilder)}
+     * to a root xml mapping builder using {@link XmlMappingBuilder#add(XmlBoostMappingBuilder)}
      */
     public static XmlBoostMappingBuilder boost(String name, String xpath) {
         return new XmlBoostMappingBuilder(name, xpath);
@@ -92,7 +92,7 @@ public abstract class XSEM {
 
     /**
      * Constructs a new XML content mapping using the specified name. Can be added to xml
-     * mapping builder using {@link org.compass.core.mapping.xsem.builder.XmlMappingBuilder#add(org.compass.core.mapping.xsem.builder.XmlContentMappingBuilder)}.
+     * mapping builder using {@link XmlMappingBuilder#add(XmlContentMappingBuilder)}.
      */
     public static XmlContentMappingBuilder content(String name) {
         return new XmlContentMappingBuilder(name);
@@ -100,7 +100,7 @@ public abstract class XSEM {
 
     /**
      * Constructs a new all mapping definition that can be added to a xml mapping builder using
-     * {@link org.compass.core.mapping.xsem.builder.XmlMappingBuilder#all(org.compass.core.mapping.xsem.builder.XmlAllMappingBuilder)}.
+     * {@link XmlMappingBuilder#all(XmlAllMappingBuilder)}.
      */
     public static XmlAllMappingBuilder all() {
         return new XmlAllMappingBuilder();

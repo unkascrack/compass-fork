@@ -22,15 +22,15 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Specifies a searchable dynamic property on property or field of the {@link Searchable} class.
+ * Specifies a searchable dynamic property on property or field of the {@link org.compass.annotations.Searchable} class.
  *
  * <p>Dynamic property is a proeprty where the Resource Property name is dynamic in addition to the value itself.
  *
  * <p>The annotation can be placed on a custom type (or an array / collection of it). When used on a custom type,
  * the field/property of the custom type for the dynamic name, and the field/property of the custom type for the dynamic value
  * should be explciitly set using {@link #nameProperty()} and {@link #valueProperty()}. Another option, instead of setting
- * them, is by using {@link org.compass.annotations.SearchableDynamicName} on the custom type field/property and
- * {@link org.compass.annotations.SearchableDynamicValue} on the custom type field/property.
+ * them, is by using {@link SearchableDynamicName} on the custom type field/property and
+ * {@link SearchableDynamicValue} on the custom type field/property.
  *
  * <p>The annotation can also be placed on a {@link java.util.Map} type, where its key will act as the Resource property
  * name and its value will act as the Resource property value. The Map value can also be an array or collection. It is
@@ -55,14 +55,14 @@ public @interface SearchableDynamicProperty {
 
     /**
      * When the name is a custom object, the name property can get field/property from it and use it
-     * as the resource property name. Note, the field/property can be marked using {@link org.compass.annotations.SearchableDynamicName}
+     * as the resource property name. Note, the field/property can be marked using {@link SearchableDynamicName}
      * annotation as well.
      */
     String nameProperty() default "";
 
     /**
      * When the name is a custom object, the value property can get field/property from it and use it
-     * as the resource property value. Note, the field/property can be marked using {@link org.compass.annotations.SearchableDynamicValue}
+     * as the resource property value. Note, the field/property can be marked using {@link SearchableDynamicValue}
      * annotation as well.
      */
     String valueProperty() default "";

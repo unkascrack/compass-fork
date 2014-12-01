@@ -30,15 +30,15 @@ public enum Reverse {
     /**
      * A special reader will wrap the actual string value,
      * and reverse it. More performant than the {@link #STRING}
-     * option, but means that it will always be {@link Index#ANALYZED}
-     * and {@link Store#NO}.
+     * option, but means that it will always be {@link org.compass.annotations.Index#ANALYZED}
+     * and {@link org.compass.annotations.Store#NO}.
      */
     READER,
 
     /**
      * A new string will be used to hold the reverse value of the meta-data.
      * Less performant than the {@link #READER} option, but allows to control
-     * the {@link Index} and the {@link Store}.
+     * the {@link org.compass.annotations.Index} and the {@link org.compass.annotations.Store}.
      */
     STRING
 }

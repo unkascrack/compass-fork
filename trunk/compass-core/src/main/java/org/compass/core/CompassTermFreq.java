@@ -22,7 +22,7 @@ package org.compass.core;
  *
  * @author kimchy
  * @see CompassSession#termFreqsBuilder(String[])
- * @see CompassTermFreqsBuilder
+ * @see org.compass.core.CompassTermFreqsBuilder
  */
 public interface CompassTermFreq {
 

@@ -24,8 +24,8 @@ package org.compass.core.engine.naming;
  * @author lexi
  * @see org.compass.core.engine.naming.PropertyPath
  * @see org.compass.core.engine.naming.DefaultPropertyPath
- * @see org.compass.core.engine.naming.PropertyNamingStrategyFactory
- * @see org.compass.core.engine.naming.DefaultPropertyNamingStrategyFactory
+ * @see PropertyNamingStrategyFactory
+ * @see DefaultPropertyNamingStrategyFactory
  */
 public class DefaultPropertyNamingStrategy implements PropertyNamingStrategy {
 

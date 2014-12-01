@@ -24,7 +24,7 @@ import org.dom4j.Node;
 import org.dom4j.XPath;
 
 /**
- * A dom4j (http://www.dom4j.org) implementation of {@link org.compass.core.xml.XmlXPathExpression}.
+ * A dom4j (http://www.dom4j.org) implementation of {@link XmlXPathExpression}.
  *
  * @author kimchy
  */

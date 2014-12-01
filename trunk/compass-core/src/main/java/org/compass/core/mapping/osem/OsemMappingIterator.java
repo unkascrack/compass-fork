@@ -66,7 +66,7 @@ public abstract class OsemMappingIterator {
     }
 
     /**
-     * <p>Gathers both {@link ClassPropertyMapping}s
+     * <p>Gathers both {@link org.compass.core.mapping.osem.ClassPropertyMapping}s
      * and {@link org.compass.core.mapping.ResourcePropertyMapping}s.
      *
      * <p>Also performs duplicate detection for referenced aliases. Duplicate mappings might occur

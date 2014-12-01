@@ -15,7 +15,7 @@ import org.compass.core.lucene.LuceneEnvironment;
  * the number of last commits to save. Defaults to <code>10</code>.
  *
  * @author kimchy
- * @see IndexDeletionPolicyFactory
+ * @see org.compass.core.lucene.engine.indexdeletionpolicy.IndexDeletionPolicyFactory
  */
 public class KeepLastNDeletionPolicy implements IndexDeletionPolicy, CompassConfigurable {
 

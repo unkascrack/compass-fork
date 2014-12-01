@@ -23,8 +23,8 @@ package org.compass.core.engine.naming;
  * @author kimchy
  * @see org.compass.core.engine.naming.PropertyPath
  * @see org.compass.core.engine.naming.StaticPropertyPath
- * @see org.compass.core.engine.naming.PropertyNamingStrategyFactory
- * @see org.compass.core.engine.naming.DefaultPropertyNamingStrategyFactory
+ * @see PropertyNamingStrategyFactory
+ * @see DefaultPropertyNamingStrategyFactory
  */
 public class StaticPropertyNamingStrategy implements PropertyNamingStrategy {
 

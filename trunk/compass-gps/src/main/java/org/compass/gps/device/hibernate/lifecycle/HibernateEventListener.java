@@ -46,7 +46,7 @@ import org.hibernate.event.PostUpdateEventListener;
  * A default implementation for Hibernate lifecycle callbacks.
  *
  * @author kimchy
- * @see DefaultHibernateEntityLifecycleInjector
+ * @see org.compass.gps.device.hibernate.lifecycle.DefaultHibernateEntityLifecycleInjector
  */
 public class HibernateEventListener implements PostInsertEventListener, PostUpdateEventListener, PostDeleteEventListener {
 

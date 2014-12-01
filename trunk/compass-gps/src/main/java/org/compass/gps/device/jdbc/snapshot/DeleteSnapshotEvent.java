@@ -25,11 +25,11 @@ import org.compass.gps.spi.CompassGpsInterfaceDevice;
 
 /**
  * A delete snapshot event, works with
- * {@link JdbcSnapshotEventListener#onDelete(org.compass.gps.device.jdbc.snapshot.DeleteSnapshotEvent)}.
+ * {@link org.compass.gps.device.jdbc.snapshot.JdbcSnapshotEventListener#onDelete(org.compass.gps.device.jdbc.snapshot.DeleteSnapshotEvent)}.
  * Holds the
  * {@link org.compass.gps.device.jdbc.mapping.ResultSetToResourceMapping}
  * that maps to the result set that initiated the event, a list of
- * {@link JdbcAliasRowSnapshot}
+ * {@link org.compass.gps.device.jdbc.snapshot.JdbcAliasRowSnapshot}
  * for all the row snapapshots that were deleted, and the
  * <code>CompassTemplate</code> to use in order to reflect the changes to the
  * index.

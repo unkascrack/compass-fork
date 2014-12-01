@@ -64,7 +64,7 @@ public abstract class AbstractHibernateGpsDevice extends AbstractParallelGpsDevi
      * Returns all the hibernate entity info. Called when the device starts up.
      *
      * @return Hibernate class informtion
-     * @throws org.compass.gps.device.hibernate.HibernateGpsDeviceException
+     * @throws HibernateGpsDeviceException
      */
     protected abstract HibernateEntityInfo[] doGetHibernateEntitiesInfo() throws HibernateGpsDeviceException;
 

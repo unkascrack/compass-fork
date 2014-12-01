@@ -42,7 +42,7 @@ public abstract class JdbcUtils {
      * 
      * @param dataSource
      * @return A connection from the datasource.
-     * @throws org.compass.gps.device.jdbc.JdbcGpsDeviceException
+     * @throws JdbcGpsDeviceException
      */
     public static Connection getConnection(DataSource dataSource) throws JdbcGpsDeviceException {
         try {

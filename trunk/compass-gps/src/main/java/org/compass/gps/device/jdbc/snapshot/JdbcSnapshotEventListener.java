@@ -31,7 +31,7 @@ public interface JdbcSnapshotEventListener {
      * A configure event fired when the systems starts.
      * 
      * @param configureSnapshotEvent
-     * @throws org.compass.gps.device.jdbc.JdbcGpsDeviceException
+     * @throws JdbcGpsDeviceException
      */
     void configure(ConfigureSnapshotEvent configureSnapshotEvent) throws JdbcGpsDeviceException;
 
@@ -41,7 +41,7 @@ public interface JdbcSnapshotEventListener {
      * called.
      * 
      * @param createAndUpdateSnapshotEvent
-     * @throws org.compass.gps.device.jdbc.JdbcGpsDeviceException
+     * @throws JdbcGpsDeviceException
      */
     void onCreateAndUpdate(CreateAndUpdateSnapshotEvent createAndUpdateSnapshotEvent) throws JdbcGpsDeviceException;
 
@@ -50,7 +50,7 @@ public interface JdbcSnapshotEventListener {
      * when the <code>performMirroring</code> is called.
      * 
      * @param deleteSnapshotEvent
-     * @throws org.compass.gps.device.jdbc.JdbcGpsDeviceException
+     * @throws JdbcGpsDeviceException
      */
     void onDelete(DeleteSnapshotEvent deleteSnapshotEvent) throws JdbcGpsDeviceException;
 }

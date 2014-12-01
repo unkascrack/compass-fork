@@ -33,7 +33,7 @@ public interface IndexEntitiesPartitioner {
      *
      * @param entities The index entities to partition
      * @return Groups of list of entities that can be indexed in
-     * @throws org.compass.gps.CompassGpsException
+     * @throws CompassGpsException
      */
     IndexEntity[][] partition(IndexEntity[] entities) throws CompassGpsException;
 }

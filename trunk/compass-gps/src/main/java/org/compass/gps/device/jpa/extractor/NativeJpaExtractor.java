@@ -45,7 +45,7 @@ public interface NativeJpaExtractor {
      *
      * @param entityManager The (possibly) wrapper <code>EntityManager</code>.
      * @return The actual <code>EntityManager</code>.
-     * @throws org.compass.gps.device.jpa.JpaGpsDeviceException
+     * @throws JpaGpsDeviceException
      */
     EntityManager extractNative(EntityManager entityManager) throws JpaGpsDeviceException;
 }

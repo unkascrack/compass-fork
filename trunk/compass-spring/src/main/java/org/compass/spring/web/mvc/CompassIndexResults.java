@@ -18,7 +18,7 @@ package org.compass.spring.web.mvc;
 
 /**
  * The results object returned by
- * {@link CompassIndexController} when an index
+ * {@link org.compass.spring.web.mvc.CompassIndexController} when an index
  * operation has occured.
  * 
  * @author kimchy

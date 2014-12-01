@@ -27,10 +27,10 @@ import org.compass.core.lucene.engine.transaction.support.job.TransactionJobs;
 
 /**
  * The actual terracotta transaction processor that simply delegates the commit point to
- * {@link TerracottaTransactionProcessorFactory#add(org.compass.core.lucene.engine.transaction.support.job.TransactionJobs)}.
+ * {@link org.compass.needle.terracotta.transaction.processor.TerracottaTransactionProcessorFactory#add(org.compass.core.lucene.engine.transaction.support.job.TransactionJobs)}.
  *
  * @author kimchy
- * @see org.compass.needle.terracotta.transaction.processor.TerracottaTransactionProcessorFactory
+ * @see TerracottaTransactionProcessorFactory
  */
 public class TerracottaTransactionProcessor extends AbstractJobBasedTransactionProcessor {
 

@@ -40,14 +40,14 @@ import org.compass.gps.spi.CompassGpsInterfaceDevice;
  * index entities into the search engine and is provided by sub classes as well.
  *
  * <p>The {@link IndexEntitiesPartitioner}
- * defaults to the {@link SubIndexIndexEntitiesPartitioner}
+ * defaults to the {@link org.compass.gps.device.support.parallel.SubIndexIndexEntitiesPartitioner}
  * that partition the index entities based on the sub index. This is the only meanigful
  * way to partition the index entities, as it allows for the best concurrent support
  * (locking is performed on the sub index level).
  *
  * <p>The {@link #index(org.compass.gps.IndexPlan)} operation uses the {@link ParallelIndexExecutor}
  * in order to execute the indexing process. The default implementation used is
- * {@link ConcurrentParallelIndexExecutor}.
+ * {@link org.compass.gps.device.support.parallel.ConcurrentParallelIndexExecutor}.
  *
  * @author kimchy
  */
@@ -67,7 +67,7 @@ public abstract class AbstractParallelGpsDevice extends AbstractGpsDevice {
      * to partition them index groups that can be parallel indexed. Also calls
      * {@link #doGetIndexEntitiesIndexer()} in order to obtain the index entities indexer.
      *
-     * @throws org.compass.gps.CompassGpsException
+     * @throws CompassGpsException
      */
     public synchronized void start() throws CompassGpsException {
         super.start();
@@ -78,7 +78,7 @@ public abstract class AbstractParallelGpsDevice extends AbstractGpsDevice {
      * Index the indexable entities. Calls the {@link ParallelIndexExecutor}
      * in order to index the different groups of indexed entities partitioned at startup.
      *
-     * @throws org.compass.gps.CompassGpsException
+     * @throws CompassGpsException
      */
     public synchronized void index(IndexPlan indexPlan) throws CompassGpsException {
         if (!isRunning()) {
@@ -140,7 +140,7 @@ public abstract class AbstractParallelGpsDevice extends AbstractGpsDevice {
 
     /**
      * Sets the parallel index executor. Defaults to
-     * {@link ConcurrentParallelIndexExecutor}.
+     * {@link org.compass.gps.device.support.parallel.ConcurrentParallelIndexExecutor}.
      *
      * @see #index(org.compass.gps.IndexPlan)
      */
@@ -150,7 +150,7 @@ public abstract class AbstractParallelGpsDevice extends AbstractGpsDevice {
 
     /**
      * Sets the index entities partitioner. Defaults to
-     * {@link SubIndexIndexEntitiesPartitioner}.
+     * {@link org.compass.gps.device.support.parallel.SubIndexIndexEntitiesPartitioner}.
      *
      * @see #start()
      */

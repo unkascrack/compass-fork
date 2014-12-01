@@ -18,7 +18,7 @@ package org.compass.spring.web.mvc;
 
 /**
  * The command object which instructs the
- * {@link CompassIndexController} to perform
+ * {@link org.compass.spring.web.mvc.CompassIndexController} to perform
  * <code>CompassGps</code> index operation.
  * <p>
  * Since the index operation might result in heavy performance effects (re-index
@@ -33,7 +33,7 @@ public class CompassIndexCommand {
 
     /**
      * Returns the <code>doIndex</code> commnand property, which instructs the
-     * {@link org.compass.spring.web.mvc.CompassIndexController} to performs the index operation.
+     * {@link CompassIndexController} to performs the index operation.
      * 
      * @return <code>true</code> if the index operation should be performed
      */
@@ -43,7 +43,7 @@ public class CompassIndexCommand {
 
     /**
      * Sets the <code>doIndex</code> commnand property, which instructs the
-     * {@link org.compass.spring.web.mvc.CompassIndexController} to performs the index operation.
+     * {@link CompassIndexController} to performs the index operation.
      * 
      * @param doIndex <code>true</code> if the index operation should be performed
      */

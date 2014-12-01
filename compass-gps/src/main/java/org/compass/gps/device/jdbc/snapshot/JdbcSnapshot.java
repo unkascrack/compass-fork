@@ -22,7 +22,7 @@ import java.util.HashMap;
 /**
  * A system level (collection of aliases - <code>ResultSet</code>s)
  * snapshots. Holds a collection of
- * {@link JdbcAliasSnapshot}s.
+ * {@link org.compass.gps.device.jdbc.snapshot.JdbcAliasSnapshot}s.
  * 
  * @author kimchy
  */

@@ -21,7 +21,7 @@ import java.sql.Types;
 /**
  * Maps a version column (no property mapping required - if you wish to map the
  * version colum to a <code>Resource Property</code> use the
- * {@link DataColumnToPropertyMapping}).
+ * {@link org.compass.gps.device.jdbc.mapping.DataColumnToPropertyMapping}).
  * <p>
  * In order to map a version column, either the column index or the column name
  * must be set, and the version column jdbc type (one of

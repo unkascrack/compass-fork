@@ -28,11 +28,11 @@ import org.compass.gps.device.jpa.JpaGpsDeviceException;
  *
  * <p>Assume that the <code>EntityManagerFactory</code> is the native one, since the
  * {@link org.compass.gps.device.jpa.extractor.NativeJpaExtractor} of the
- * {@link org.compass.gps.device.jpa.JpaGpsDevice} was used to extract it.
+ * {@link JpaGpsDevice} was used to extract it.
  *
  * @author kimchy
- * @see HibernateJpaEntityLifecycleInjector
- * @see org.compass.gps.device.jpa.lifecycle.JpaEntityLifecycleInjectorDetector
+ * @see org.compass.gps.device.jpa.lifecycle.HibernateJpaEntityLifecycleInjector
+ * @see JpaEntityLifecycleInjectorDetector
  */
 public interface JpaEntityLifecycleInjector {
 
@@ -42,7 +42,7 @@ public interface JpaEntityLifecycleInjector {
      *
      * @param entityManagerFactory The <code>EntityManagerFactory</code> to inject the global lifecycle to.
      * @param device               The Jpa device calling this injector
-     * @throws org.compass.gps.device.jpa.JpaGpsDeviceException
+     * @throws JpaGpsDeviceException
      */
     void injectLifecycle(EntityManagerFactory entityManagerFactory, JpaGpsDevice device) throws JpaGpsDeviceException;
 
@@ -51,7 +51,7 @@ public interface JpaEntityLifecycleInjector {
      *
      * @param entityManagerFactory The EMF to remove lifecycle from
      * @param device               The Jpa device calling
-     * @throws org.compass.gps.device.jpa.JpaGpsDeviceException
+     * @throws JpaGpsDeviceException
      */
     void removeLifecycle(EntityManagerFactory entityManagerFactory, JpaGpsDevice device) throws JpaGpsDeviceException;
 

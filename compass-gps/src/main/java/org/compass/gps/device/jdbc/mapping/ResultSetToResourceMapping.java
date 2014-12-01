@@ -29,7 +29,7 @@ import java.util.Map;
  * select query that generates the <code>ResultSet</code>, and at least one
  * id mapping that maps the <code>ResultSet</code> identifiers columns ({@link IdColumnToPropertyMapping}).
  * <p>
- * Mapping data columns ({@link DataColumnToPropertyMapping})
+ * Mapping data columns ({@link org.compass.gps.device.jdbc.mapping.DataColumnToPropertyMapping})
  * is optional, but provides the meta data (<code>Resource Proeprty</code>)
  * for searching. You can also enable (which is disabled by default) for
  * indexing all the un mapped columns of the <code>ResultSet</code> using the

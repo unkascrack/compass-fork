@@ -32,7 +32,7 @@ public interface NativeHibernateExtractor {
      *
      * @param sessionFactory The (possibly) wrapped <code>EntityManagerFactory</code>.
      * @return The actual <code>EntityManagerFactory</code> implementation.
-     * @throws org.compass.gps.device.hibernate.HibernateGpsDeviceException
+     * @throws HibernateGpsDeviceException
      */
     SessionFactory extractNative(SessionFactory sessionFactory) throws HibernateGpsDeviceException;
 }

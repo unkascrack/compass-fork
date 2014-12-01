@@ -60,7 +60,7 @@ public class ScheduledMirrorGpsDevice extends AbstractMirrorGpsDeviceWrapper imp
 
     /**
      * Creates a new instance of the scheduled device with the wrapped
-     * {@link org.compass.gps.ActiveMirrorGpsDevice} initialized.
+     * {@link ActiveMirrorGpsDevice} initialized.
      *
      * @param gpsDevice
      */
@@ -71,7 +71,7 @@ public class ScheduledMirrorGpsDevice extends AbstractMirrorGpsDeviceWrapper imp
 
     /**
      * Checks that when setting the wrapped gps device, it is of type
-     * {@link org.compass.gps.ActiveMirrorGpsDevice}
+     * {@link ActiveMirrorGpsDevice}
      */
     public void setGpsDevice(CompassGpsDevice gpsDevice) {
         if (!(gpsDevice instanceof ActiveMirrorGpsDevice)) {

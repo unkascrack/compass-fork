@@ -277,7 +277,7 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>compass-core</artifactId>
             <classifier>tests</classifier>
-            <scope>test</scope>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -337,5 +337,21 @@
             </exclusions>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>org/compass/gps/**/*Test.java</include>
+                        <include>org/compass/gps/**/*Tests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
 
 </project>

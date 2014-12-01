@@ -31,7 +31,7 @@ import org.apache.commons.logging.LogFactory;
  * Taken from Spring.
  * 
  * @author kimchy
- * @see org.compass.gps.device.jdbc.datasource.DriverManagerDataSource
+ * @see DriverManagerDataSource
  */
 public abstract class AbstractDataSource implements DataSource {
 

@@ -129,7 +129,7 @@ public abstract class AbstractGpsDevice implements CompassGpsDevice {
     /**
      * Derived devices can implement it in case of start event notification.
      *
-     * @throws org.compass.gps.CompassGpsException
+     * @throws CompassGpsException
      */
     protected void doStart() throws CompassGpsException {
 
@@ -145,7 +145,7 @@ public abstract class AbstractGpsDevice implements CompassGpsDevice {
     /**
      * Derived devices can implement it in case of stop event notification.
      *
-     * @throws org.compass.gps.CompassGpsException
+     * @throws CompassGpsException
      */
     protected void doStop() throws CompassGpsException {
 

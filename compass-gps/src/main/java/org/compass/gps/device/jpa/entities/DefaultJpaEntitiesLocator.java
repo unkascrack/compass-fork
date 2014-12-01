@@ -83,7 +83,7 @@ public class DefaultJpaEntitiesLocator implements JpaEntitiesLocator {
      * @param clazz           The class to create the {@link org.compass.gps.device.jpa.entities.EntityInformation} for
      * @param resourceMapping The Compass resource mapping (used for sub indexes extraction)
      * @return The entity information, or <code>null</code> to filter it out
-     * @throws org.compass.gps.device.jpa.JpaGpsDeviceException
+     * @throws JpaGpsDeviceException
      */
     protected EntityInformation createEntityInformation(Class<?> clazz, ResourceMapping resourceMapping)
             throws JpaGpsDeviceException {

@@ -25,7 +25,7 @@ import org.compass.gps.device.support.parallel.IndexEntity;
  * during the indexing process.
  *
  * @author kimchy
- * @see org.compass.gps.device.jpa.entities.JpaEntitiesLocator
+ * @see JpaEntitiesLocator
  */
 public class EntityInformation implements IndexEntity {
 

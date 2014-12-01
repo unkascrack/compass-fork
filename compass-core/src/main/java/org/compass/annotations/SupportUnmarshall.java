@@ -17,7 +17,7 @@
 package org.compass.annotations;
 
 /**
- * Controls if the {@link Searchable} class support un-marshalling (the process
+ * Controls if the {@link org.compass.annotations.Searchable} class support un-marshalling (the process
  * of converting the raw resource read from the search engine into a domain model
  * object).
  *

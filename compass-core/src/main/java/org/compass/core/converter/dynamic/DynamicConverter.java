@@ -39,7 +39,7 @@ public interface DynamicConverter extends Converter {
      * Sets the expression this dynamic converter will ecaluate.
      *
      * @param expression The expression to evaluate
-     * @throws org.compass.core.converter.ConversionException
+     * @throws ConversionException
      */
     void setExpression(String expression) throws ConversionException;
 

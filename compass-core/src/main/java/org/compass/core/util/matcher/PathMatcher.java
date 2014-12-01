@@ -24,11 +24,11 @@ package org.compass.core.util.matcher;
  * {@link org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver},
  * and {@link org.springframework.web.servlet.mvc.WebContentInterceptor}.
  *
- * <p>The default implementation is {@link org.compass.core.util.matcher.AntPathMatcher}, supporting the
+ * <p>The default implementation is {@link AntPathMatcher}, supporting the
  * Ant-style pattern syntax.
  *
  * @author kimchy
- * @see org.compass.core.util.matcher.AntPathMatcher
+ * @see AntPathMatcher
  */
 public interface PathMatcher {
 

@@ -21,8 +21,8 @@ package org.compass.core.engine.naming;
  * take care and override <code>equals</code> and <code>hashCode</code>.
  *
  * @author kimchy
- * @see org.compass.core.engine.naming.DynamicPropertyNamingStrategy
- * @see org.compass.core.engine.naming.StaticPropertyNamingStrategy
+ * @see DynamicPropertyNamingStrategy
+ * @see StaticPropertyNamingStrategy
  */
 public interface PropertyPath {
 

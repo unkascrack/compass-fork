@@ -34,8 +34,8 @@ import org.apache.lucene.store.jdbc.support.JdbcTemplate;
  * A base file entry handler that supports most of the file entry base operations.
  * <p/>
  * Supports the creation of configurable <code>IndexInput</code> and <code>IndexOutput</code>,
- * base on the {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings#INDEX_INPUT_TYPE_SETTING} and
- * {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings#INDEX_OUTPUT_TYPE_SETTING}.
+ * base on the {@link JdbcFileEntrySettings#INDEX_INPUT_TYPE_SETTING} and
+ * {@link JdbcFileEntrySettings#INDEX_OUTPUT_TYPE_SETTING}.
  * <p/>
  * Does not implement the deletion of files.
  *

@@ -55,7 +55,7 @@ public class ConstantSubIndexHash implements SubIndexHash, CompassConfigurable {
      * the setting name, and the sub index value as the setting value.
      *
      * @param settings The settings to configure by
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     public void configure(CompassSettings settings) throws CompassException {
         subIndex = settings.getSetting("subIndex", subIndex).toLowerCase();

@@ -8,7 +8,7 @@ import org.compass.core.xml.XmlXPathExpression;
 import org.w3c.dom.NodeList;
 
 /**
- * A java 5 implementation of {@link org.compass.core.xml.XmlXPathExpression} wrapping a {@link javax.xml.xpath.XPathExpression}.
+ * A java 5 implementation of {@link XmlXPathExpression} wrapping a {@link javax.xml.xpath.XPathExpression}.
  *
  * @author kimchy
  */

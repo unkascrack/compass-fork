@@ -118,7 +118,7 @@ public class CompassTemplate implements CompassOperations {
      *
      * @param action The action to execute witin a compass transaction
      * @return An object as the result of the compass action
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     public <T> T execute(CompassCallback<T> action) throws CompassException {
         CompassSession session = compass.openSession();
@@ -162,7 +162,7 @@ public class CompassTemplate implements CompassOperations {
      *
      * @param action The action to execute witin a compass transaction
      * @return An object as the result of the compass action
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     public <T> T executeLocal(CompassCallback<T> action) throws CompassException {
         CompassSession session = compass.openSession();
@@ -202,7 +202,7 @@ public class CompassTemplate implements CompassOperations {
      *
      * @param action the callback to execute.
      * @return The hits that match the query
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     public CompassHitsOperations executeFind(CompassCallback<CompassHitsOperations> action) throws CompassException {
         return execute(action);

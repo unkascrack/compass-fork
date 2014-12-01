@@ -192,8 +192,8 @@ public class LuceneAnalyzerManager {
     }
 
     /**
-     * Returns the Lucene {@link org.apache.lucene.analysis.Analyzer} based on the give {@link org.compass.core.Resource}. Will build a specifc
-     * per field analyzr if the given {@link org.compass.core.Resource} has properties with different analyzers.
+     * Returns the Lucene {@link org.apache.lucene.analysis.Analyzer} based on the give {@link Resource}. Will build a specifc
+     * per field analyzr if the given {@link Resource} has properties with different analyzers.
      * Will also take into account if the resource has an analyzer controller based on the analyzer
      * controller property value.
      */

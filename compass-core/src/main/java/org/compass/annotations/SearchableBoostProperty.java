@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * <p>Specifies a {@link org.compass.annotations.Searchable} class field/property that dynamically
+ * <p>Specifies a {@link Searchable} class field/property that dynamically
  * controls boost value of the class mapped based on its value.
  *
  * <p>The value of the field should be allowed to be converted to a float value.

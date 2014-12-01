@@ -63,9 +63,9 @@ import org.compass.core.spi.InternalResource;
 public abstract class LuceneHelper {
 
     /**
-     * Creates a new {@link org.compass.core.CompassQuery} based on a Lucene {@link org.apache.lucene.search.Query}.
+     * Creates a new {@link CompassQuery} based on a Lucene {@link org.apache.lucene.search.Query}.
      *
-     * <p>Allows to create {@link org.compass.core.CompassQuery} based on external Lucene {@link org.apache.lucene.search.Query} that is not supported
+     * <p>Allows to create {@link CompassQuery} based on external Lucene {@link org.apache.lucene.search.Query} that is not supported
      * by one of Compass query builders.
      *
      * @param compass Compass instance
@@ -80,9 +80,9 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Creates a new {@link org.compass.core.CompassQuery} based on a Lucene {@link org.apache.lucene.search.Query}.
+     * Creates a new {@link CompassQuery} based on a Lucene {@link org.apache.lucene.search.Query}.
      *
-     * <p>Allows to create {@link org.compass.core.CompassQuery} based on external Lucene {@link org.apache.lucene.search.Query} that is not supported
+     * <p>Allows to create {@link CompassQuery} based on external Lucene {@link org.apache.lucene.search.Query} that is not supported
      * by one of Compass query builders.
      *
      * @param session Compass session
@@ -99,10 +99,10 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns the underlying {@link org.compass.core.lucene.engine.LuceneSearchEngineQuery} of the given {@link org.compass.core.CompassQuery}.
+     * Returns the underlying {@link LuceneSearchEngineQuery} of the given {@link CompassQuery}.
      * <p/>
      * Can be used for example to add custom Sorting using
-     * {@link org.compass.core.lucene.engine.LuceneSearchEngineQuery#addSort(org.apache.lucene.search.SortField)}, or get the actual lucene query
+     * {@link LuceneSearchEngineQuery#addSort(org.apache.lucene.search.SortField)}, or get the actual lucene query
      * using {@link org.compass.core.lucene.engine.LuceneSearchEngineQuery#getQuery()}.
      *
      * @param query The compass query to extract the lucene search engine query from
@@ -113,9 +113,9 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Creates a new {@link org.compass.core.CompassQueryFilter} based on a Lucene {@link org.apache.lucene.search.Filter}.
+     * Creates a new {@link CompassQueryFilter} based on a Lucene {@link org.apache.lucene.search.Filter}.
      * <p/>
-     * Allows to create {@link org.compass.core.CompassQueryFilter} based on external Lucene {@link org.apache.lucene.search.Filter} that is not supported
+     * Allows to create {@link CompassQueryFilter} based on external Lucene {@link org.apache.lucene.search.Filter} that is not supported
      * by one fo Comapss query filter builders.
      *
      * @param session Comapss session
@@ -128,7 +128,7 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns the underlying {@link org.compass.core.lucene.engine.LuceneSearchEngineQueryFilter} of the given {@link org.compass.core.CompassQueryFilter}.
+     * Returns the underlying {@link LuceneSearchEngineQueryFilter} of the given {@link CompassQueryFilter}.
      * <p/>
      * Can be used to get the actual Lucene {@link org.apache.lucene.search.Filter} using
      * {@link org.compass.core.lucene.engine.LuceneSearchEngineQueryFilter#getFilter()}.
@@ -141,7 +141,7 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns the underlying {@link org.compass.core.lucene.engine.LuceneSearchEngineHits} of the given {@link org.compass.core.CompassHits}.
+     * Returns the underlying {@link LuceneSearchEngineHits} of the given {@link CompassHits}.
      * <p/>
      * Used mainly to access the actual Lucene {@link org.apache.lucene.search.Hits}, or get
      * Lucene {@link org.apache.lucene.search.Explanation}.
@@ -160,7 +160,7 @@ public abstract class LuceneHelper {
 
     /**
      * Returns the given search engine "internals" used for search. For Lucene, returns
-     * {@link org.compass.core.lucene.engine.LuceneSearchEngineInternalSearch} which allows to access Lucene
+     * {@link LuceneSearchEngineInternalSearch} which allows to access Lucene
      * {@link org.apache.lucene.index.IndexReader} and {@link org.apache.lucene.search.Searcher}.
      * <p/>
      * The search intenrals will be ones that are executed against the whole index. In order to search on
@@ -175,7 +175,7 @@ public abstract class LuceneHelper {
 
     /**
      * Returns the given search engine "internals" used for search. For Lucene, returns
-     * {@link org.compass.core.lucene.engine.LuceneSearchEngineInternalSearch} which allows to access Lucene
+     * {@link LuceneSearchEngineInternalSearch} which allows to access Lucene
      * {@link org.apache.lucene.index.IndexReader} and {@link org.apache.lucene.search.Searcher}.
      * <p/>
      * The search can be narrowed down to specific sub indexes or aliases. A <code>null</code> value
@@ -191,7 +191,7 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns the actual Lucene {@link org.apache.lucene.document.Document} that the {@link org.compass.core.Resource} wraps.
+     * Returns the actual Lucene {@link org.apache.lucene.document.Document} that the {@link Resource} wraps.
      *
      * @param resource The resource to get the document from
      * @return The Lucene document that resource wraps
@@ -201,7 +201,7 @@ public abstract class LuceneHelper {
     }
 
     /**
-     * Returns Lucene {@link org.apache.lucene.index.TermFreqVector} using the given Compass session and {@link org.compass.core.Resource}.
+     * Returns Lucene {@link org.apache.lucene.index.TermFreqVector} using the given Compass session and {@link Resource}.
      *
      * @param session  Compass session
      * @param resource The resource to get the term freq vector for

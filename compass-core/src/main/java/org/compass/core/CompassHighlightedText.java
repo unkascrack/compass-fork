@@ -20,8 +20,8 @@ package org.compass.core;
  * A cached holder of highlighted text.
  *
  * @author kimchy
- * @see CompassHitsOperations#highlightedText(int)
- * @see CompassHits#highlighter(int)
+ * @see org.compass.core.CompassHitsOperations#highlightedText(int)
+ * @see org.compass.core.CompassHits#highlighter(int)
  */
 public interface CompassHighlightedText {
 

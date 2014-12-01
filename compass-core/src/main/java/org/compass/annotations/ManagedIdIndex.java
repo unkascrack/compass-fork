@@ -1,13 +1,13 @@
 package org.compass.annotations;
 
 /**
- * Controls the index (see {@link Index}) of the internal managed id generated
- * (see {@link ManagedId}). Note, that this is an advance mapping setting, which
+ * Controls the index (see {@link org.compass.annotations.Index}) of the internal managed id generated
+ * (see {@link org.compass.annotations.ManagedId}). Note, that this is an advance mapping setting, which
  * usually should not be set.
  *
  * @author kimchy
- * @see ManagedId
- * @see Index
+ * @see org.compass.annotations.ManagedId
+ * @see org.compass.annotations.Index
  */
 public enum ManagedIdIndex {
     /**
@@ -17,7 +17,7 @@ public enum ManagedIdIndex {
 
     /**
      * Do not index the property value. This property can thus not be searched, but one
-     * can still access its contents provided it is {@link Store stored}.
+     * can still access its contents provided it is {@link org.compass.annotations.Store stored}.
      */
 
     NO,

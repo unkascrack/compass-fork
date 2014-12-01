@@ -22,11 +22,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Defines a collection of {@link SearchableMetaData} associated with
- * a {@link Searchable} class field/property.
+ * Defines a collection of {@link org.compass.annotations.SearchableMetaData} associated with
+ * a {@link org.compass.annotations.Searchable} class field/property.
  * <p/>
- * Only applies to a field/property that is annotated with {@link SearchableId}
- * or {@link SearchableProperty}.
+ * Only applies to a field/property that is annotated with {@link org.compass.annotations.SearchableId}
+ * or {@link org.compass.annotations.SearchableProperty}.
  *
  * @author kimchy
  */
@@ -35,7 +35,7 @@ import java.lang.annotation.Target;
 public @interface SearchableMetaDatas {
 
     /**
-     * Colleciton of meta-data that will be associated with a {@link Searchable} class field/property.
+     * Colleciton of meta-data that will be associated with a {@link org.compass.annotations.Searchable} class field/property.
      */
     SearchableMetaData[] value();
 }

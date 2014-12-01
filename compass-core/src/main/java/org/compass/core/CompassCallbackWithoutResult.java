@@ -40,7 +40,7 @@ public abstract class CompassCallbackWithoutResult implements CompassCallback<Ob
      * on the outer compass transaction with its transactional semantics.
      * 
      * @param session
-     * @throws CompassException
+     * @throws org.compass.core.CompassException
      */
     protected abstract void doInCompassWithoutResult(CompassSession session) throws CompassException;
 }

@@ -32,7 +32,7 @@ import org.compass.core.transaction.LocalTransactionFactory;
 import org.compass.core.transaction.TransactionFactory;
 
 /**
- * A wrapper around an actual implemenation of {@link org.compass.core.Compass} that allows to rebuild it
+ * A wrapper around an actual implemenation of {@link Compass} that allows to rebuild it
  * after changes that are perfomed on the {@link #getConfig()} configuration.
  *
  * @author kimchy

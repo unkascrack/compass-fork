@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Specifies a searchable reference on property or field of the {@link Searchable} class.
+ * Specifies a searchable reference on property or field of the {@link org.compass.annotations.Searchable} class.
  *
  * <p>A searchable reference is a class field/property that reference another class, and the
  * relationship need to be stored by Compass so it can be traversed when getting the class

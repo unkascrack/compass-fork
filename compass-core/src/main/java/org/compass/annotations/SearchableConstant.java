@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * A constant meta-data that can be defined on a {@link Searchable} class.
+ * A constant meta-data that can be defined on a {@link org.compass.annotations.Searchable} class.
  *
  * <p>A constant meta-data is a predefined name and value pair that will be
  * saved in the search engine index.
@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
  * <p>Multiple constants can be defined using the {@link SearchableConstants} annotation.
  *
  * @author kimchy
- * @see Searchable
+ * @see org.compass.annotations.Searchable
  * @see SearchableConstants
  */
 @Target({ElementType.TYPE})

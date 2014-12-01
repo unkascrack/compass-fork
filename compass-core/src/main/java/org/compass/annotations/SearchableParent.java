@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * <p/>
  * If a {@link SearchableComponent} has a reference it it's parent,
  * the annotation will make sure that this reference will be initalized
- * when the {@link Searchable} class is loaded from the index.
+ * when the {@link org.compass.annotations.Searchable} class is loaded from the index.
  *
  * @author kimchy
  */

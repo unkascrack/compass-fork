@@ -24,7 +24,7 @@ import org.compass.core.util.ClassUtils;
 
 /**
  * A {@link org.apache.lucene.index.MergePolicy} factory creating based on the type of the provider
- * the actual implementation of {@link MergePolicyProvider}
+ * the actual implementation of {@link org.compass.core.lucene.engine.merge.policy.MergePolicyProvider}
  * and then using it to create the merge factory.
  *
  * @author kimchy

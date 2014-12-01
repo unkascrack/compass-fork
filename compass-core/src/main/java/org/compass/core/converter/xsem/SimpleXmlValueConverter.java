@@ -93,16 +93,16 @@ public class SimpleXmlValueConverter implements Converter {
     }
 
     /**
-     * A simple extension point that allows to set the boost value for the created {@link org.compass.core.Property}.
+     * A simple extension point that allows to set the boost value for the created {@link Property}.
      * <p/>
      * The default implemenation uses the statically defined boost value in the mapping definition
      * ({@link org.compass.core.mapping.ResourcePropertyMapping#getBoost()}) to set the boost level
-     * using {@link org.compass.core.Property#setBoost(float)}
+     * using {@link Property#setBoost(float)}
      *
      * @param property                The property to set the boost on
      * @param root                    The object that is marshalled into a property
      * @param resourcePropertyMapping The Resource Property Mapping definition
-     * @throws org.compass.core.converter.ConversionException
+     * @throws ConversionException
      */
     protected void doSetBoost(Property property, Object root, ResourcePropertyMapping resourcePropertyMapping,
                               MarshallingContext context) throws ConversionException {

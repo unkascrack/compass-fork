@@ -25,7 +25,7 @@ import org.dom4j.xpath.DefaultXPath;
 import org.jaxen.SimpleNamespaceContext;
 
 /**
- * A dom4j (http://www.dom4j.org) implementation of {@link org.compass.core.xml.XmlObject}.
+ * A dom4j (http://www.dom4j.org) implementation of {@link XmlObject}.
  *
  * @author kimchy
  */

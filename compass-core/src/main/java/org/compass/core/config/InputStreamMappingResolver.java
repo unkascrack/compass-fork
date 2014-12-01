@@ -39,7 +39,7 @@ public interface InputStreamMappingResolver {
      * Returns an <code>InputStream</code> that holds the mapping.
      * 
      * @return InputStream that has the mapping definitions.
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     InputStream getMappingAsInputStream() throws CompassException;
 }

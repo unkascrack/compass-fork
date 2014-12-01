@@ -47,7 +47,7 @@ import org.compass.core.config.CompassSettings;
  * }
  * </pre>
  *
- * <p>A more complex form includes explicit control using {@link CompassTransaction}:
+ * <p>A more complex form includes explicit control using {@link org.compass.core.CompassTransaction}:
  *
  * <pre>
  * CompassSession session = compass.openSession();
@@ -88,7 +88,7 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
     boolean isReadOnly();
 
     /**
-     * When not using the {@link CompassTransaction} interface, will begin a local transaction
+     * When not using the {@link org.compass.core.CompassTransaction} interface, will begin a local transaction
      * instead of the configured transaction.
      */
     CompassSession useLocalTransaction();
@@ -126,8 +126,8 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
      * determined by the property <code>compass.transaction.factory</code>.
      *
      * @return a CompassTransaction instance
-     * @throws org.compass.core.CompassException
-     * @see org.compass.core.CompassTransaction
+     * @throws CompassException
+     * @see CompassTransaction
      */
     CompassTransaction beginTransaction() throws CompassException;
 
@@ -164,7 +164,7 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
      *
      * @param names The property names
      * @return A term freqs builder
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     CompassTermFreqsBuilder termFreqsBuilder(String... names) throws CompassException;
 
@@ -172,12 +172,12 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
      * Returns an Analyzer helper. Can be used to help analyze given texts.
      *
      * @return the analyzer helper
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     CompassAnalyzerHelper analyzerHelper() throws CompassException;
 
     /**
-     * When not using explicit {@link CompassTransaction} in order to manage transactions, can be called
+     * When not using explicit {@link org.compass.core.CompassTransaction} in order to manage transactions, can be called
      * to rollback the current running transaction. Effectively also closes the session.
      */
     void rollback() throws CompassException;
@@ -195,7 +195,7 @@ public interface CompassSession extends CompassOperations, CompassSearchSession,
      * / rolledback yet, will commit the transaction (and in case of failure, will roll it back). Failed
      * commits will throw an exception from the close method.
      *
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      * @see Compass#openSession()
      */
     void close() throws CompassException;

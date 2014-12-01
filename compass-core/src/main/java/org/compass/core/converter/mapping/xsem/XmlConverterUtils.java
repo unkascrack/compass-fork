@@ -38,7 +38,7 @@ public abstract class XmlConverterUtils {
      * @param xmlObject    The xml object to execute the xpath expression against.
      * @param xpathMapping The xpath mapping definiton
      * @return The list of xml objects matching the xpath expression
-     * @throws org.compass.core.converter.ConversionException
+     * @throws ConversionException
      */
     public static XmlObject[] select(XmlObject xmlObject, XPathEnabledMapping xpathMapping) throws ConversionException {
         if (xpathMapping.getXPathExpression() != null) {

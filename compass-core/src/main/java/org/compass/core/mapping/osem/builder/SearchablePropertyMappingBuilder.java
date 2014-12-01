@@ -36,7 +36,7 @@ import org.compass.core.mapping.osem.ManagedId;
  * controlled using one of the <code>managedIdConverter</code> method.
  *
  * <p>Note, that most of the time, a specialized converter for user classes will not be needed,
- * since the {@link org.compass.core.mapping.osem.builder.SearchableComponentMappingBuilder} usually makes more sense to use.
+ * since the {@link SearchableComponentMappingBuilder} usually makes more sense to use.
  *
  * <p>The searchable property can annotate an array/collections as well, with the array element type used for
  * Converter lookups.

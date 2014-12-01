@@ -45,7 +45,7 @@ import org.apache.lucene.store.jdbc.support.JdbcTemplate;
 /**
  * A Jdbc based implementation of a Lucene <code>Directory</code> allowing the storage of a Lucene index
  * within a database. Uses a jdbc <code>DataSource</code>, {@link org.apache.lucene.store.jdbc.dialect.Dialect} specific for the database used,
- * and an optional {@link org.apache.lucene.store.jdbc.JdbcDirectorySettings} and {@link org.apache.lucene.store.jdbc.support.JdbcTable} for configuration.
+ * and an optional {@link JdbcDirectorySettings} and {@link org.apache.lucene.store.jdbc.support.JdbcTable} for configuration.
  * <p/>
  * The directory works against a single table, where the binary data is stored in <code>Blob</code>. Each "file"
  * has an entry in the database, and different {@link org.apache.lucene.store.jdbc.handler.FileEntryHandler} can be defines for different files (or
@@ -68,7 +68,7 @@ import org.apache.lucene.store.jdbc.support.JdbcTemplate;
  * For none managed applications (i.e. applications that do not use JTA or Spring transaction manager), the jdbc directory
  * implementation comes with {@link org.apache.lucene.store.jdbc.datasource.TransactionAwareDataSourceProxy} which wraps
  * a <code>DataSource</code> (should be a pooled one, like Jakartat DBCP). Using it with the
- * {@link org.apache.lucene.store.jdbc.datasource.DataSourceUtils}, or the provided {@link org.apache.lucene.store.DirectoryTemplate} should make
+ * {@link org.apache.lucene.store.jdbc.datasource.DataSourceUtils}, or the provided {@link DirectoryTemplate} should make
  * integrating or using jdbc directory simple.
  * <p/>
  * Also, for none managed applications, there is an option working with autoCommit=true mode. The system will work much
@@ -99,12 +99,12 @@ public class JdbcDirectory extends Directory implements MultiDeleteDirectory {
 
 
     /**
-     * Creates a new jdbc directory.  Creates new {@link org.apache.lucene.store.jdbc.JdbcDirectorySettings} using it's default values.
+     * Creates a new jdbc directory.  Creates new {@link JdbcDirectorySettings} using it's default values.
      * Uses {@link org.apache.lucene.store.jdbc.dialect.DialectResolver} to try and automatically reolve the {@link org.apache.lucene.store.jdbc.dialect.Dialect}.
      *
      * @param dataSource The data source to use
      * @param tableName  The table name
-     * @throws org.apache.lucene.store.jdbc.JdbcStoreException
+     * @throws JdbcStoreException
      */
     public JdbcDirectory(DataSource dataSource, String tableName) throws JdbcStoreException {
         Dialect dialect = new DialectResolver().getDialect(dataSource);
@@ -112,7 +112,7 @@ public class JdbcDirectory extends Directory implements MultiDeleteDirectory {
     }
 
     /**
-     * Creates a new jdbc directory. Creates new {@link org.apache.lucene.store.jdbc.JdbcDirectorySettings} using it's default values.
+     * Creates a new jdbc directory. Creates new {@link JdbcDirectorySettings} using it's default values.
      *
      * @param dataSource The data source to use
      * @param dialect    The dialect
@@ -250,7 +250,7 @@ public class JdbcDirectory extends Directory implements MultiDeleteDirectory {
     /**
      * Delets all the file entries that are marked to be deleted, and they were marked
      * "delta" time ago (base on database time, if possible by dialect). The delta is
-     * taken from {@link JdbcDirectorySettings#getDeleteMarkDeletedDelta()}.
+     * taken from {@link org.apache.lucene.store.jdbc.JdbcDirectorySettings#getDeleteMarkDeletedDelta()}.
      */
     public void deleteMarkDeleted() throws IOException {
         deleteMarkDeleted(settings.getDeleteMarkDeletedDelta());

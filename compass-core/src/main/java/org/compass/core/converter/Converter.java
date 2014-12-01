@@ -40,7 +40,7 @@ public interface Converter<T> {
      * @param mapping  The mapping definition of how to marshall the Object to the resoruce
      * @param context  The context for the current marhslling process
      * @return <code>true</code> if data was saved in the the index that can be read.
-     * @throws org.compass.core.converter.ConversionException
+     * @throws ConversionException
      */
     boolean marshall(Resource resource, T root, Mapping mapping, MarshallingContext context)
             throws ConversionException;
@@ -52,7 +52,7 @@ public interface Converter<T> {
      * @param mapping  The mapping definition of how to unmarshall the Resource into an Object
      * @param context  The context for the current marshalling process
      * @return The object unmarshalled
-     * @throws org.compass.core.converter.ConversionException
+     * @throws ConversionException
      */
     T unmarshall(Resource resource, Mapping mapping, MarshallingContext context) throws ConversionException;
 }

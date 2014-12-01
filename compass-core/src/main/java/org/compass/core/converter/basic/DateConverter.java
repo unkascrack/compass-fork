@@ -31,7 +31,7 @@ import org.compass.core.marshall.MarshallingContext;
 
 /**
  * Converts dates to String and vice versa. Supports the notion of "now" using
- * {@link DateMathParser}.
+ * {@link org.compass.core.converter.basic.DateMathParser}.
  *
  * @author kimchy
  */

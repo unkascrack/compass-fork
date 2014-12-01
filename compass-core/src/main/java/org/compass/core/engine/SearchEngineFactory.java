@@ -101,7 +101,7 @@ public interface SearchEngineFactory {
     /**
      * Closes the factory.
      * 
-     * @throws org.compass.core.engine.SearchEngineException
+     * @throws SearchEngineException
      */
     void close() throws SearchEngineException;
 

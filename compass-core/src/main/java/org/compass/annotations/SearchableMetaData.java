@@ -23,9 +23,9 @@ import java.lang.annotation.Target;
 
 /**
  * Sepcifies additional meta-data on a {@link SearchableProperty} or
- * {@link SearchableId}.
+ * {@link org.compass.annotations.SearchableId}.
  *
- * <p>{@link SearchableId} and {@link SearchableProperty} can be used to
+ * <p>{@link org.compass.annotations.SearchableId} and {@link SearchableProperty} can be used to
  * auto-generate meta-data. If more than one meta-data is required, the
  * {@link org.compass.annotations.SearchableMetaData}/{@link SearchableMetaDatas} can be used.
  *

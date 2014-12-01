@@ -115,35 +115,35 @@ public interface ResourceMapping extends AliasMapping {
     /**
      * Returns all the resource property mappings that are assoicated with the resource mapping.
      * Note, that it is an important method, since it might be that not all the mappings that were
-     * added to the resource mapping are of type {@link org.compass.core.mapping.ResourcePropertyMapping}, and using this
-     * method you can be assured that ALL the {@link org.compass.core.mapping.ResourcePropertyMapping}s will be returned
+     * added to the resource mapping are of type {@link ResourcePropertyMapping}, and using this
+     * method you can be assured that ALL the {@link ResourcePropertyMapping}s will be returned
      * (even deep ones).
      */
     ResourcePropertyMapping[] getResourcePropertyMappings();
 
     /**
      * Returns the first resource property mapping that match the given proeprty name
-     * ({@link ResourcePropertyMapping#getName()}, or
+     * ({@link org.compass.core.mapping.ResourcePropertyMapping#getName()}, or
      * <code>null</code> if not exists.
      */
     ResourcePropertyMapping getResourcePropertyMapping(String propertyName);
 
     /**
      * Returns the list of resource property mappings that match the given proeprty name
-     * ({@link ResourcePropertyMapping#getName()}, or
+     * ({@link org.compass.core.mapping.ResourcePropertyMapping#getName()}, or
      * <code>null</code> if not exists.
      */
     ResourcePropertyMapping[] getResourcePropertyMappings(String propertyName);
 
     /**
-     * Returns the {@link org.compass.core.mapping.ResourcePropertyMapping} that match the given path
-     * ({@link ResourcePropertyMapping#getPath()}, or
+     * Returns the {@link ResourcePropertyMapping} that match the given path
+     * ({@link org.compass.core.mapping.ResourcePropertyMapping#getPath()}, or
      * <code>null</code> of not exists.
      */
     ResourcePropertyMapping getResourcePropertyMappingByPath(PropertyPath path);
 
     /**
-     * Returns the {@link org.compass.core.mapping.ResourcePropertyMapping} that match the given path
+     * Returns the {@link ResourcePropertyMapping} that match the given path
      * "dot" path (a.bValue.value), or <code>null</code> if none exists.
      */
     ResourcePropertyMapping getResourcePropertyMappingByDotPath(String path);

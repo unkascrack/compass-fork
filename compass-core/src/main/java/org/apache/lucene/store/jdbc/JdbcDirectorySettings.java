@@ -28,12 +28,12 @@ import org.apache.lucene.store.jdbc.lock.PhantomReadLock;
 /**
  * General directory level settings.
  * <p />
- * The settings also holds {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings}, that can be registered with
+ * The settings also holds {@link JdbcFileEntrySettings}, that can be registered with
  * the directory settings. Note, that when registering them, they are registered under
  * both the complete name and the 3 charecters name suffix.
  * <p />
  * When creating the settings, it already holds sensible settings, they are:
- * The default {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings} uses the file entry settings defaults.
+ * The default {@link JdbcFileEntrySettings} uses the file entry settings defaults.
  * The "deletable", ""deleteable.new", and "deletable.new" uses the {@link org.apache.lucene.store.jdbc.handler.NoOpFileEntryHandler}.
  * The "segments" and "segments.new" uses the {@link org.apache.lucene.store.jdbc.handler.ActualDeleteFileEntryHandler}, {@link org.apache.lucene.store.jdbc.index.FetchOnOpenJdbcIndexInput},
  * and {@link org.apache.lucene.store.jdbc.index.RAMJdbcIndexOutput}.
@@ -216,7 +216,7 @@ public class JdbcDirectorySettings {
     }
 
     /**
-     * Registers a {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings} against the given name.
+     * Registers a {@link JdbcFileEntrySettings} against the given name.
      * The name can be the full name of the file, or it's 3 charecters suffix.
      */
     public void registerFileEntrySettings(String name, JdbcFileEntrySettings fileEntrySettings) {
@@ -232,7 +232,7 @@ public class JdbcDirectorySettings {
 
     /**
      * Returns the file entries according to the name. If a direct match is found, it's registered
-     * {@link org.apache.lucene.store.jdbc.JdbcFileEntrySettings} is returned. If one is registered
+     * {@link JdbcFileEntrySettings} is returned. If one is registered
      * against the last 3 charecters, then it is returned. If none is found, the default file entry
      * handler is returned.
      */

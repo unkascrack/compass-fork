@@ -39,7 +39,7 @@ public interface DataSourceProvider {
      *
      * @param url      The jdbc url connection string
      * @param settings The settings for the given data source provider (and the {@link javax.sql.DataSource}).
-     * @throws org.compass.core.CompassException
+     * @throws CompassException
      */
     void configure(String url, CompassSettings settings) throws CompassException;
 

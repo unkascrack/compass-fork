@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * For {@link Searchable} classes, allows to control the "all" meta-data
+ * For {@link org.compass.annotations.Searchable} classes, allows to control the "all" meta-data
  * definitions per searchable class.
  *
  * <p>The "all" meta-data is an internal meta-data, which holds
@@ -33,7 +33,7 @@ import java.lang.annotation.Target;
  * settings.
  *
  * @author kimchy
- * @see Searchable
+ * @see org.compass.annotations.Searchable
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

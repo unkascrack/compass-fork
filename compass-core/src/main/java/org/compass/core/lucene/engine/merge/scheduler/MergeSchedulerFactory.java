@@ -9,7 +9,7 @@ import org.compass.core.lucene.engine.manager.LuceneSearchEngineIndexManager;
 import org.compass.core.util.ClassUtils;
 
 /**
- * A {@link org.apache.lucene.index.MergeScheduler} factory using {@link org.compass.core.lucene.engine.merge.scheduler.MergeSchedulerProvider}
+ * A {@link org.apache.lucene.index.MergeScheduler} factory using {@link MergeSchedulerProvider}
  * to create one.
  *
  * @author kimchy

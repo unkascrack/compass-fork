@@ -29,7 +29,7 @@ import org.compass.core.lucene.engine.analyzer.LuceneAnalyzerTokenFilterProvider
  *
  * <p>The {@link LuceneAnalyzerTokenFilterProvider} is registed under a lookup
  * name ({@link #name()}), which can then be reference in in the analyzer definition
- * (i.e. {@link org.compass.annotations.SearchAnalyzer#filters()}).
+ * (i.e. {@link SearchAnalyzer#filters()}).
  *
  * <p>Additional settings can be injected into the {@link LuceneAnalyzerTokenFilterProvider}
  * implementation using {@link #settings()}.

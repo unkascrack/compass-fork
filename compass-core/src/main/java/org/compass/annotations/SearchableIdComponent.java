@@ -22,10 +22,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Specifies a searchable id component on property or field of the {@link org.compass.annotations.Searchable} class.
+ * Specifies a searchable id component on property or field of the {@link Searchable} class.
  *
  * <p>A searchable id component is a class field/property that reference another class, which
- * content need to be embedded into the content of its {@link org.compass.annotations.Searchable} class and
+ * content need to be embedded into the content of its {@link Searchable} class and
  * represents one of its ids.
  *
  * <p>The referenced class must have searchable definitions, defined either using annotations
@@ -46,8 +46,8 @@ import java.lang.annotation.Target;
  * referenced searchable class mapping definitions.
  *
  * @author kimchy
- * @see org.compass.annotations.Searchable
- * @see org.compass.annotations.SearchableReference
+ * @see Searchable
+ * @see SearchableReference
  */
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)

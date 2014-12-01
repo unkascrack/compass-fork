@@ -20,14 +20,14 @@ import org.compass.core.converter.Converter;
 import org.compass.core.converter.mapping.ResourcePropertyConverter;
 
 /**
- * A {@link org.compass.core.converter.Converter} that can handle format parameter.
+ * A {@link Converter} that can handle format parameter.
  *
  * @author kimchy
  */
 public interface FormatConverter<T> extends ResourcePropertyConverter<T> {
 
     /**
-     * Sets the format for the {@link org.compass.core.converter.Converter}.
+     * Sets the format for the {@link Converter}.
      */
     void setFormat(String format);
 

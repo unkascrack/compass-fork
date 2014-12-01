@@ -27,8 +27,8 @@ import org.compass.core.util.ClassUtils;
  * A helper class that based on which jars exists in the classpath, tries to get the actual
  * class out of an object.
  *
- * <p>Order in which libraries are used: {@link SpringProxyExtractor},
- * {@link HibernateProxyExtractor}.
+ * <p>Order in which libraries are used: {@link org.compass.core.util.proxy.extractor.SpringProxyExtractor},
+ * {@link org.compass.core.util.proxy.extractor.HibernateProxyExtractor}.
  *
  * @author kimchy
  */

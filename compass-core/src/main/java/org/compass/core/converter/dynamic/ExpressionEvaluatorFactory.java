@@ -13,7 +13,7 @@ public interface ExpressionEvaluatorFactory {
      * Creates a new {@link org.compass.core.converter.dynamic.ExpressionEvaluator}.
      *
      * @return A new expression evaluator
-     * @throws org.compass.core.converter.ConversionException
+     * @throws ConversionException
      */
     ExpressionEvaluator create() throws ConversionException;
 }

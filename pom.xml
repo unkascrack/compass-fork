@@ -74,7 +74,7 @@
         <cglib.version>2.2</cglib.version>
         <coherence.version>3.4.2</coherence.version>
         <commonj.version>1.1.1</commonj.version>
-        <commons-collections.version>3.2.1</commons-collections.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
         <commons-dbcp.version>1.2.1</commons-dbcp.version>
         <commons-el.version>1.0</commons-el.version>
         <commons-jexl.version>1.0</commons-jexl.version>
